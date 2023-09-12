@@ -2,7 +2,7 @@ Team roles:
   Scrum Master: Francesco Romano
   Product Owner: Tanay Patankar
   Front End Specialists:
-  Back End Specialists:
+  Back End Specialists: Brian Munoz
 
 Customer Meeting Date/Time/Place:
   Date: September 5th
@@ -12,6 +12,29 @@ Customer Meeting Date/Time/Place:
 Summary:
 
 User Stories:
+
+Feature: Login 
+As a user
+So that I can access the PHD Review Application
+I want to be able to log in through TAMU CAS
+
+
+Feature: Add reviews to application
+As a faculty member
+So that I can add my feedback about the candidate
+I want to add a textual review associated with an applicated and give them a score from 1 to 10.
+
+
+Feature: Creating a committee
+As a committee chair
+So that I can have a committee review an applicant
+I want to add faculty members to a committee
+
+
+Feature: Search
+As a faculty member
+So that I can find a particular applicant
+I want to specify criteria to search the applicant
 
 Links:
   Deployed Application
