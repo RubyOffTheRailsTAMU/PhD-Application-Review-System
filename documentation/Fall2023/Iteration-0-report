@@ -36,6 +36,16 @@ As a faculty member
 So that I can find a particular applicant
 I want to specify criteria to search the applicant
 
+Feature: Generating a Report
+As a faculty
+So that the grad office can make a decision on the applicant
+I want to generate a report of the reviews of a PHD applicant
+
+Feature: Notify committee members about review
+As a committee member
+So that the applicant gets reviewed promptly
+I want to see notifications about applicants I need to review
+
 Links:
   Deployed Application
   GitHub Repo: https://github.com/RubyOffTheRailsTAMU/PhD-Application-Review-System
