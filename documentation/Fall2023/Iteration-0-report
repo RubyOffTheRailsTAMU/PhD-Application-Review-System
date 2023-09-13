@@ -13,13 +13,13 @@ Summary:
 
 User Stories:
 
-Feature: Login 
+Feature: Login with CAS
 As a user
 So that I can access the PHD Review Application
 I want to be able to log in through TAMU CAS
 
 
-Feature: Add reviews to application
+Feature: Add reviews to the application
 As a faculty member
 So that I can add my feedback about the candidate
 I want to add a textual review associated with an applicated and give them a score from 1 to 10.
@@ -31,17 +31,17 @@ So that I can have a committee review an applicant
 I want to add faculty members to a committee
 
 
-Feature: Search
+Feature: Search for an applicant
 As a faculty member
 So that I can find a particular applicant
-I want to specify criteria to search the applicant
+I want to specify the criteria for searching the applicant
 
 Feature: Generating a Report
 As a faculty
 So that the grad office can make a decision on the applicant
 I want to generate a report of the reviews of a PHD applicant
 
-Feature: Notify committee members about review
+Feature: Notify committee members about a review
 As a committee member
 So that the applicant gets reviewed promptly
 I want to see notifications about applicants I need to review
