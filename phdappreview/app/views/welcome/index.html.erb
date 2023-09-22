@@ -4,7 +4,7 @@
 </p>
 <% if session[:user_token] %>
   <p>
-  Hi <%= session[:user_email] %>
+  Hi <%= session.inspect %>
 </p>
 <% else %>
   <%= link_to 'Login with Google', '/auth/google_oauth2' %>
