@@ -1,0 +1,58 @@
+Team roles:
+  Scrum Master: Francesco Romano
+  Product Owner: Tanay Patankar
+  Front End Specialists: Ruofei Xu, Shreyas Shivakumar Kasetty
+  Back End Specialists: Brian Munoz, Meetansh Gupta, Shreyas Shivakumar Kasetty
+
+Customer Meeting Date/Time/Place:
+  Date: September 5th
+  Time: 1pm-2pm
+  Place: PETR 214
+
+Summary:
+  The main purpose of our application is to streamline the PhD application review process. This process includes adding candidate information, allowing faculty to review the applications, and then to generate a report compiled of all reviews. More specifically, once a candidate is in the system, a committee chair will do a inital review and create a committee of faculty assigned to review the application. The reviews will constitute a text review and a numeric score from 1-5. 
+  In addtion to the main process the system is designed to aid, other features to improve user experience will be added. Theses includ: a search page that will allow a faculty member to find all candidates that meet a specified criteria, a user friendly home page that will display unreviewed assigned candidated for a faculty to review at a high priority, and a candidate add page that will take a csv file (or other format... to be determined) and add the candidate to the system. 
+
+User Stories:
+
+  Feature: Login with CAS
+  As a user
+  So that I can access the PHD Review Application
+  I want to be able to log in through TAMU CAS
+  
+  
+  Feature: Add reviews to the application
+  As a faculty member
+  So that I can add my feedback about the candidate
+  I want to add a textual review associated with an applicated and give them a score from 1 to 10.
+  
+  
+  Feature: Creating a committee
+  As a committee chair
+  So that I can have a committee review an applicant
+  I want to add faculty members to a committee
+  
+  
+  Feature: Search for an applicant
+  As a faculty member
+  So that I can find a particular applicant
+  I want to specify the criteria for searching the applicant
+  
+  Feature: Generating a Report
+  As a faculty
+  So that the grad office can make a decision on the applicant
+  I want to generate a report of the reviews of a PHD applicant
+  
+  Feature: Notify committee members about a review
+  As a committee member
+  So that the applicant gets reviewed promptly
+  I want to see notifications about applicants I need to review
+
+Links:
+  Deployed Application: https://applicationapp-7378da3e3864.herokuapp.com/
+  GitHub Repo: https://github.com/RubyOffTheRailsTAMU/PhD-Application-Review-System
+  Project Management Page: https://github.com/orgs/RubyOffTheRailsTAMU/projects/1
+  Slack Channel: phdapplicatio-buc1202.slack.com
+
+
+  
