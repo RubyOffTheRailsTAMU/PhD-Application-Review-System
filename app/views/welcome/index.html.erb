@@ -1,0 +1,11 @@
+<h2>Hello World! Test Github Deploy!</h2>
+<p>
+  The time is now: <%= Time.now %>
+</p>
+<% if session[:user_token] %>
+  <p>
+  Hi <%= session.inspect %>
+</p>
+<% else %>
+  <%= link_to 'Login with Google', '/auth/google_oauth2' %>
+<% end %>
