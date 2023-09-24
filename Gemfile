@@ -38,6 +38,9 @@ gem "jbuilder"
 # CSV to JSON
 gem 'csv'
 
+# xlsx to JSON
+gem 'roo'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
