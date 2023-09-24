@@ -84,6 +84,7 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
+    csv (3.2.7)
     cucumber (9.0.2)
       builder (~> 3.2, >= 3.2.4)
       cucumber-ci-environment (~> 9.2, >= 9.2.0)
@@ -301,6 +302,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  csv
   cucumber-rails
   database_cleaner
   debug
