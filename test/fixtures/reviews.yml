@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  review_id: 1
+  appuser_netid: MyString
+  candidate_id: MyString
+  review_info: MyString
+
+two:
+  review_id: 1
+  appuser_netid: MyString
+  candidate_id: MyString
+  review_info: MyString
