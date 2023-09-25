@@ -14,12 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_234412) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "CANDIDATES", id: false, force: :cascade do |t|
-    t.string "candidate_id"
-    t.string "candidate_info"
-    t.index ["candidate_id"], name: "candidate_id_unq_idx", unique: true
-  end
-
   create_table "candidates", force: :cascade do |t|
     t.string "candidate_id"
     t.text "candidate_info"
@@ -28,4 +22,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_234412) do
     t.index ["candidate_id"], name: "index_candidates_on_candidate_id", unique: true
   end
 
+  create_table "recipes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.text "instructions"
+    t.integer "minutes_to_complete"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_recipes_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "image_url"
+    t.string "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "recipes", "users"
 end
