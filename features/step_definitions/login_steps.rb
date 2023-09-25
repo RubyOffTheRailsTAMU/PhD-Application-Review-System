@@ -1,21 +1,21 @@
-Given(/I am a user/) do
-    expect(true).to eq(true)
+require 'rspec/expectations'
+World(RSpec::Matchers)
+
+Given('I am a user') do
+    # pending # Write code here that turns the phrase above into concrete actions
 end
 
-When('When I want to log into the site with email {string}') do |email|
-    # OmniAuth.config.test_mode = true
-    # OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
-    #     :provider => "google_oauth2",
-    #     :uid => "7148",
-    #     :info => {
-    #       :name => "abc Stark",
-    #       :email => "abc@tamu.edu"
-    #     },
-    #     :credentials => {
-    #       :token => "token",
-    #       :refresh_token => "refresh token"
-    #     }
-    #   })
-      
-    #   OmniAuth.config.test_mode = false
+When('I want to log into the site with email {string}') do |email|
+    expect(email).to eq('abc@tamu.edu')
+    # TODO: Delete the line above and write your own code
+    # TODO: Try login, and get the response, if able to login `@logedIn=true`, else `@logedIn=false`
+    # TODO: You can use more details for testing form the login response and add more testing steps
+end
+
+Then('I should be able to log in') do
+    expect(@logedIn).to eq(true)
+end
+
+Then('I should not be able to log in') do
+    expect(@logedIn).to eq(false)
 end
