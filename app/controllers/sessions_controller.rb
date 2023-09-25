@@ -22,11 +22,10 @@ class SessionsController < ApplicationController
         if email_exists?(auth.info.email, emails)
           session[:user_token] = auth.credentials.token
           session[:user_email] = auth.info.email
-          puts "email found"
           # TODO: change this redirect to the user home page in the future
+          # TODO: create/get User with this email and use that user from this point onwards
           redirect_to root_path
         else
-          puts "email not found"
           session[:user_email] = auth.info.email
           session[:alert] = 'This user is not allowed access to this site'
           redirect_to root_path
