@@ -24,31 +24,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_25_024842) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "review_id"
-    t.string "appuser_netid"
+    t.string "user_netid"
     t.string "candidate_id"
     t.string "review_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "recipes", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "title"
-    t.text "instructions"
-    t.integer "minutes_to_complete"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_recipes_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.string "image_url"
-    t.string "bio"
+    t.string "email"
+    t.text "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email"
   end
 
-  add_foreign_key "recipes", "users"
 end

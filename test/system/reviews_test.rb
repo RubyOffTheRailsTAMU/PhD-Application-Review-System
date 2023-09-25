@@ -14,7 +14,7 @@ class ReviewsTest < ApplicationSystemTestCase
     visit reviews_url
     click_on "New review"
 
-    fill_in "Appuser netid", with: @review.appuser_netid
+    fill_in "Appuser netid", with: @review.user_netid
     fill_in "Candidate", with: @review.candidate_id
     fill_in "Review", with: @review.review_id
     fill_in "Review info", with: @review.review_info
@@ -28,7 +28,7 @@ class ReviewsTest < ApplicationSystemTestCase
     visit review_url(@review)
     click_on "Edit this review", match: :first
 
-    fill_in "Appuser netid", with: @review.appuser_netid
+    fill_in "Appuser netid", with: @review.user_netid
     fill_in "Candidate", with: @review.candidate_id
     fill_in "Review", with: @review.review_id
     fill_in "Review info", with: @review.review_info

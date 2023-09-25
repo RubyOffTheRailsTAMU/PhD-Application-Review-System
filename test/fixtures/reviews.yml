@@ -2,12 +2,12 @@
 
 one:
   review_id: 1
-  appuser_netid: MyString
+  user_netid: MyString
   candidate_id: MyString
   review_info: MyString
 
 two:
   review_id: 1
-  appuser_netid: MyString
+  user_netid: MyString
   candidate_id: MyString
   review_info: MyString
