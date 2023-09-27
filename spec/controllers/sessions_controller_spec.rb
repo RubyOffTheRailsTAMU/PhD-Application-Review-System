@@ -27,6 +27,11 @@ RSpec.describe SessionsController, type: :controller do
                 OmniAuth.config.test_mode = false
             end
         end
+        describe "when trying to log out" do
+            it 'succeeds' do
+                get :destroy
+            end
+        end
     end
     context 'when the email is in the whitelist' do
         before(:each) do
@@ -52,6 +57,11 @@ RSpec.describe SessionsController, type: :controller do
                 expect(session[:user_email]).to eq('tanayp@tamu.edu')
                 expect(session[:alert]).to eq(nil)
                 OmniAuth.config.test_mode = false
+            end
+        end
+        describe "when trying to log out" do
+            it 'succeeds' do
+                get :destroy
             end
         end
     end
