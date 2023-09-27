@@ -40,3 +40,5 @@
 
 # Ignore .env
 .env
+
+/config/database.yml
