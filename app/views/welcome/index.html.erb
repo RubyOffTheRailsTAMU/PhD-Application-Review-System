@@ -10,6 +10,7 @@
     <p>
       Hi <%= session[:user_email] %>
     </p>
+    <%= link_to 'Log Out', '/logout' %>
   <% end %>
 <% else %>
   <%= link_to 'Login with Google', '/auth/google_oauth2' %>
