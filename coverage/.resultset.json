@@ -1,0 +1,58 @@
+{
+  "Cucumber Features": {
+    "coverage": {
+      "/home/felix/se/PhD-Application-Review-System/features/step_definitions/csvtojson_step.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          null
+        ]
+      },
+      "/home/felix/se/PhD-Application-Review-System/features/step_definitions/login_steps.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null
+        ]
+      }
+    },
+    "timestamp": 1695857978
+  }
+}
