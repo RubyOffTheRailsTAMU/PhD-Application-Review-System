@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   get 'xlsx/tojson'
   get 'csv/tojson'
   resources :reviews

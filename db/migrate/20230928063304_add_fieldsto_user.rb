@@ -1,7 +1,9 @@
 class AddFieldstoUser < ActiveRecord::Migration[7.0]
   def change
-    add_column :user, :netid, :string
-    add_column :user, :user_name, :string
-    add_column :user, :user_level, :integer
+    create_table :users do |t|
+      t.string :netid
+      t.string :user_name
+      t.integer :user_level
+    end
   end
 end
