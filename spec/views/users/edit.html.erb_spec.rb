@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "users/edit", type: :view do
   let(:user) {
     User.create!(
-      netid: "MyString",
+      user_netid: "MyString",
       user_name: "MyString",
       user_level: 1
     )
@@ -18,7 +18,7 @@ RSpec.describe "users/edit", type: :view do
 
     assert_select "form[action=?][method=?]", user_path(user), "post" do
 
-      assert_select "input[name=?]", "user[netid]"
+      assert_select "input[name=?]", "user[user_netid]"
 
       assert_select "input[name=?]", "user[user_name]"
 
