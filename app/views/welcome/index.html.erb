@@ -1,17 +1,16 @@
-<center><strong>PhD Application System</strong></center>
-<p>
-  The time is now: <%= Time.now %>
-</p>
 <% if session[:user_email] %>
-  <% if session[:alert] %>
-    <p><%= session[:alert] %></p>
-    <%= link_to 'Login with Google', '/auth/google_oauth2' %>
-  <% else %>
+    <% if session[:alert] %>
+      <p><%= session[:alert] %></p>
+      <div class="login-button">
+        <%= link_to 'Login with Google', '/auth/google_oauth2', class: 'login-with-google' %>
+      </div>
+    <% else %>
     <p>
       Hi <%= session[:user_email] %>
     </p>
     <%= link_to 'Log Out', '/logout' %>
   <% end %>
 <% else %>
-  <%= link_to 'Login with Google', '/auth/google_oauth2' %>
+ <%= render 'login'%>
 <% end %>
+
