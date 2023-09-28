@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
     # TODO: Replace this with Users foreign key
-    # belongs_to :appuser, foreign_key: 'user_netid', class_name: 'AppUser'
+    # belongs_to :users, foreign_key: 'netid', class_name: 'User'
 end
