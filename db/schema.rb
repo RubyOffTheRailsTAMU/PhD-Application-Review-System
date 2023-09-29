@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_28_063304) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "netid"
+    t.string "user_netid"
     t.string "user_name"
     t.integer "user_level"
   end
