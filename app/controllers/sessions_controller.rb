@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       end
       emails
     end
-
+    
     # Function to check if an email exists in the array
     def email_exists?(email_to_check, emails)
       emails.include?(email_to_check)
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
           session[:user_email] = auth.info.email
           # TODO: change this redirect to the user home page in the future
           # TODO: create/get User with this email and use that user from this point onwards
-          redirect_to '/home'
+          redirect_to root_path
         else
           session[:user_email] = auth.info.email
           session[:alert] = 'This user is not allowed access to this site'
