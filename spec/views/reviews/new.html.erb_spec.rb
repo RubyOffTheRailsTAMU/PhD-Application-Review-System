@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "reviews/new", type: :view do
   before(:each) do
     assign(:review, Review.new(
-      netid: "MyString",
       review_id: 1,
+      user_netid: "MyString",
       review_info: "MyString",
       created_at: "MyString",
       updated_at: "MyString"
@@ -16,9 +16,9 @@ RSpec.describe "reviews/new", type: :view do
 
     assert_select "form[action=?][method=?]", reviews_path, "post" do
 
-      assert_select "input[name=?]", "review[netid]"
-
       assert_select "input[name=?]", "review[review_id]"
+
+      assert_select "input[name=?]", "review[user_netid]"
 
       assert_select "input[name=?]", "review[review_info]"
 
