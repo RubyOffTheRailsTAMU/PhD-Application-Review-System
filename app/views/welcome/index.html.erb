@@ -5,11 +5,8 @@
         <%= link_to 'Login with Google', '/auth/google_oauth2', class: 'login-with-google' %>
       </div>
     <% else %>
-    <p>
-      Hi <%= session[:user_email] %>
-    </p>
-    <%= link_to 'Log Out', '/logout' %>
-  <% end %>
+    <%= controller.redirect_to '/home' %>
+    <% end %>
 <% else %>
  <%= render 'login'%>
 <% end %>
