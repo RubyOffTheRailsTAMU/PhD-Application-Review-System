@@ -9,9 +9,9 @@
 #   {:candidate_id => "1", :candidate_info => "Francesco Romano"}
 #]
 
-tanay = User.create!(netid: "5290000", user_name: "Tanay", user_level: 1)
+tanay = User.create!(user_netid: "5290000", user_name: "Tanay", user_level: 1)
 
-Review.create!(user_netid: tanay.netid, candidate_id: "Tanay_CandidateID", review_info: "Tanay is a very good candidate. 10/10. Please admit immidiateley.", review_id: 10)
+Review.create!(user_netid: tanay.user_netid, candidate_id: "Tanay_CandidateID", review_info: "Tanay is a very good candidate. 10/10. Please admit immidiateley.", review_id: 10)
 
 #sample_review = [{:user_netid => "10", :candidate_id => "1", :review_info => "Tanay is a very good candidate. 10/10. Please admit immidiateley.", :review_id => "101"}]
 
