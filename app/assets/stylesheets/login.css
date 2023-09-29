@@ -17,7 +17,7 @@
 .card-login-container {
   width: 350px; /* Set fixed width */
   height: 350px; /* Set fixed height */
-  background-color: white;
+  background-color: rgb(235, 235, 235);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -37,6 +37,7 @@
 .text {
   margin-bottom: 15px; /* Adjusted margin for compact sizing */
   text-align: center;
+  font-weight: 650;
 }
 
 /* Style for the button */

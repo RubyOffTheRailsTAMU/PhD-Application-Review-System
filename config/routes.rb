@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get "/candidates", to: "candidates#index"
   get "/appusers", to: "app_users#index"
   get "/reviews", to: "reviews#index"
+  get '/home', to: 'homepage#index'
   root 'welcome#index'
 end

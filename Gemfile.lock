@@ -140,6 +140,7 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
     ffi (1.16.2)
+    ffi (1.16.2-x64-mingw-ucrt)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (5.0.0)
@@ -186,6 +187,8 @@ GEM
       net-protocol
     nio4r (2.5.9)
     nokogiri (1.15.4-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.4-x64-mingw-ucrt)
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-darwin)
       racc (~> 1.4)
@@ -338,8 +341,8 @@ GEM
     zeitwerk (2.6.11)
 
 PLATFORMS
-  x64-mingw-ucrt
   arm64-darwin-22
+  x64-mingw-ucrt
   x86_64-darwin-22
   x86_64-linux
 
