@@ -1,0 +1,2 @@
+class HompageController < ApplicationController
+end
