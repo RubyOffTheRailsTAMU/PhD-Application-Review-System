@@ -3,73 +3,57 @@
    box-sizing: border-box;
  }
  .phdapp-login {
-   background: #ffffff;
-   width: 1512px;
-   height: 982px;
-   position: relative;
-   overflow: hidden;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, #500000 50%, #ffffff 50%);
  }
- .rectangle-2 {
-   background: #500000;
-   width: 1128.63px;
-   height: 2028.72px;
-   position: absolute;
-   left: -836.4px;
-   top: 530.07px;
-   transform-origin: 0 0;
-   transform: rotate(-46.355deg) scale(1, 1);
- }
- .rectangle-1 {
-   position: absolute;
-   left: 535px;
-   top: 278px;
-   overflow: visible;
- }
- .tam-primary-mark-a-1 {
-   width: 254px;
-   height: 99px;
-   position: absolute;
-   left: 629px;
-   top: 313px;
- }
- .login-button {
-   position: absolute;
-   inset: 0;
- }
- .rectangle-3 {
-   background: #500000;
-   border-radius: 5px;
-   width: 180px;
-   height: 41px;
-   position: absolute;
-   left: 666px;
-   top: 492px;
- }
+
+
+/* Updated style for the container */
+.card-login-container {
+  width: 300px; /* Set fixed width */
+  height: 300px; /* Set fixed height */
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+ /* Style for the logo */
+.logo {
+  width: 100%;  /* Adjusted width for responsive sizing */
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 15px; /
+}
+
+/* Style for the text */
+.text {
+  margin-bottom: 15px; /* Adjusted margin for compact sizing */
+  text-align: center;
+}
+
+/* Style for the button */
+.button {
+  padding: 10px 20px; /* Make the button larger */
+  font-size: 1rem; /* Font size of button text */
+  cursor: pointer; /* Change cursor on hover over button */
+}
+
+
  .login-with-google {
-   color: #ffffff;
-   text-align: center;
-   font: 600 15px "Open Sans", sans-serif;
-   position: absolute;
-   left: 687px;
-   top: 495.73px;
-   width: 140px;
-   text-decoration: none;
-   height: 34.79px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
- }
- .ph-d-application-review-system {
-   color: #000000;
-   text-align: center;
-   font: 600 15px "Open Sans", sans-serif;
-   position: absolute;
-   left: 634px;
-   top: 412px;
-   width: 243px;
-   height: 33px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  padding: 8px 16px;  /* Adjusted padding for compact sizing */
+  background-color: #500000;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1rem;
  }
  

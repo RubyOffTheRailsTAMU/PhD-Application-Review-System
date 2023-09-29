@@ -30,11 +30,32 @@ class XlsxController < ApplicationController
           schoolInfo['level']=person['gpas_by_transcript_school_level_'+school]
           schoolInfo['qualityPoints']=person['gpas_by_transcript_quality_points_'+school]
           schoolInfo['GPA']=person['gpas_by_transcript_gpa_'+school]
-          schoolInfo['credieHours']=person['gpas_by_transcript_credit_hours_'+school]
+          schoolInfo['creditHours']=person['gpas_by_transcript_credit_hours_'+school]
           person['school'].push(schoolInfo)
         end
       end
 
+      person['gre']={}
+      person['gre']['quantitativeScaled']=person['gre_quantitative_scaled']
+      person['gre']['quantitativePercentile']=person['gre_quantitative_percentile']
+      person['gre']['verbalScaled']=person['gre_verbal_scaled']
+      person['gre']['verbalPercentile']=person['gre_verbal_percentile']
+      person['gre']['analyticalScaled']=person['gre_analytical_scaled']
+      person['gre']['analyticalPercentile']=person['gre_analytical_percentile']
+
+      person['ielts']={}
+      person['ielts']['reading']=person['ielts_reading_score']
+      person['ielts']['writing']=person['ielts_writing_score']
+      person['ielts']['listening']=person['ielts_listening_score']
+      person['ielts']['speaking']=person['ielts_speaking_score']
+      person['ielts']['overall']=person['ielts_overall_band_score']
+
+      person['toefl']={}
+      person['toefl']['listening']=person['toefl_ibt_listening']
+      person['toefl']['reading']=person['toefl_ibt_reading']
+      person['toefl']['result']=person['toefl_ibt_result']
+      person['toefl']['speaking']=person['toefl_ibt_speaking']
+      person['toefl']['writing']=person['toefl_ibt_writing']
     end
     return data
   end
