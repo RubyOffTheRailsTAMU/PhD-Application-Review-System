@@ -8,9 +8,7 @@ require 'simplecov'
 
 puts "SimpleCov is loaded!"
 
-SimpleCov.start 'rails' do
-
-end
+SimpleCov.start 'rails'
 
 require 'cucumber/rails'
 
