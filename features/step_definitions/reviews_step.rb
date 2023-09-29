@@ -1,5 +1,13 @@
 require 'rspec/expectations'
 World(RSpec::Matchers)
+require 'capybara'
+require 'capybara/dsl'
+require 'selenium-webdriver'
+
+require 'capybara'
+require 'capybara/dsl'
+
+World(Capybara::DSL)
 
 When('I want to see all reviews') do
   uri = URI('http://127.0.0.1:3000/reviews')
@@ -14,8 +22,10 @@ Then('The response status should be {int}') do |status_code|
   expect(@response_code).to eq(status_code)
 end
 
-#* The response should be a valid JSON
-Then('the response should be a valid ') do
-  expect(@content_type).to include('application/json')
-  expect { JSON.parse(@response_body) }.not_to raise_error
+And('I can see all reviews') do
+  visit '/reviews'
+  expect(page).to have_css('#reviews')
+  # within('#reviews') do
+  #   expect(page).to have_css('[id^="review_"]')
+  # end
 end
