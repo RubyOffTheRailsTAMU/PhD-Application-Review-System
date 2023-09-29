@@ -15,8 +15,8 @@
 
 /* Updated style for the container */
 .card-login-container {
-  width: 300px; /* Set fixed width */
-  height: 300px; /* Set fixed height */
+  width: 350px; /* Set fixed width */
+  height: 350px; /* Set fixed height */
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -27,8 +27,8 @@
 
  /* Style for the logo */
 .logo {
-  width: 100%;  /* Adjusted width for responsive sizing */
-  max-width: 200px;
+  width: 115%;  /* Adjusted width for responsive sizing */
+  max-width: 300px;
   height: auto;
   margin-bottom: 15px; /
 }
