@@ -83,7 +83,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem 'cucumber'
+  # gem 'cucumber'
+  gem 'cucumber-rails', require: false
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
   gem 'simplecov', require: false
