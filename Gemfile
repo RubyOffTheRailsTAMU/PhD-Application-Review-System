@@ -84,7 +84,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'cucumber'
-    # database_cleaner is not mandatory, but highly recommended
+  # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
   gem 'simplecov', require: false
 end

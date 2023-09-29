@@ -1,4 +1,3 @@
-
 require 'omniauth'
 require 'rspec/expectations'
 World(RSpec::Matchers)
@@ -19,7 +18,6 @@ OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
   })
 #   visit '/'
 #   request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
-
     expect(email).to eq('tanayp@tamu.edu')
 end
 

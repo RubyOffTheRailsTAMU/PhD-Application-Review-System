@@ -1,13 +1,5 @@
 /* SQLEditor (Generic SQL)*/
 
-
-CREATE TABLE CANDIDATES
-(
-candidate_id VARCHAR AUTO_INCREMENT  UNIQUE ,
-candidate_info VARCHAR,
-CONSTRAINT CANDIDATES_pkey PRIMARY KEY (candidate_id)
-);
-
 CREATE TABLE USER_LEVELS
 (
 user_level INTEGER UNIQUE ,

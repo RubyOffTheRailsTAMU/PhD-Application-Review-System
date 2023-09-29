@@ -5,11 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-me = [
-    {:candidate_id => "1", :candidate_info => "Francesco Romano"}
-]
+#me = [
+#   {:candidate_id => "1", :candidate_info => "Francesco Romano"}
+#]
 
-me.each do |i|
-    Candidate.create!(i)
-end
+tanay = User.create!(user_netid: "5290000", user_name: "Tanay", user_level: 1)
+
+Review.create!(netid: tanay.user_netid, candidate_id: "Tanay_CandidateID", review_info: "Tanay is a very good candidate. 10/10. Please admit immidiateley.", review_id: 10)
+
+#sample_review = [{:user_netid => "10", :candidate_id => "1", :review_info => "Tanay is a very good candidate. 10/10. Please admit immidiateley.", :review_id => "101"}]
+
+#sample_review.each do |i|
+    #Review.create!(i)
+#end
 
