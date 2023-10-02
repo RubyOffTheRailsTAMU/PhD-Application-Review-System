@@ -88,6 +88,12 @@
           null
         ]
       },
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/hompage_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/home/felix/se/PhD-Application-Review-System/app/controllers/reviews_controller.rb": {
         "lines": [
           1,
@@ -95,7 +101,7 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
           null,
           null,
@@ -433,7 +439,7 @@
         ]
       }
     },
-    "timestamp": 1696010013
+    "timestamp": 1696015000
   },
   "RSpec": {
     "coverage": {
