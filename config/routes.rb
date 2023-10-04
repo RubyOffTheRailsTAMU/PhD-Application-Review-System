@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :users
   get 'xlsx/tojson'
   get 'csv/tojson'
+  get 'applicants/savedata'
   resources :reviews
   resources :app_users
   resources :candidates
