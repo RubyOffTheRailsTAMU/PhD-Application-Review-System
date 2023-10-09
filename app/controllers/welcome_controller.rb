@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
     def create
-        puts params
         user = User.find_by(user_name: params[:session][:user_name])
         if user && params[:session][:user_name] == "admin" && user.authenticate(params[:session][:password])
             session[:user_token] = "admin_token_placeholder"

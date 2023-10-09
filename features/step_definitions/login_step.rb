@@ -2,25 +2,54 @@ require 'omniauth'
 require 'rspec/expectations'
 World(RSpec::Matchers)
 
-When(/^I want to log into the site with email "([^"]*)"$/) do |email|
-OmniAuth.config.test_mode = true
-OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
-    :provider => "google_oauth2",
-    :uid => "7148",
-    :info => {
-      :name => "abc Stark",
-      :email => email
-    },
-    :credentials => {
-      :token => "token",
-      :refresh_token => "refresh token"
-    }
-  })
-#   visit '/'
-#   request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google_oauth2]
-    expect(email).to eq('tanayp@tamu.edu')
+Given(/the following users exist/) do |users|
+  users.hashes.each do |user|
+    User.create user
+  end
 end
 
-Then ('I should not be able to log in') do
-    expect(@logedIn).to eq(false)
+When(/I am on the log in page/) do
+  visit root_path
+end
+
+When(/I click "(.*)"/) do | button |
+  click_button(button)
+end
+
+When(/I want to log into the site with "(.*)" as "(.*)" and "(.*)" as "(.*)"/) do |username, name, password, pwd|
+  fill_in(username, with: name)
+  fill_in(password, with: pwd)
+end
+
+Then (/I should not be able to log in/) do
+  expect(page).to have_current_path(root_path)
+end
+
+Then (/I should be able to log in/) do
+  expect(page).to have_current_path('/home')
+end
+
+Given(/I want to log into the site with email "(.*)" using Google/) do | email |
+  page.driver.browser.set_cookie("stub_user_email=#{email}")
+  page.driver.browser.set_cookie("stub_user_token=testtokencucumber")
+end
+
+When(/I follow link "(.*)"/) do |link|
+  # click_link(link)
+  visit link
+end
+
+When(/I get redirected to "(.*)"/) do | link |
+  sleep(5)
+  expect(page).to have_current_path(link)
+end
+
+Then(/I should see "(.*)"/) do |string|
+  expect(page).to have_content(string)
+end
+
+When(/I create a user with netid "(.*)" username "(.*)" and user level "(.*)"/) do | netid, username, level |
+  fill_in("User NetID", with: netid)
+  fill_in("Username", with: username)
+  fill_in("User Level", with: level)
 end

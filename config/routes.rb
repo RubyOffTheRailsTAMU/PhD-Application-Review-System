@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :candidates
   # Defines the root path route ("/")
   # root "articles#index"
-  get '/auth/google_oauth2/callback', to: 'sessions#create'
+  get '/auth/google_oauth2/callback', to: 'sessions#create', via: [:get, :post]
   get '/logout', to: 'sessions#destroy'
   get "/candidates", to: "candidates#index"
   get "/users", to: "users#index"
