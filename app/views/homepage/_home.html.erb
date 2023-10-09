@@ -9,9 +9,12 @@
     </div>
     <div class='title'>
         <%= image_tag('tamu_circle_logo.png', class: 'tamu-circle-logo', alt: 'Description') %>
-      <p class="welcome-to-phd">
-        Welcome <%= session[:user_email] %> !
-        <br><br> PhD. Application Review System </p>
+        <% if logged_in? %>
+        <p class="welcome-to-phd">
+          Welcome <%= current_user.user_name %> !
+          <br><br> PhD. Application Review System
+        </p>
+        <% end %>
     </div>
     <div class="div-wrapper">
       <div class="text-wrapper">Search</div>

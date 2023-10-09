@@ -23,7 +23,11 @@
 
   <div>
     <%= form.label :user_level, style: "display: block" %>
-    <%= form.number_field :user_level %>
+    <%= form.text_field :user_level %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :user_email, value: session[:user_email] %>
   </div>
 
   <div>
