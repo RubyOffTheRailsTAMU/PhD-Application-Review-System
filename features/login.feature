@@ -20,7 +20,7 @@ Background: users in database
   Given the following users exist:
     | user_netid   | user_name | user_level | user_email        | password  |
     | 123456789    | John      | faculty    | johnwick@tamu.edu | babayaga  |
-    |              | admin     | admin      | admin@tamu.edu    | admin     |
+    | 987          | admin     | admin      | admin@tamu.edu    | admin     |
 
   Scenario: Admin Successful log in
     When I am on the log in page
