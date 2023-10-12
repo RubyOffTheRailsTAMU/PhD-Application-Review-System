@@ -10,25 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_04_170753) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_11_160235) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "applicantions", force: :cascade do |t|
-    t.integer "application_cas_id"
-    t.string "application_name"
-    t.string "application_gender"
-    t.string "application_citizenship_country"
-    t.string "application_dob"
-    t.string "application_email"
-    t.string "application_degree"
-    t.datetime "application_submitted"
-    t.string "application_status"
-    t.string "application_research"
-    t.string "application_faculty"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "applicants", force: :cascade do |t|
     t.string "application_cas_id"
@@ -105,9 +89,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_04_170753) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_netid"
-    t.string "user_name"
-    t.integer "user_level"
+    t.string "user_netid", null: false
+    t.string "user_name", null: false
+    t.string "user_level", null: false
+    t.string "user_email"
+    t.string "password_digest"
   end
 
   add_foreign_key "application_ielts", "applicants", on_delete: :cascade

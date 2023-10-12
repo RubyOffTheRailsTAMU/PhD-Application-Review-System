@@ -9,7 +9,12 @@
 #   {:candidate_id => "1", :candidate_info => "Francesco Romano"}
 #]
 
-tanay = User.create!(user_netid: "5290000", user_name: "Tanay", user_level: 1)
+# tanay = User.create!(user_netid: "5290000", user_name: "Tanay", user_level: 1)
+user = User.create!(
+    user_name: 'admin',
+    user_email: 'admin.phd@tamu.edu',
+    password: 'password',
+  )
 
 Review.create!(user_netid: tanay.user_netid, candidate_id: "Tanay_CandidateID", review_info: "Tanay is a very good candidate. 10/10. Please admit immidiateley.", review_id: 10)
 
