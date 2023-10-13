@@ -6,7 +6,7 @@ class SearchesController < ApplicationController
         query = params[:query]
         field = params[:field]
         #todo: non local
-        uri = URI("http://localhost:3001/api/v1/searches?query=#{params[:query]}&field=#{params[:field]}")
+        uri = URI("https://phdapplicationsystemdatabase-5e5fc255409c.herokuapp.com/api/v1/searches?query=#{params[:query]}&field=#{params[:field]}")
         response = Net::HTTP.get(uri)
         @results = JSON.parse(response)
       else
