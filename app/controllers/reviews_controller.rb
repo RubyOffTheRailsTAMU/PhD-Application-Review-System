@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :require_user
   before_action :set_review, only: %i[ show edit update destroy ]
 
   # GET /reviews or /reviews.json
