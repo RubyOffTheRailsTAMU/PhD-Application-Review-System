@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   get "/reviews", to: "reviews#index"
   get '/home', to: 'homepage#index'
   post '/login', to: 'welcome#create'
+  get '/searches', to: 'searches#index'
+
   root 'welcome#index'
 end

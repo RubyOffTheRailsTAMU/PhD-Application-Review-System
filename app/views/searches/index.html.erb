@@ -1,0 +1,14 @@
+<!-- Search Form -->
+<%= form_tag searches_path, method: :get do %>
+  <%= text_field_tag :query %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<!-- Display Results -->
+<% if @results.any? %>
+  <% @results.each do |result| %>
+    <%= result["application_name"] %>
+  <% end %>
+<% else %>
+  <p>No results found.</p>
+<% end %>
