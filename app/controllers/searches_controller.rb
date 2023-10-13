@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
     require 'net/http'
-  
+    before_action :require_user
     def index
       if params[:query].present?
         query = params[:query]
