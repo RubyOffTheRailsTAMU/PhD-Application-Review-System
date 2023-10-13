@@ -1,8 +1,15 @@
 <!-- Search Form -->
 <%= form_tag searches_path, method: :get do %>
   <%= text_field_tag :query %>
+  <%= select_tag :field, options_for_select([
+    ['Name', 'application_name'],
+    ['CAS ID', 'application_cas_id'],
+    ['Country of Citizenship', 'application_citizenship_country'],
+    ['Degree', 'application_degree']
+  ]) %>
   <%= submit_tag "Search" %>
 <% end %>
+
 
 <!-- Display Results -->
 <% if @results.any? %>
