@@ -6,7 +6,7 @@ Feature: Login to the Application
 Background: users in database
   Given the following users exist:
     | user_netid   | user_name | user_level | user_email        | password  |
-    |              | admin     | admin      | admin@tamu.edu    | admin     |
+    | 12345        | admin     | admin      | admin@tamu.edu    | admin     |
 
   Scenario: Good user log in with Google
     When I am on the log in page

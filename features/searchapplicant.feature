@@ -1,13 +1,23 @@
 @search
   Feature: Search for an applicant
-    Scenario: Successfully search the applicant
-      Given I have applicant's name: ""
-      When I search the applicant by sending a GET request to ""
-      Then the response status should be 200
-      And The result is valid
+  
+  Background: users in database
+    Given the following users exist:
+      | user_netid   | user_name | user_level | user_email        | password  |
+      | 12345        | admin     | admin      | admin@tamu.edu    | admin     |
 
-    Scenario:
-      Given I have applicant's name: ""
-      When I search the applicant by sending a GET request to ""
-      # TODO: responce code
-      Then the response status should be 404
+    Scenario: Successfully search the applicant
+      Given I have applicants name: 'Evan'
+      When I am on the log in page
+      And I want to log into the site with "Username" as "admin" and "Password" as "admin"
+      And I click "Log In"
+      When I search the applicant by sending a GET request to database
+      Then I should see "Evan"
+
+    Scenario: Applicant does not exist
+      Given I have applicants name: 'abc'
+      When I am on the log in page
+      And I want to log into the site with "Username" as "admin" and "Password" as "admin"
+      And I click "Log In"
+      When I search the applicant by sending a GET request to database
+      Then I should see "No results found."
