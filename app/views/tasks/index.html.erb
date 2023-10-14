@@ -1,0 +1,127 @@
+<div class="d-flex justify-content-center min-vh-100">
+  <div class="container my-5">
+      <div class="row">
+          <div class="col">
+              <div class="accordion" id="tasksAccordion">
+                  <% ['Assigned', 'In Progress', 'Completed'].each_with_index do |status, index| %>
+                        <div class="accordion-item <%= "#{status.downcase.gsub(' ', '-')}-task-card" %>">
+                          <h2 class="accordion-header" id="<%= status.downcase.gsub(' ', '') %>Tasks">
+                              <button class="accordion-button <%= 'collapsed' unless index.zero? %>" type="button" data-bs-toggle="collapse"
+                                  data-bs-target="#collapse<%= status.gsub(' ', '') %>" aria-expanded="true"
+                                  aria-controls="collapse<%= status.gsub(' ', '') %>">
+                                  <%= status %> Tasks
+                              </button>
+                          </h2>
+                          <div id="collapse<%= status.gsub(' ', '') %>" class="accordion-collapse collapse <%= 'show' if index.zero? %>"
+                              aria-labelledby="<%= status.downcase.gsub(' ', '') %>Tasks" data-bs-parent="#tasksAccordion">
+                              <div class="accordion-body">
+                                  <% @tasks.select { |task| task.status == status.downcase.gsub(' ', '')}.each do |task| %>
+                                      <div class="card mb-3">
+                                          <div class="card-body">
+                                              <h5 class="card-title">Applicant Name: <%= task.applicant.application_name %></h5>
+                                              <p class="card-text">CAS ID: <%= task.applicant.application_cas_id %></p>
+                                              <button type="button" class="btn btn-primary">Review</button>
+
+                                              <div class="dropdown d-inline">
+                                                  <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                      id="statusDropdown<%= task.id %>" data-bs-toggle="dropdown" aria-expanded="false">
+                                                      Change Status
+                                                  </button>
+                                                  <ul class="dropdown-menu" aria-labelledby="statusDropdown<%= task.id %>">
+                                                      <% ['assigned', 'inprogress', 'completed'].each do |s| %>
+                                                          <li>
+                                                              <a class="dropdown-item" href="#" onclick="changeStatus(<%= task.id %>, '<%= s %>')">
+                                                                  <%= s.titleize %>
+                                                              </a>
+                                                          </li>
+                                                      <% end %>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  <% end %>
+                              </div>
+                          </div>
+                      </div>
+                  <% end %>
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<script>
+async function changeStatus(taskId, newStatus) {
+    console.log('Task ID:', taskId);
+    console.log('New Status:', newStatus);
+    
+    const url = `/tasks/${taskId}`;
+    console.log('fetch url:', url);
+    
+    try {
+        const response = await fetch(url, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
+            },
+            body: JSON.stringify({ status: newStatus })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const taskCard = document.querySelector(`.card[data-task-id="${taskId}"]`);
+        if (!taskCard) {
+            throw new Error('Task card not found!');
+        }
+
+        console.log('Task Card:', taskCard);
+        taskCard.remove();
+        
+        const newStatusFormatted = newStatus.replace(' ', '').toLowerCase();
+        console.log('New Status Formatted:', newStatusFormatted);
+        
+        const newContainer = document.querySelector(`#collapse${newStatusFormatted.charAt(0).toUpperCase() + newStatusFormatted.slice(1)} .accordion-body`);
+        if (!newContainer) {
+            throw new Error('New container not found!');
+        }
+
+        console.log('New Container:', newContainer);
+        newContainer.appendChild(taskCard);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+  crossorigin="anonymous">
+</script>
+
+<style>
+    .assigned-task-card .card{
+        background-color: #ADD8E6; /* You can choose your own shade of green */
+        border-color: #00796b;
+    }
+    
+    .inprogress-task-card .card {
+        background-color: #fff9c4; /* Light yellow for In Progress */
+        border-color: #fbc02d;
+    }
+
+    .completed-task-card .card {
+        background-color: #90EE90; /* Light blue for Completed */
+        border-color: #00796b;
+    }
+    .accordion-item {
+      margin-bottom: 40px; /* Adjust as needed */
+    }
+    
+</style>
+

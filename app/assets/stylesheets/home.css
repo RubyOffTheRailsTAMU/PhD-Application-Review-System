@@ -16,8 +16,10 @@
   position: relative;
 }
 .home-page .overlap-group {
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  width: 98px;
+  width: 65px;
   height: 982px;
   top: 0;
   left: 0;
@@ -26,45 +28,45 @@
 }
 .home-page .brief {
   position: absolute;
-  width: 48px;
-  height: 48px;
+  width: 35px;
+  height: 35px;
   top: 368px;
-  left: 25px;
+  left: 16px;
 }
 .home-page .alarm {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   top: 442px;
-  left: 24px;
+  left: 16px;
 }
 .home-page .logout {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   top: 914px;
-  left: 24px;
+  left: 16px;
 }
 .home-page .male-user {
   position: absolute;
-  width: 48px;
-  height: 48px;
+  width: 35px;
+  height: 35px;
   top: 36px;
-  left: 22px;
+  left: 16px;
 }
 .home-page .dashboard-layout {
   position: absolute;
-  width: 48px;
-  height: 48px;
+  width: 35px;
+  height: 35px;
   top: 298px;
-  left: 27px;
+  left: 16px;
 }
 .home-page .icon-home {
   position: absolute;
-  width: 48px;
-  height: 48px;
+  width: 35;
+  height: 35px;
   top: 227px;
-  left: 25px;
+  left: 16px;
 }
 .home-page .search-bar {
   position: absolute;

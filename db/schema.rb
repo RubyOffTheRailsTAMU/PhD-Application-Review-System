@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_11_160235) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_13_054300) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -76,6 +76,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_11_160235) do
     t.index ["applicant_id"], name: "index_schools_on_applicant_id"
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.integer "status"
+    t.bigint "user_id", null: false
+    t.bigint "applicant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["applicant_id"], name: "index_tasks_on_applicant_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
   create_table "toefls", force: :cascade do |t|
     t.bigint "applicant_id", null: false
     t.integer "application_toefl_listening"
@@ -99,5 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_11_160235) do
   add_foreign_key "application_ielts", "applicants", on_delete: :cascade
   add_foreign_key "gres", "applicants", on_delete: :cascade
   add_foreign_key "schools", "applicants", on_delete: :cascade
+  add_foreign_key "tasks", "applicants"
+  add_foreign_key "tasks", "users"
   add_foreign_key "toefls", "applicants", on_delete: :cascade
 end
