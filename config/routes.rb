@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   resources :users
   get 'xlsx/tojson'
   get 'csv/tojson'
-  get 'applicants/savedata'
+
+  # Removed the ApplicantsController
+  # get 'applicants/savedata'
+
   resources :reviews
   resources :users
   resources :candidates
