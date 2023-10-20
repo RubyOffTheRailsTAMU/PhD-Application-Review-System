@@ -21,3 +21,11 @@
       And I click "Log In"
       When I search the applicant by sending a GET request to database
       Then I should see "No results found."
+
+    Scenario: Successfully search the applicant
+      Given I have a query: '*application_gender=Male application_citizenship_country=Bangladesh'
+      When I am on the log in page
+      And I want to log into the site with "Username" as "admin" and "Password" as "admin"
+      And I click "Log In"
+      When I search the applicant by sending a GET request to database
+      Then I should see "Evan"

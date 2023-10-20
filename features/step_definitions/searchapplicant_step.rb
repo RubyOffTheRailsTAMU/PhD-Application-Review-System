@@ -13,6 +13,10 @@ Given('I have applicants name: {string}') do |string|
   @name = string
 end
 
+Given('I have a query: {string}') do |string|
+  @name = string
+end
+
 When('I search the applicant by sending a GET request to database') do
   query = @name
   field = 'Name'
