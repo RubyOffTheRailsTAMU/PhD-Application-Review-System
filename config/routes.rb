@@ -10,7 +10,18 @@ Rails.application.routes.draw do
 
   get 'xlsx/tojson'
   get 'csv/tojson'
-  get 'applicants/savedata'
+
+  # Removed the ApplicantsController
+  # get 'applicants/savedata'
+
+  resources :reviews
+  resources :users
+  resources :candidates
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  resources :candidates
+  # Defines the root path route ("/")
+  # root "articles#index"
   get '/auth/google_oauth2/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   get '/home', to: 'homepage#index'
