@@ -94,14 +94,23 @@
 }
 .home-page .title {
   position: absolute;
-  width: 750px;
-  height: 215px;
-  top: 60px;
-  left: 383px;
+  width: 50%;
+  height: 20%;
+  top: 10%;
+  left: 25%;
+  text-align: center;
+  display: block;
+}.home-page .search-bar {
+  position: absolute;
+  width: 50%;
+  height: 20%;
+  top: 40%;
+  left: 25%;
   text-align: center;
   display: block;
 }
-.home-page .welcome-to-phd {
+
+/* .home-page .welcome-to-phd {
   width: 750px;
   height: 123px;
   margin-top: 10px;
@@ -112,12 +121,12 @@
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
-}
+} */
 .home-page .tamu-circle-logo {
-  width: 120px;
-  height: 120px;
+  width: 10%;
+  height: auto;
   top: 0;
-  left: 320px;
+  left: 25%;
   align-self: center;
 }
 .home-page .div-wrapper {

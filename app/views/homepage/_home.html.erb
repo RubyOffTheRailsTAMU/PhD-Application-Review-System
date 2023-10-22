@@ -24,38 +24,24 @@
     <div class='title'>
         <%= image_tag('tamu_circle_logo.png', class: 'tamu-circle-logo', alt: 'Description') %>
         <% if logged_in? %>
-        <p class="welcome-to-phd">
-          Welcome <%= current_user.user_name %> !
+        <h1>
+        <%
+=begin%>
+  should this be a temporary banner instead??
+<%
+=end%>
+          Welcome <%= current_user.user_name %>!
           <br><br> PhD. Application Review System
-        </p>
+        </h1>
         <% end %>
     </div>
-    <div class="div-wrapper">
+    <div class="search-bar">
       <%= render 'searches/form' %> 
       <%
 =begin%>
  <div class="text-wrapper">Search</div> 
 <%
 =end%>
-    </div>
-    <img class="rectangle" src="img/rectangle-7.svg" />
-    <div class="list-item">
-      <div class="ellipse"></div>
-      <div class="rectangle-2"></div>
-      <div class="rectangle-3"></div>
-      <div class="rectangle-4"></div>
-    </div>
-    <div class="list-item-2">
-      <div class="rectangle-5"></div>
-      <div class="rectangle-6"></div>
-      <div class="rectangle-7"></div>
-      <div class="ellipse-2"></div>
-    </div>
-    <div class="list-item-3">
-      <div class="ellipse-3"></div>
-      <div class="rectangle-5"></div>
-      <div class="rectangle-6"></div>
-      <div class="rectangle-7"></div>
     </div>
   </div>
 </div>

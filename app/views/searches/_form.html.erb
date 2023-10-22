@@ -1,6 +1,6 @@
 <!-- Search Form -->
-<%= form_tag searches_path, method: :get do %>
-  <%= text_field_tag :query %>
+<%= form_tag searches_path, method: :get, class: 'search-form' do %>
+  <%= text_field_tag :query, nil, class: 'search-input' %>
   <%= select_tag :field, options_for_select([
   ['cas_id', 'application_cas_id'],
   ['name', 'application_name'],
@@ -33,8 +33,7 @@
   ['school_level', 'schools.application_school_level'],
   ['school_quality_points', 'schools.application_school_quality_points'],
   ['school_gpa', 'schools.application_school_gpa'],
-  ['school_credit_hours', 'schools.application_school_credit_hours']
-]
-) %>
-  <%= submit_tag "Search" %>
+  ['school_credit_hours', 'schools.application_school_credit_hours']]
+), class: 'search-dropdown' %>
+  <%= submit_tag "Search", class: 'search-btn' %>
 <% end %>
