@@ -2,10 +2,10 @@
     <% if session[:alert] %>
       <p><%= session[:alert] %></p>
       <div class="login-button">
-        <%= link_to 'Login with Google', '/auth/google_oauth2', class: 'login-with-google' %>
+        <%= link_to 'Login with Google', '/login', class: 'login-with-google' %>
       </div>
       <div class="login-button">
-        <%= link_to 'Login as Admin', '/auth/google_oauth2', class: 'login-with-google' %>
+        <%= link_to 'Login as Admin', '/admin', class: 'login-with-google' %>
       </div>
     <% else %>
     <%= controller.redirect_to '/home' %>
