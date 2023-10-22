@@ -1,12 +1,26 @@
+<%
+=begin%>
+  todo: refactor side bar into a header that will be included on all the pages
+<%
+=end%>
+
 <div class="home-page">
   <div class="div">
-    <div class="overlap-group">
-        <a href="/home"><%= image_tag('home.png', class: 'icon-home', alt: 'Description') %></a>
-         <%= image_tag('dashboard.png', class: 'dashboard-layout', alt: 'Description') %>
-        <a href='/tasks'><%= image_tag('brief.png', class: 'brief', alt: 'Description') %></a>
-        <%= image_tag('alarm.png', class: 'alarm', alt: 'Description') %>
-        <a href='/logout'><%= image_tag('logoutlogo.png', class: 'logout', alt: 'Description') %></a>
+    <div class="sidebar">
+      <a href="/home"><%= image_tag('home.png', class: 'icon-home', alt: 'home') %></a>
+      <a href="/dashboard"><%= image_tag('dashboard.png', class: 'dashboard-layout', alt: 'dashboard') %></a>
+      <a href="/reviews"><%= image_tag('alarm.png', class: 'alarm', alt: 'reviews') %>
+      <%
+=begin%>
+  todo: add real bookmark png to match style
+<%
+=end%>
+      <a href="/bookmarks"><%= image_tag('bookmark.png', class: 'bookmark', alt: 'bookmarks') %>
+      <a href='/report'><%= image_tag('brief.png', class: 'brief', alt: 'report') %></a>
+      <a href='/logout'><%= image_tag('logoutlogo.png', class: 'logout', alt: 'logout') %></a>
     </div>
+
+
     <div class='title'>
         <%= image_tag('tamu_circle_logo.png', class: 'tamu-circle-logo', alt: 'Description') %>
         <% if logged_in? %>
@@ -17,7 +31,12 @@
         <% end %>
     </div>
     <div class="div-wrapper">
-      <div class="text-wrapper">Search</div>
+      <%= render 'searches/form' %> 
+      <%
+=begin%>
+ <div class="text-wrapper">Search</div> 
+<%
+=end%>
     </div>
     <img class="rectangle" src="img/rectangle-7.svg" />
     <div class="list-item">

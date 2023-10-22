@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   get '/home', to: 'homepage#index'
   post '/login', to: 'welcome#create'
   get '/searches', to: 'searches#index'
+  get '/admin', to: 'welcome#_admin'
 
   root 'welcome#index'
+
+  post 'search', to: 'searches#search', as: 'search'
+
 end
