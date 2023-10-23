@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+ #container {
+background-color: #ffffff;
+padding: 40px 60px;
+border-radius: 10px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+margin-top: 0;
+color: #333;
+font-size: 24px;
+font-weight: bold;
+font-family: "Georgia", Helvetica;
+}
+
+#search-form {
+color: #555;
+font-size: 18px;
+}
+    
+.search-form {
+display: flex;
+flex-direction: column;
+gap: 10px; /* space between elements */
+width: 100%;
+max-width: 400px; /* adjust as needed */
+margin: 20px auto; /* center the form */
+}
+
+.search-input,
+.search-dropdown {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+width: 100%;
+font-size: 16px;
+}
+
+.search-btn {
+padding: 10px 20px;
+background-color: #007BFF;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+
+/* Hover effect for the button */
+&:hover {
+    background-color: #0056b3;
+}
+}
+  
+.search-results {
+display: flex;
+flex-direction: column;
+gap: 10px; /* space between elements */
+width: 100%;
+max-width: 50%; /* adjust as needed */
+margin: 20px auto; /* center the form */
+}
