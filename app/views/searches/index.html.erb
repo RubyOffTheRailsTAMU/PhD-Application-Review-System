@@ -1,31 +1,5 @@
 <!-- Search Form -->
 <%= render 'searches/form' %>
 
-
-
-
 <!-- Display Results -->
-<% if !@results.is_a?(Array) and @results.key?("error") %>
-  <p><%= @results["error"] %></p>
-<% elsif @results.any? %>
-  <p><strong>Total Results:</strong> <%= @results.size %></p>
-
-  <% @results.each do |result| %>
-    <div>
-      <p>
-        <strong>ID:</strong>
-        <%= result["application_cas_id"] %>
-        <strong>Name:</strong>
-        <%= result["application_name"] %>
-        <strong>Email:</strong>
-        <%= result["application_email"]  %>
-        <strong>Degree:</strong>
-        <%= result["application_degree"]  %>
-      </p>
-
-    </div>
-
-  <% end %>
-<% else %>
-  <p>No results found.</p>
-<% end %>
+<%= render 'searches/results'%>
