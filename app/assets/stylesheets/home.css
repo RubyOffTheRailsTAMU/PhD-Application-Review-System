@@ -17,7 +17,7 @@
   min-height: 100vh;
   position: relative;
 }
-.home-page .sidebar {
+.sidebar {
   justify-content: center;
   align-items: center;
   position: absolute;

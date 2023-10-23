@@ -1,6 +1,6 @@
 <!-- Search Form -->
 <%= form_tag searches_path, method: :get, class: 'search-form' do %>
-  <%= text_field_tag :query, nil, class: 'search-input' %>
+  <%= text_field_tag :query, params[:query], class: 'search-input' %>
   <%= select_tag :field, options_for_select([
   ['cas_id', 'application_cas_id'],
   ['name', 'application_name'],

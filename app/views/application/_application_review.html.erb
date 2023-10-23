@@ -1,6 +1,6 @@
 <h1>Application ID: <%= params[:cas_id] %></h1>
 
-<%= result =  SearchService.search(query: params[:cas_id], field: "application_cas_id")[0] %>
+<%= result =  SearchService.search(query: "*application_cas_id=#{params[:cas_id]}", field: nil)[0] %>
 
 <div class="search-results">
     <table>
@@ -18,11 +18,11 @@
     </tr>
   </table>
   </div>
-
-  <%
-=begin%>
-  todo: add review form
-  todo: display other reviews below as stacked cards
-
-<%
-=end%>
+<div>
+    <h2>Add a new Application Review</h2>
+    <p><%= result["application_status"] %></p>
+</div>
+<div>
+    <h2>Other Application Reviews</h2>
+    <p><%= result["application_notes"] %></p>
+</div>
