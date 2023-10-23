@@ -31,36 +31,36 @@
 }
 .home-page .icon-home {
   position: absolute;
-  width: 3rem;       
-  height: 3rem;      
+  width: 50%;       
+  height: auto;      
   top: 3%;          
   left: 25%;  
 }
 .home-page .dashboard-layout {
   position: absolute;
-  width: 3rem;       
-  height: 3rem;      
+  width: 50%;       
+  height: auto;      
   top: 33%;          
   left: 25%;  
 }
 .home-page .alarm {
   position: absolute;
-  width: 3rem;       
-  height: 3rem;      
+  width: 50%;       
+  height: auto;      
   top: 39%;          
   left: 25%;  
 }
 .home-page .bookmark {
   position: absolute;
-  width: 3rem;       
-  height: 3rem;      
+  width: 50%;       
+  height: auto;      
   top: 45%;          
   left: 25%;       
 }
 .home-page .brief {
   position: absolute;
-  width: 3rem;       
-  height: 3rem;      
+  width: 50%;       
+  height: auto;      
   top: 51%;          
   left: 25%;       
 }
@@ -78,8 +78,8 @@
 
 .home-page .logout {
   position: absolute;
-  width: 3rem;       
-  height: 3rem;      
+  width: 50%;       
+  height: auto;      
   top: 93%;          
   left: 25%;  
 }
