@@ -27,6 +27,11 @@
   </div>
 
   <div>
+    <%= form.label :rating, style: "display: block" %>
+    <%= form.number_field :rating, in: 1..5, step: 1 %>
+  </div>
+
+  <div>
     <%= form.label :created_at, style: "display: block" %>
     <%= form.text_field :created_at %>
   </div>

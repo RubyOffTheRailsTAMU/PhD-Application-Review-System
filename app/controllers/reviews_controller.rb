@@ -23,6 +23,11 @@ class ReviewsController < ApplicationController
   # POST /reviews or /reviews.json
   def create
     @review = Review.new(review_params)
+    if saved?
+      @review.status = 1
+    else
+      @review.status = 0
+    end
 
     respond_to do |format|
       if @review.save
@@ -38,6 +43,12 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
     respond_to do |format|
+      if saved?
+        @review.status = 1
+      else
+        @review.status = 0
+      end
+
       if @review.update(review_params)
         format.html { redirect_to review_url(@review), notice: "Review was successfully updated." }
         format.json { render :show, status: :ok, location: @review }
@@ -66,6 +77,11 @@ class ReviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def review_params
-      params.require(:review).permit(:review_id, :user_netid, :review_info, :created_at, :updated_at)
+      # params.require(:review).permit(:review_id, :user_netid, :applicant_id, :review_info, :rating, :created_at, :updated_at)
+      params.permit(:review_id, :user_netid, :applicant_id, :review_info, :rating, :created_at, :updated_at)
+    end
+
+    def saved?
+      params[:commit] == "Submit"
     end
 end
