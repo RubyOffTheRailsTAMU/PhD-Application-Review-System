@@ -68,12 +68,18 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    ar_lazy_preload (1.1.2)
+      rails (>= 5.2)
+    audited (5.4.0)
+      activerecord (>= 5.0, < 7.2)
+      request_store (~> 1.2)
     base64 (0.1.1)
     bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.5.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -139,6 +145,8 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     erubi (1.12.0)
+    et-orbi (1.2.7)
+      tzinfo
     eventmachine (1.2.7)
     faraday (2.7.11)
       base64
@@ -148,6 +156,9 @@ GEM
     ffi (1.16.2)
     ffi (1.16.2-x64-mingw-ucrt)
     formatador (1.1.0)
+    fugit (1.9.0)
+      et-orbi (~> 1, >= 1.2.7)
+      raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
     guard (2.18.1)
@@ -200,6 +211,12 @@ GEM
     mime-types-data (3.2023.0808)
     mini_mime (1.1.5)
     minitest (5.20.0)
+    motor-admin (0.4.22)
+      ar_lazy_preload (~> 1.0)
+      audited (~> 5.0)
+      cancancan (~> 3.0)
+      fugit (~> 1.0)
+      rails (>= 5.2)
     msgpack (1.7.2)
     multi_json (1.15.0)
     multi_test (1.1.0)
@@ -258,6 +275,7 @@ GEM
     public_suffix (5.0.3)
     puma (5.6.7)
       nio4r (~> 2.0)
+    raabro (1.4.0)
     racc (1.7.1)
     rack (2.2.8)
     rack-livereload (0.5.1)
@@ -303,6 +321,8 @@ GEM
     regexp_parser (2.8.1)
     reline (0.3.8)
       io-console (~> 0.5)
+    request_store (1.5.1)
+      rack (>= 1.4)
     rexml (3.2.6)
     roo (2.10.0)
       nokogiri (~> 1)
@@ -399,6 +419,7 @@ DEPENDENCIES
   guard-livereload
   importmap-rails
   jbuilder
+  motor-admin
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection (~> 1.0)
