@@ -12,7 +12,7 @@
     </tr>
   <% @results.each do |result| %>
     <tr>
-        <td><a href="/application?cas_id=<%= result["application_cas_id"] %>"><%= result["application_cas_id"]  %></a></td>
+        <td> <%= link_to "#{result["application_cas_id"]}", "/application?cas_id=#{result["application_cas_id"]}" %></td>
         <td><%= result["application_name"]%></td>
         <td><%= result["application_email"]%></td>
         <td><%= result["application_degree"]%></td>

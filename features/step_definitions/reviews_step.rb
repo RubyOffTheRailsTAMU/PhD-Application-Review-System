@@ -29,3 +29,9 @@ And('I can see all reviews') do
   #   expect(page).to have_css('[id^="review_"]')
   # end
 end
+
+And(/I fill in review "(.*)" with rating "(.*)" and assistantship "(.*)"/) do |review, rating, assistantship|
+  fill_in 'review_info', with: review
+  choose "rating_#{rating}" 
+  check "#{assistantship.downcase}"
+end
