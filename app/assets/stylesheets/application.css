@@ -74,3 +74,7 @@ width: 100%;
 max-width: 50%; /* adjust as needed */
 margin: 20px auto; /* center the form */
 }
+
+.main-layout{
+    display: flex;
+}
