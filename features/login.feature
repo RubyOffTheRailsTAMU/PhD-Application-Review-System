@@ -8,11 +8,15 @@ Background: users in database
     | user_netid   | user_name | user_level | user_email        | password  |
     | 12345        | admin     | admin      | admin@tamu.edu    | admin     |
 
+  Scenario: Cannot access home when not logged in
+    When I follow link "/home"
+    Then I should see "Login with Google"
+
   Scenario: Good user log in with Google
     When I am on the log in page
     When I want to log into the site with email "johnwick@tamu.edu" using Google
     And I follow link "/users/new"
-    And I create a user with netid "123" username "John W" and user level "faculty"
+    And I create a user with netid "123" username "John W"
     And I click "Create User"
     Then I should be able to log in
     And I should see "John W"
