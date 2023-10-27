@@ -24,7 +24,7 @@
 </div>
 <div>
     <h2>Other Application Reviews</h2>
-    <% others = Review.where(applicant_id: @result["application_cas_id"], status: 1).where.not(user_netid: current_user.user_netid) %>
+    <% others = Review.where(applicant_id: @result["application_cas_id"], status: "completed").where.not(user_netid: current_user.user_netid) %>
     <div class="search-results">
       <table>
         <tr>

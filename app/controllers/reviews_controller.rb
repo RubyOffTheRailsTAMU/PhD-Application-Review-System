@@ -24,9 +24,9 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if saved?
-      @review.status = 1
+      @review.status = "completed"
     else
-      @review.status = 0
+      @review.status = "inprogress"
     end
 
     respond_to do |format|
@@ -44,9 +44,9 @@ class ReviewsController < ApplicationController
   def update
     respond_to do |format|
       if saved?
-        @review.status = 1
+        @review.status = "completed"
       else
-        @review.status = 0
+        @review.status = "inprogress"
       end
 
       if @review.update(review_params)
