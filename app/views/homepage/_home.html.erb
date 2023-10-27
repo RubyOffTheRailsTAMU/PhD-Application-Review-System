@@ -6,22 +6,6 @@
 
 <div class="home-page">
   <div class="div">
-    <div class="sidebar">
-      <a href="/home"><%= image_tag('home.png', class: 'icon-home', alt: 'home') %></a>
-      <a href="/dashboard"><%= image_tag('dashboard.png', class: 'dashboard-layout', alt: 'dashboard') %></a>
-      <a href="/reviews"><%= image_tag('alarm.png', class: 'alarm', alt: 'reviews') %>
-      <%
-=begin%>
-  todo: add real bookmark png to match style
-  todo: make side bar stand on own. 
-<%
-=end%>
-      <a href="/bookmarks"><%= image_tag('bookmark.png', class: 'bookmark', alt: 'bookmarks') %>
-      <a href='/report'><%= image_tag('brief.png', class: 'brief', alt: 'report') %></a>
-      <a href='/logout'><%= image_tag('logoutlogo.png', class: 'logout', alt: 'logout') %></a>
-    </div>
-
-
     <div class='title'>
         <%= image_tag('tamu_circle_logo.png', class: 'tamu-circle-logo', alt: 'Description') %>
         <% if logged_in? %>
@@ -45,5 +29,3 @@
 =end%>
     </div>
   </div>
-</div>
-

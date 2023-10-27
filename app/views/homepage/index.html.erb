@@ -1,5 +1,9 @@
 <% if session[:user_email] && session[:user_token]%>
-    <%= render 'home'%>
+    <div class="main-layout">
+        <%= render 'nav' %>
+        <%= render 'home'%>
+    </div>
+   
 <% else %>
     <%= controller.redirect_to root_path %>
 <% end %>
