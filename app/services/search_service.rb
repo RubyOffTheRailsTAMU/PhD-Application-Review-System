@@ -8,7 +8,7 @@ class SearchService
         # http = Net::HTTP.new(uri.host, uri.port)
 
         # request = Net::HTTP::Get.new(uri)
-        # request['Authorization'] = "Bearer eyJhbGciOiJSUzI1NiJ9.eyJ1c2VyX2VtYWlsIjoieHJmQHRhbXUuZWR1In0.lWL_Zvobkt9y-noCBrvJxmlOjwtqngCr4AtFBbCB6PtCdEVQS7vlGpVuNk5AoNypYN4fcmxh5XT4aovCYZZ8OdaRrjJQEqMSc7SySNgK6c-XKWjTapbAQYGqLWgbJ0o-YiW8WzgExBSvb0h-rXPf8muI_XdGx7gFOZ1JNiCIt3Rs26y9KiAtaHJnYmFeBRI4r4-qQwXKdfCyv-jb3LUD26hXUfAbW38YKxDRxBteRo8PJDCYCMZ_eOc1OxS0nkwZfrY7_XcuInvXARAYOE36STO94sqNivO5gEyLpDkFIqK78TKhmHUioqfK6SM-G3I47u7xF4PMPPY0NbE6nXK8bg" 
+        # request['Authorization'] = "Bearer #{token}" 
 
         # response = http.request(request)
         # JSON.parse(response.body)
