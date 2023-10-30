@@ -419,6 +419,7 @@ DEPENDENCIES
   guard-livereload
   importmap-rails
   jbuilder
+  jwt
   motor-admin
   omniauth
   omniauth-google-oauth2

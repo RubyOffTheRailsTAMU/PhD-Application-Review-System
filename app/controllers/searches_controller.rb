@@ -4,7 +4,7 @@ class SearchesController < ApplicationController
 
     def index
       if params[:query].present?
-        @results = SearchService.search(query: params[:query], field: params[:field])
+        @results = SearchService.search(query: params[:query], field: params[:field], token: session[:jwt_token])
       else
         @results = []
       end
