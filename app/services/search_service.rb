@@ -16,7 +16,7 @@ class SearchService
 
         # response = Net::HTTP.get(uri)
         headers = {
-            'Authorization' => 'Bearer '+token 
+            'Authorization' => "Bearer #{token}"
           }
           
         response = Net::HTTP.get_response(uri, headers)
