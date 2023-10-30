@@ -44,6 +44,9 @@ gem 'csv'
 # xlsx to JSON
 gem 'roo'
 
+# JWT
+gem 'jwt'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

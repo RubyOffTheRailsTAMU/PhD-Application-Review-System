@@ -24,6 +24,11 @@ class SessionsController < ApplicationController
         session[:user_email] = auth.info.email
         # TODO: change this redirect to the user home page in the future
         # TODO: create/get User with this email and use that user from this point onwards
+
+        jwtToken=JwtService.generate_jwt({user_email:session[:user_email]})
+        session[:jwt_token] = jwtToken
+        
+
         user = User.find_by(user_email: session[:user_email])
         if user
           redirect_to '/home'
