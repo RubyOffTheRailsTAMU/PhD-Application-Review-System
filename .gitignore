@@ -47,3 +47,4 @@ node_modules
 # Ignore private key for JWT
 /private_key.pem
 /public_key.pem
+/test.rb
