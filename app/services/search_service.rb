@@ -4,12 +4,23 @@ class SearchService
     def self.search(query:, field: ,token:)
         uri = URI("https://phdapplicationsystemdatabase-5e5fc255409c.herokuapp.com/api/v1/searches?query=#{query}&field=#{field}")
         # uri = URI("http://127.0.0.1:3001/api/v1/searches?query=#{query}&field=#{field}")
-        http = Net::HTTP.new(uri.host, uri.port)
+        puts uri
+        # http = Net::HTTP.new(uri.host, uri.port)
 
-        request = Net::HTTP::Get.new(uri)
-        request['Authorization'] = "Bearer #{token}" 
+        # request = Net::HTTP::Get.new(uri)
+        # request['Authorization'] = "Bearer #{token}" 
 
-        response = http.request(request)
+        # response = http.request(request)
+        # JSON.parse(response.body)
+
+
+        # response = Net::HTTP.get(uri)
+        headers = {
+            'Authorization' => "Bearer #{token}"
+          }
+          
+        response = Net::HTTP.get_response(uri, headers)
+        puts response.body
         JSON.parse(response.body)
     end
 end
