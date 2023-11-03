@@ -25,7 +25,8 @@ class SessionsController < ApplicationController
         # TODO: change this redirect to the user home page in the future
         # TODO: create/get User with this email and use that user from this point onwards
 
-        jwtToken=JwtService.generate_jwt({user_email:session[:user_email]})
+        jwtToken=JwtService.generate_jwt({user_email:session[:user_email],
+          exp: 24.hours.from_now.to_i})
         session[:jwt_token] = jwtToken
         
 

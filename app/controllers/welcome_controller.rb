@@ -5,7 +5,8 @@ class WelcomeController < ApplicationController
             session[:user_token] = "admin_token_placeholder"
             session[:user_email] = user.user_email
 
-            jwtToken=JwtService.generate_jwt({user_email:session[:user_email]})
+            jwtToken=JwtService.generate_jwt({user_email:session[:user_email],
+              exp: 24.hours.from_now.to_i})
             session[:jwt_token] = jwtToken
             
             current_user
