@@ -12,10 +12,11 @@
     </tr>
   <% @results.each do |result| %>
     <tr>
-        <td><%= result["application_cas_id"]%></td>
+        <td><a href="/application?cas_id=<%= result["application_cas_id"] %>"><%= result["application_cas_id"]  %></a></td>
         <td><%= result["application_name"]%></td>
         <td><%= result["application_email"]%></td>
-        <td><a href="/application?cas_id=<%= result["application_cas_id"] %>"><%= result["application_degree"]  %></a></td>
+        <td><%= result["application_degree"]%></td>
+
     </tr>
   <% end %>
   </table>
