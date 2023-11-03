@@ -170,3 +170,12 @@ bundle exec rspec
 ```
 
 Go `coverage/index.html` to check the coverage of the test.
+
+## Error when run server locally
+
+IMPORTANT: Guys, because I added the private and public keys on Heroku, it will fail when we try to run `rails s` locally. Here are steps for solving this problem.
+
+1. Copy the public key and paste into the database project's root dir
+2. Copy the private key and paste it into the review project's root dir
+3. Go config/initializers/jwt.rb to get the key locally (as pics)
+4. Change the search API uri to run locally if you wanna test api locally (see pic)
