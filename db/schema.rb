@@ -10,50 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_27_200550) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_05_023457) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "applicants", force: :cascade do |t|
-    t.string "application_cas_id"
-    t.string "application_name"
-    t.string "application_gender"
-    t.string "application_citizenship_country"
-    t.datetime "application_dob"
-    t.string "application_email"
-    t.string "application_degree"
-    t.string "application_submitted"
-    t.string "application_status"
-    t.string "application_research"
-    t.string "application_faculty"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "application_ielts", force: :cascade do |t|
-    t.bigint "applicant_id", null: false
-    t.integer "application_ielts_listening"
-    t.integer "application_ielts_reading"
-    t.integer "application_ielts_result"
-    t.integer "application_ielts_speaking"
-    t.integer "application_ielts_writing"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["applicant_id"], name: "index_application_ielts_on_applicant_id"
-  end
-
-  create_table "gres", force: :cascade do |t|
-    t.bigint "applicant_id", null: false
-    t.integer "application_gre_quantitative_scaled"
-    t.integer "application_gre_quantitative_percentile"
-    t.integer "application_gre_verbal_scaled"
-    t.integer "application_gre_verbal_percentile"
-    t.float "application_gre_analytical_scaled"
-    t.integer "application_gre_analytical_percentile"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["applicant_id"], name: "index_gres_on_applicant_id"
-  end
 
   create_table "motor_alert_locks", force: :cascade do |t|
     t.bigint "alert_id", null: false
@@ -259,38 +218,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_27_200550) do
     t.string "status"
   end
 
-  create_table "schools", force: :cascade do |t|
-    t.bigint "applicant_id", null: false
-    t.string "application_school_name"
-    t.string "application_school_level"
-    t.integer "application_school_quality_points"
-    t.float "application_school_gpa"
-    t.integer "application_school_credit_hours"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["applicant_id"], name: "index_schools_on_applicant_id"
-  end
-
   create_table "tasks", force: :cascade do |t|
     t.integer "status"
     t.bigint "user_id", null: false
-    t.bigint "applicant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["applicant_id"], name: "index_tasks_on_applicant_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
-  end
-
-  create_table "toefls", force: :cascade do |t|
-    t.bigint "applicant_id", null: false
-    t.integer "application_toefl_listening"
-    t.integer "application_toefl_reading"
-    t.integer "application_toefl_result"
-    t.integer "application_toefl_speaking"
-    t.integer "application_toefl_writing"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["applicant_id"], name: "index_toefls_on_applicant_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -301,15 +234,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_27_200550) do
     t.string "password_digest"
   end
 
-  add_foreign_key "application_ielts", "applicants", on_delete: :cascade
-  add_foreign_key "gres", "applicants", on_delete: :cascade
   add_foreign_key "motor_alert_locks", "motor_alerts", column: "alert_id"
   add_foreign_key "motor_alerts", "motor_queries", column: "query_id"
   add_foreign_key "motor_note_tag_tags", "motor_note_tags", column: "tag_id"
   add_foreign_key "motor_note_tag_tags", "motor_notes", column: "note_id"
   add_foreign_key "motor_taggable_tags", "motor_tags", column: "tag_id"
-  add_foreign_key "schools", "applicants", on_delete: :cascade
-  add_foreign_key "tasks", "applicants"
   add_foreign_key "tasks", "users"
-  add_foreign_key "toefls", "applicants", on_delete: :cascade
 end
