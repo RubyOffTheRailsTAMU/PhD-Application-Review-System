@@ -11,9 +11,9 @@
       <th>Degree</th>
     </tr>
     <tr>
-        <td><%= @result["application_cas_id"]%></td>
-        <td><%= @result["application_name"]%></td>
-        <td><%= @result["application_email"]%></td>
+        <td><%= @result["application_cas_id"] %></td>
+        <td><%= @result["application_name"] %></td>
+        <td><%= @result["application_email"] %></td>
         <td><a href="/application?cas_id=<%= @result["application_cas_id"] %>"><%= @result["application_degree"]  %></a></td> 
     </tr>
   </table>
