@@ -49,6 +49,8 @@
   }
     
   .container {
+    margin-left: 10% !important;
+    margin-right: 10% !important;
     background-color: #ffffff; /* White background for content */
     padding: 2rem;
     border-radius: 8px;
