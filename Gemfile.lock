@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/RubyOffTheRailsTAMU/motor-admin-rails
-  revision: dd42d2a9ea596c3690b5bb90d441c1749d66ea1d
+  revision: 4303e11271dc4a3cb08fec8c9763ccdad1614cb0
   specs:
     motor-admin (0.4.22)
       ar_lazy_preload (~> 1.0)
@@ -81,7 +81,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ar_lazy_preload (1.1.2)
       rails (>= 5.2)
-    audited (5.4.0)
+    audited (5.4.2)
       activerecord (>= 5.0, < 7.2)
       request_store (~> 1.2)
     base64 (0.1.1)
