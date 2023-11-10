@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .body-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Use viewport height to ensure full height */
+  }
+  
+.site-footer {
+    background-color: #500000; /* Maroon */
+    color: white;
+    padding: 5px 0;
+    font-family: 'Poppins', sans-serif;
+    margin-top: auto; /* Push footer to the bottom */
+  }  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px; 
+    padding-top: 10px;
+  }
+  
+  .site-footer {
+    /* Your footer styling */
+    
+  }

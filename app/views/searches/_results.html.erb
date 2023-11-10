@@ -1,26 +1,42 @@
-<% if @results!=nil and !@results.is_a?(Array) and @results.key?("error") %>
-  <h1><%= @results["error"] %></h1>
-<% elsif @results!=nil %>
-<div class="search-results">
-    <p><strong>Total Results:</strong> <%= @results.size %></p>
-    <table>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Degree</th>
-    </tr>
-  <% @results.each do |result| %>
-    <tr>
-        <td> <%= link_to "#{result["application_cas_id"]}", "/application?cas_id=#{result["application_cas_id"]}" %></td>
-        <td><%= result["application_name"]%></td>
-        <td><%= result["application_email"]%></td>
-        <td><%= result["application_degree"]%></td>
-
-    </tr>
-  <% end %>
+<div class="container">
+  <p><strong>Total Results:</strong> <%= @results.size %></p>
+  <% if @results!=nil and !@results.is_a?(Array) and @results.key?("error") %>
+    <h1><%= @results["error"] %></h1>
+  <% elsif @results!=nil %>
+  <table class="table">
+    <!-- Table Header -->
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Degree</th>
+      </tr>
+    </thead>
+    <tbody id="applicationList">
+      <% @results.each do |result| %>
+        <tr class="clickable-row" data-href="/application?cas_id=<%= result["application_cas_id"] %>">
+          <td><%= result["application_cas_id"]  %></a></td>
+          <td><%= result["application_name"]%></td>
+          <td><%= result["application_email"]%></td>
+          <td><%= result["application_degree"]%></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
-  </div>
+</div>
+</div>
 <% else %>
   <h1>No results found.</h1>
 <% end %>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var rows = document.querySelectorAll('.clickable-row');
+    rows.forEach(function(row) {
+      row.addEventListener('click', function() {
+        window.location.href = this.dataset.href;
+      });
+    });
+  });
+</script>
