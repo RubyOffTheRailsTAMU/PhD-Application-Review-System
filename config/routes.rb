@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   mount Motor::Admin => '/motor_admin'
   get 'dashboards/show'

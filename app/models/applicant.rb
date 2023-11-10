@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Applicant < ApplicationRecord
   has_one :toefl
   has_one :gre
