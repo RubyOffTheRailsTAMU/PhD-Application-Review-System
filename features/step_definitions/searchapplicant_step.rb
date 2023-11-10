@@ -9,21 +9,15 @@ require 'capybara/dsl'
 
 World(Capybara::DSL)
 
-Given('I have applicants name: {string}') do |string|
+Given('I have an applicants query: {string}') do |string|
   @name = string
 end
 
-Given('I have a query: {string}') do |string|
-  @name = string
-end
-
-When('I search the applicant by sending a GET request to database') do
+When(/I search the applicant field "(.*)"/) do |string|
   query = @name
-  field = 'Name'
 
-  visit '/searches'
   fill_in 'query', with: query
-  select field, from: 'field'
+  select string, from: 'field'
   click_button 'Search'
 end
 

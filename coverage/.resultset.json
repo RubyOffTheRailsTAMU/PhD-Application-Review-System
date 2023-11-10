@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/felix/se/PhD-Application-Review-System/app/channels/application_cable/channel.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/channels/application_cable/channel.rb": {
         "lines": [
           1,
           1,
@@ -9,7 +9,7 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/channels/application_cable/connection.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/channels/application_cable/connection.rb": {
         "lines": [
           1,
           1,
@@ -17,187 +17,189 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/application_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           1,
           1,
           1,
-          25,
-          25,
+          42,
+          42,
           null,
           null,
           1,
-          19,
+          48,
+          null,
+          1,
+          16,
           null,
           1,
           9,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/csv_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/dashboards_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/reviews_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/searches_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/sessions_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/tasks_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/welcome_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/xlsx_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/dashboards_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/homepage_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/reviews_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          2,
+          2,
+          null,
+          2,
+          4,
+          2,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
+          2,
+          null,
+          2,
+          4,
+          2,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          null,
+          4,
+          null,
           null,
           1,
           4,
-          1,
-          1,
-          null,
           null,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/csv_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/reviews_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/searches_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/sessions_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/tasks_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/users_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/welcome_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/xlsx_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/homepage_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/reviews_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/searches_controller.rb": {
         "lines": [
           1,
           1,
           1,
           null,
-          null,
           1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
+          5,
+          5,
           null,
           0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/searches_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          3,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          3,
           null,
           null,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/sessions_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -221,6 +223,11 @@
           null,
           0,
           0,
+          0,
+          0,
+          null,
+          null,
+          null,
           0,
           0,
           null,
@@ -253,100 +260,10 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/tasks_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
           null,
           null,
           1,
@@ -355,9 +272,6 @@
           null,
           null,
           1,
-          null,
-          null,
-          null,
           1,
           1,
           1,
@@ -373,29 +287,6 @@
           null,
           null,
           null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
           1,
           null,
           1,
@@ -409,168 +300,29 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/welcome_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
-          5,
-          5,
-          4,
-          4,
-          4,
-          4,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/xlsx_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          23,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          23,
-          null,
-          23,
-          null,
-          23,
-          69,
-          38,
-          38,
-          38,
-          38,
-          38,
-          38,
-          38,
-          null,
-          null,
-          null,
-          23,
-          23,
-          23,
-          23,
-          23,
-          23,
-          23,
-          null,
-          23,
-          23,
-          23,
-          23,
-          23,
-          23,
-          null,
-          23,
-          23,
-          23,
-          23,
-          23,
-          23,
-          null,
-          23,
-          8,
-          8,
-          8,
-          8,
-          null,
-          8,
-          8,
-          null,
-          1304,
-          95,
-          5,
-          5,
           7,
-          null,
-          null,
-          90,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          23,
-          15,
-          15,
-          15,
-          15,
-          null,
-          15,
-          15,
-          null,
-          2445,
-          103,
-          6,
+          7,
           6,
           6,
           null,
+          6,
+          6,
           null,
-          97,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          6,
+          6,
           null,
           1,
+          1,
+          null,
           null,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/jobs/application_job.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/jobs/application_job.rb": {
         "lines": [
           1,
           null,
@@ -581,7 +333,7 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/mailers/application_mailer.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/mailers/application_mailer.rb": {
         "lines": [
           1,
           1,
@@ -589,7 +341,7 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/applicant.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/applicant.rb": {
         "lines": [
           1,
           1,
@@ -599,28 +351,28 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/application_record.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/application_ielt.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/application_ielt.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/gre.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/gre.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/review.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/review.rb": {
         "lines": [
           1,
           null,
@@ -628,14 +380,14 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/school.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/school.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/task.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/task.rb": {
         "lines": [
           1,
           1,
@@ -655,27 +407,66 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/toefl.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/toefl.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/user.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/user.rb": {
         "lines": [
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/services/jwt_service.rb": {
+        "lines": [
+          1,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/services/search_service.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          11,
+          null,
+          11,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          11,
+          null,
+          null,
+          11,
+          11,
+          11,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1698195457
+    "timestamp": 1699470276
   },
   "RSpec": {
     "coverage": {
-      "/home/felix/se/PhD-Application-Review-System/app/channels/application_cable/channel.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/channels/application_cable/channel.rb": {
         "lines": [
           1,
           1,
@@ -683,7 +474,7 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/channels/application_cable/connection.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/channels/application_cable/connection.rb": {
         "lines": [
           1,
           1,
@@ -691,93 +482,107 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/application_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
           1,
           1,
           1,
-          7,
-          7,
+          4,
+          4,
           null,
           null,
           1,
-          1,
+          0,
           null,
           1,
-          1,
+          0,
           null,
           1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
           null,
           null,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/application_helper.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/csv_helper.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/csv_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/reviews_helper.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/dashboards_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/searches_helper.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/reviews_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/sessions_helper.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/searches_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/tasks_helper.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/users_helper.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/tasks_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/welcome_helper.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/helpers/xlsx_helper.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/homepage_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/xlsx_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/reviews_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/dashboards_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/homepage_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/reviews_controller.rb": {
         "lines": [
           1,
           1,
@@ -786,26 +591,15 @@
           null,
           1,
           0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
           0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
           0,
           null,
           0,
+          null,
+          null,
+          0,
+          0,
+          null,
           0,
           0,
           0,
@@ -821,21 +615,18 @@
           0,
           0,
           0,
-          0,
           null,
           0,
-          0,
           null,
-          null,
-          null,
-          null,
-          null,
-          1,
           0,
           null,
           0,
           0,
           0,
+          null,
+          0,
+          0,
+          null,
           null,
           null,
           null,
@@ -844,6 +635,11 @@
           1,
           0,
           null,
+          null,
+          null,
+          1,
+          null,
+          0,
           null,
           null,
           1,
@@ -852,16 +648,13 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/searches_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/searches_controller.rb": {
         "lines": [
           1,
           1,
           1,
+          null,
           1,
-          0,
-          0,
-          0,
-          0,
           0,
           0,
           null,
@@ -871,7 +664,7 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/sessions_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           1,
@@ -899,6 +692,11 @@
           1,
           null,
           null,
+          null,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           0,
@@ -927,91 +725,10 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/tasks_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
           null,
           null,
           1,
@@ -1020,19 +737,7 @@
           null,
           null,
           1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
+          0,
           0,
           0,
           0,
@@ -1044,29 +749,6 @@
           0,
           0,
           null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
           null,
           null,
           null,
@@ -1083,7 +765,7 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/welcome_controller.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
@@ -1091,6 +773,10 @@
           0,
           0,
           0,
+          null,
+          0,
+          0,
+          null,
           0,
           0,
           null,
@@ -1101,150 +787,7 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/controllers/xlsx_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/jobs/application_job.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/jobs/application_job.rb": {
         "lines": [
           1,
           null,
@@ -1255,7 +798,7 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/mailers/application_mailer.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/mailers/application_mailer.rb": {
         "lines": [
           1,
           1,
@@ -1263,7 +806,7 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/applicant.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/applicant.rb": {
         "lines": [
           1,
           1,
@@ -1273,28 +816,28 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/application_record.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/application_ielt.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/application_ielt.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/gre.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/gre.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/review.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/review.rb": {
         "lines": [
           1,
           null,
@@ -1302,19 +845,17 @@
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/school.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/school.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/task.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/task.rb": {
         "lines": [
           1,
           1,
-          1,
-          null,
           1,
           null,
           1,
@@ -1324,27 +865,68 @@
           1,
           null,
           1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/toefl.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/services/jwt_service.rb": {
+        "lines": [
+          1,
+          1,
           1,
           null,
           null
         ]
       },
-      "/home/felix/se/PhD-Application-Review-System/app/models/toefl.rb": {
+      "/mnt/d/GitHub/PhD-Application-Review-System/app/services/search_service.rb": {
         "lines": [
           1,
           1,
-          null
-        ]
-      },
-      "/home/felix/se/PhD-Application-Review-System/app/models/user.rb": {
-        "lines": [
+          null,
           1,
-          1,
-          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1698195506
+    "timestamp": 1699470227
   }
 }

@@ -48,8 +48,7 @@ Then(/I should see "(.*)"/) do |string|
   expect(page).to have_content(string)
 end
 
-When(/I create a user with netid "(.*)" username "(.*)" and user level "(.*)"/) do | netid, username, level |
+When(/I create a user with netid "(.*)" username "(.*)"/) do | netid, username |
   fill_in("User NetID", with: netid)
   fill_in("Username", with: username)
-  fill_in("User Level", with: level)
 end
