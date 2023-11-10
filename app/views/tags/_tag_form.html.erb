@@ -1,0 +1,8 @@
+<%= form_with(model: current_user.tags.build, local: true) do |form| %>
+  <div class="search-results">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :tag_name %>
+  </div>
+  <%= form.hidden_field :cas_id, value: params[:cas_id] %>
+  <%= form.submit 'Add Tag', class: 'search-btn' %>
+<% end %>
