@@ -1,0 +1,259 @@
+/* TAMU Theme Colors */
+:root {
+    --tamu-maroon: #500000;
+    --tamu-white: #FFFFFF;
+  }
+  
+  /* Override Bootstrap button outline styles with higher specificity */
+  .btn-outline-primary {
+    color: var(--tamu-maroon) !important;
+    border-color: var(--tamu-maroon) !important;
+  }
+  
+  .btn-outline-primary:hover,
+  .btn-outline-primary:focus {
+    color: var(--tamu-white) !important;
+    background-color: var(--tamu-maroon) !important;
+    border-color: var(--tamu-maroon) !important;
+  }
+  
+  /* If the buttons are within a specific container, use that for specificity */
+  .container .btn-outline-primary {
+    color: var(--tamu-maroon) !important;
+    border-color: var(--tamu-maroon) !important;
+  }
+  
+  .container .btn-outline-primary:hover,
+  .container .btn-outline-primary:focus {
+    color: var(--tamu-white) !important;
+    background-color: var(--tamu-maroon) !important;
+    border-color: var(--tamu-maroon) !important;
+  }
+  
+  /* Focus and active states for TAMU theme outline buttons */
+  .btn-outline-primary:focus,
+  .btn-outline-primary:hover, /* Corrected typo */
+  .btn-outline-primary:not(:disabled):not(.disabled).active,
+  .btn-outline-primary:not(:disabled):not(.disabled):active,
+  .show > .btn-outline-primary.dropdown-toggle {
+    color: var(--tamu-white)  !important;
+    background-color: var(--tamu-maroon)  !important;
+    border-color: var(--tamu-maroon) !important;
+  }
+  
+  /* Ensure that text remains visible when buttons are toggled/active */
+  .btn-check:checked + .btn-outline-primary {
+    color: var(--tamu-white) !important;
+    background-color: var(--tamu-maroon) !important;
+    border-color: var(--tamu-maroon) !important;
+  }
+    
+  .container {
+    background-color: #ffffff; /* White background for content */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+  }
+  
+  /* If you are using status boxes, you might want to adjust the completed status to use TAMU maroon */
+  .status-box.completed {
+    background-color: #500000
+  }
+
+  h2 {
+    color: #343a40; /* Dark grey color for headings */
+    margin-bottom: 1rem;
+  }
+
+  .btn-group label {
+    transition: all 0.3s ease;
+  }
+
+  /* Aesthetic styles for buttons */
+  .btn-group .btn-check:checked + label {
+    background-color: #500000; /* Bootstrap primary color */
+    color: white;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  }
+
+  /* Hover effect for rows */
+  .clickable-row:hover {
+    background-color: #e9ecef; /* Light grey background on hover */
+    cursor: pointer;
+    transform: scale(1.01); /* Slight scale up for emphasis */
+  }
+
+  /* Change text color on hover, if desired */
+  .clickable-row:hover td {
+    color: #212529; /* Bootstrap dark */
+  }
+
+  /* Subtle transition effects for hover states */
+  .clickable-row {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Table styling */
+  .table {
+    margin-top: 1rem;
+  }
+
+  .table thead th {
+    background-color: #f8f9fa; /* Header background */
+  }
+
+  /* Button styling */
+  .btn-primary {
+    transition: background-color 0.2s ease;
+    background-color: #500000;
+  }
+  .btn-primary {
+    background-color: #500000; /* TAMU Maroon */
+    border-color: #500000; /* TAMU Maroon */
+  }
+  
+  .btn-primary:hover {
+    background-color: #400000; /* A darker maroon for hover state */
+    border-color: #400000; /* A darker maroon for hover state */
+  }
+
+  /* Filter button styles */
+  .btn-outline-primary {
+    transition: background-color 0.2s ease, color 0.2s ease;
+ 
+  }
+
+  .btn-outline-primary:hover {
+    background-color: white; /* Bootstrap primary color */
+    color: white;
+  }
+
+  /* Animation for rows appearing */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .clickable-row {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+
+  .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+  }
+
+  /* Add a bottom border to table rows for definition */
+  .table tr {
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  /* Zebra striping for rows */
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* Aesthetic and crisp row items */
+  .clickable-row {
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .clickable-row:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+  }
+
+  /* Styling for buttons */
+  .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+  }
+
+  /* Ensure the button doesn't look out of place on hover */
+  .btn-primary:not(:disabled):not(.disabled).active, 
+  .btn-primary:not(:disabled):not(.disabled):active,
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #500000;
+    border-color: #600000;
+  }
+
+  /* Typography for table data */
+  .table td {
+    font-size: 0.9rem;
+    color: #495057; /* A darker shade for better contrast */
+  }
+
+  /* Make the headings slightly bigger and bolder */
+  .table th {
+    font-size: 1rem;
+    color: #343a40;
+    font-weight: 500;
+  }
+
+  /* Add a hover effect for the entire row to indicate interactivity */
+  .table tbody tr:hover {
+    background-color: #e9ecef;
+  }
+
+  .status-box {
+    display: inline-block;
+    padding: .25em .6em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    color: white;
+  }
+  
+  .status-box.inprogress {
+    background-color: #ffc107; /* Bootstrap warning color for 'in progress' */
+  }
+  
+  .status-box.assigned {
+    background-color: #17a2b8; /* Bootstrap info color for 'assigned' */
+  }
+  
+  .status-box.completed {
+    background-color: #28a745; /* Bootstrap success color for 'completed' */
+  }
+  
+  /* Add more classes if there are other statuses */
+  
+  /* Style adjustments for hover effects on rows */
+  .clickable-row:hover {
+    background-color: #f8f9fa; /* Lighter background on hover */
+    cursor: pointer;
+    /* Apply a lifting effect on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .clickable-row {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  
