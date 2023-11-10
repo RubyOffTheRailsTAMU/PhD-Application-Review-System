@@ -1,5 +1,13 @@
+class AdminConstraint
+  def matches?(request)
+    return false unless request.session[:user_token] == 'admin_token_placeholder'
+
+    true
+  end
+end
+
 Rails.application.routes.draw do
-  mount Motor::Admin => '/motor_admin'
+  # mount Motor::Admin => '/motor_admin'
   get 'dashboards/show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
@@ -10,7 +18,18 @@ Rails.application.routes.draw do
   resources :reviews
   resources :applicants
 
-  get 'xlsx/tojson'
+  constraints(AdminConstraint.new) do
+    mount Motor::Admin => '/motor_admin'
+    get 'xlsx/tojson'
+  end
+
+  mount lambda { |_env|
+          [200, { 'Content-Type' => 'text/html' }, ['<script>alert("Access Denied"); window.location.href = "/home";</script>']]
+        }, at: '/motor_admin'
+  get 'xlsx/tojson', to: lambda { |_env|
+                           [200, { 'Content-Type' => 'text/html' }, ['<script>alert("Access Denied"); window.location.href = "/home";</script>']]
+                         }
+  # get 'xlsx/tojson', constraints: AdminConstraint.new
   get 'csv/tojson'
 
   # Removed the ApplicantsController
