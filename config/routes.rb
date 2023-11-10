@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   resources :users
   resources :reviews
   resources :applicants
+  resources :tags, only: [:create, :destroy]
+
+  
 
   constraints(AdminConstraint.new) do
     mount Motor::Admin => '/motor_admin'
@@ -51,6 +54,7 @@ Rails.application.routes.draw do
   get '/admin', to: 'welcome#_admin'
   get 'application', to: 'application#index'
   # get '/applicants/:id', to: 'applicants#index', as: 'applicants'
+  get 'tags/show_tags/:cas_id', to: 'tags#show_tags', as: :show_tags_for_cas
 
   post 'searches', to: 'searches#index', as: 'search'
 end
