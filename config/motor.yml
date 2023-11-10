@@ -1,0 +1,23 @@
+---
+engine_version: 0.4.22
+file_version: 2023-11-05 02:36:03.483785000 Z
+resources: []
+configs:
+- key: header.links
+  value:
+  - name: Reports
+    link_type: reports
+  - name: Forms
+    link_type: forms
+  updated_at: 2023-11-05 02:36:03.483785000 +00:00
+queries: []
+dashboards: []
+forms: []
+alerts: []
+api_configs:
+- id: 1
+  name: origin
+  url: "/"
+  preferences: {}
+  description:
+  updated_at: 2023-11-05 02:35:33.795155000 +00:00

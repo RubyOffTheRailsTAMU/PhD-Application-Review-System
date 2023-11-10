@@ -1,6 +1,7 @@
 <% existing = Review.where(user_netid: current_user.user_netid, applicant_id: @result['application_cas_id']) %>
 <% condition = ! existing.blank? %>
 
+<div>
 <%# <%= form_with url: reviews_path, method: :post do |form|%>
 <%= form_with url: condition ? review_path(existing.first) : reviews_path, method: condition ? :patch : :post do |form| %>
 <div>
@@ -8,15 +9,50 @@
     <%= form.text_area :review_info, size: "50x3", value: condition ? existing.first.review_info : nil %>
 </div>
 <div>
-    <%= form.label :rating, "Rating:", class: "bold-label" %>
+    <%# <%= form.label :rating, "Rating:", class: "bold-label" <br> %>
     <%# <%= form.select :rating, [1, 2, 3, 4, 5], { include_blank: "Add rating" }, selected: condition ? 4 : nil %>
-    <%= form.select :rating, options_for_select([1, 2, 3, 4, 5], condition ? existing.first.rating : nil), { include_blank: "Add rating" }, type: "number" %>
+    <%# <%= form.radio_button :rating, 1, checked: (existing.first.rating == 1) %>
+    <%# <%= form.label :rating_1, "1" <br> %>
+    <%# <%= form.radio_button :rating, 2, checked: (existing.first.rating == 2) %> 
+    <%# <%= form.label :rating_2, "2" <br> %>
+    <%# <%= form.radio_button :rating, 3, checked: (existing.first.rating == 3) %>
+    <%# <%= form.label :rating_3, "3" <br> %>
+    <%# <%= form.radio_button :rating, 4, checked: (existing.first.rating == 4) %>
+    <%# <%= form.label :rating_4, "4" <br> %>
+    <%# <%= form.radio_button :rating, 5, checked: (existing.first.rating == 5) %>
+    <%# <%= form.label :rating_5, "5" <br> %>
+    
+    <%= form.label :rating, "Rating:", class: "bold-label" %><br>
+    <% if condition %>
+        <% (1..5).each do |rating_number| %>
+            <%= form.radio_button :rating, rating_number, checked: (existing.first.rating == rating_number) %>
+            <%= form.label "rating_#{rating_number}", rating_number %><br>
+        <% end %>
+    <% else %>
+        <% (1..5).each do |rating_number| %>
+            <%= form.radio_button :rating, rating_number %>
+            <%= form.label "rating_#{rating_number}", rating_number %><br>
+        <% end %>
+    <% end %>
+
 </div>
 <div>
     <%= form.hidden_field :user_netid, value: current_user.user_netid %>
-    <%# <%= current_user.user_netid %>
     <%= form.hidden_field :applicant_id, value: @result['application_cas_id'] %>
-    <%= form.hidden_field :status, value: nil, id: 'status-field' %>
+</div>
+<div>
+    <%= form.label :rating, "Recommend Applicant for Assistantship:", class: "bold-label" %><br>
+    <% if condition %>
+        <%= form.check_box :gar, checked_value: true, unchecked_value: false, checked: existing.first.gar? %>
+        <%= form.label :assistantship, "GAR" %><br>
+        <%= form.check_box :gat, checked_value: true, unchecked_value: false, checked: existing.first.gat? %>
+        <%= form.label :assistantship, "GAT" %>
+    <% else %>
+        <%= form.check_box :gar, checked_value: true, unchecked_value: false %>
+        <%= form.label :assistantship, "GAR" %><br>
+        <%= form.check_box :gat, checked_value: true, unchecked_value: false %>
+        <%= form.label :assistantship, "GAT" %>
+    <% end %>    
 </div>
 <div>
     <%= submit_tag "Save For Later" %>

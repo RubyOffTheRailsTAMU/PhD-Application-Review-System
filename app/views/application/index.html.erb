@@ -1,4 +1,10 @@
 <% if session[:user_email] && session[:user_token]%>
+    <% flash.each do |key, value| %>
+    <div class="flash-<%= key %>">
+        <%= value %>
+    </div>
+    <% end %>
+
     <%= render 'application/application_review'%>
 <% else %>
     <%= controller.redirect_to root_path %>

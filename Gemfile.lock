@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/RubyOffTheRailsTAMU/motor-admin-rails
+  revision: dd42d2a9ea596c3690b5bb90d441c1749d66ea1d
+  specs:
+    motor-admin (0.4.22)
+      ar_lazy_preload (~> 1.0)
+      audited (~> 5.0)
+      cancancan (~> 3.0)
+      fugit (~> 1.0)
+      rails (>= 5.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -211,12 +222,6 @@ GEM
     mime-types-data (3.2023.0808)
     mini_mime (1.1.5)
     minitest (5.20.0)
-    motor-admin (0.4.22)
-      ar_lazy_preload (~> 1.0)
-      audited (~> 5.0)
-      cancancan (~> 3.0)
-      fugit (~> 1.0)
-      rails (>= 5.2)
     msgpack (1.7.2)
     multi_json (1.15.0)
     multi_test (1.1.0)
@@ -420,7 +425,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   jwt
-  motor-admin
+  motor-admin!
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection (~> 1.0)

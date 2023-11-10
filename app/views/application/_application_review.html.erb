@@ -1,6 +1,6 @@
 <h1>Application ID: <%= params[:cas_id] %></h1>
 
-<%= @result = SearchService.search(query: "*application_cas_id=#{params[:cas_id]}", field: nil)[0] %>
+<%= @result = SearchService.search(query: "*application_cas_id=#{params[:cas_id]}", field: nil, token: session[:jwt_token])[0] %>
 
 <div class="search-results">
     <table>
@@ -11,9 +11,9 @@
       <th>Degree</th>
     </tr>
     <tr>
-        <td><%= @result["application_cas_id"]%></td>
-        <td><%= @result["application_name"]%></td>
-        <td><%= @result["application_email"]%></td>
+        <td><%= @result["application_cas_id"] %></td>
+        <td><%= @result["application_name"] %></td>
+        <td><%= @result["application_email"] %></td>
         <td><a href="/application?cas_id=<%= @result["application_cas_id"] %>"><%= @result["application_degree"]  %></a></td> 
     </tr>
   </table>
