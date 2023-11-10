@@ -28,13 +28,18 @@
     <div class="search-results">
       <table>
         <tr>
+          <th> Reviews By </th>
           <th> Rating </th>
-          <th> Reviewed By </th>
         </tr>
         <% others.each do |other| %>
         <tr>
+          <td><%= other.user_netid %></td>
           <td><%= other.rating %></td>
-          <td><%= link_to other.user_netid, review_path(other) %></td>
+          <td>
+            <div class="details-view">View Details
+              <span class="details-bubble"> <%= other.review_info %> </span>
+            </div>
+          </td>
         </tr>
         <%end%>
       </table>
