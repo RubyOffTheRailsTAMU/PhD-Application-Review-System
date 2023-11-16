@@ -31,9 +31,9 @@ font-family: "Georgia", Helvetica;
 .main-content {
     flex: 1; /* Takes up all available space between header and footer */
     /* Add padding or styles as necessary for your content */
-    padding: 1rem; /* Adjust padding as needed */
-    margin-top: 70px; /* Adjust based on the height of your header */
-    margin-bottom: 70px; /* Adjust based on the height of your footer */
+    /*padding: 1rem; /* Adjust padding as needed */
+    /* margin-top: 70px; Adjust based on the height of your header */
+   /* margin-bottom: 70px;  Adjust based on the height of your footer */
 }
 
 .page-container {
@@ -47,6 +47,11 @@ color: #555;
 font-size: 18px;
 }
     
+.webpage-body{
+    margin-top: 100px;
+    margin-bottom: 70px;
+}
+
 .search-form {
 display: flex;
 flex-direction: column;
@@ -87,6 +92,7 @@ gap: 10px; /* space between elements */
 width: 100%;
 max-width: 50%; /* adjust as needed */
 margin: 20px auto; /* center the form */
+margin-top: 5px;
 }
 
 .main-layout{

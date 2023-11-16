@@ -4,8 +4,9 @@
         <%= value %>
     </div>
     <% end %>
-
-    <%= render 'application/application_review'%>
+    <div class="webpage-body">
+        <%= render 'application/application_review'%>
+    </div>
 <% else %>
     <%= controller.redirect_to root_path %>
 <% end %>

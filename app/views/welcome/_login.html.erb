@@ -1,13 +1,40 @@
 <div class="phdapp-login">
-  <div class="card-login-container">
+  <div class="card-login-container" id="googleLoginUI">
     <%= image_tag 'tamu_login_logo.png', class: 'logo', alt: 'TAMU LOGO' %>
     <p class="text">
       PhD Application Review System
     </p>
-    <%= link_to 'Login with Google', '/auth/google_oauth2', class: 'login-with-google' %>
+
+    <!-- Google Login UI -->
+    <div class="login-options">
+      <%= link_to 'Login with Google', '/auth/google_oauth2', class: 'login-with-google' %>
+      <div class="or-divider">
+        <span class="or-text">or</span>
+      </div>
+      <button id="adminLoginToggle" class="toggle-button">Admin Login</button>
+    </div>
   </div>
-  <div class="card-login-container">
-    <%= render 'admin'%>
-  </div>
+  <%= render 'admin' %> <!-- Render the admin login partial -->
 </div>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var adminLoginToggle = document.getElementById('adminLoginToggle');
+    var googleLoginToggle = document.getElementById('googleLoginToggle');
+    var adminLoginForm = document.getElementById('adminLoginForm');
+    var googleLoginUI = document.getElementById('googleLoginUI');
+
+    adminLoginToggle.addEventListener('click', function() {
+        adminLoginForm.style.display = 'flex';
+        googleLoginUI.style.display = 'none';
+        googleLoginToggle.style.display = 'flex'; // Show the back button
+    });
+
+    googleLoginToggle.addEventListener('click', function() {
+        adminLoginForm.style.display = 'none';
+        googleLoginUI.style.display = 'flex';
+        googleLoginToggle.style.display = 'none'; // Hide the back button
+    });
+});
+</script>

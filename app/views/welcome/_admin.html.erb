@@ -1,17 +1,20 @@
-<%= form_with(scope: :session, url: '/login') do |f| %>
-<p>Admin Login</p>
-<div class="form-group">
-  <%= f.label :user_name, 'Username' %><br/>
-  <%= f.text_field :user_name, class: "form-control" %>
-</div>
-<div class="form-group">
-  <%= f.label :password, 'Password' %><br/>
-  <%= f.password_field :password, class: "form-control" %>
-</div>
-<div>
-    <%= f.hidden_field :user_email, value: "admin.phd@tamu.edu" %>
-</div>
-<div class="form-group">
-  <%= f.submit "Log In", class: "btn btn-primary" %>
-</div>
-<% end %>
+  <!-- Admin Login Form (Initially Hidden) -->
+  <div class="admin-login-form" id="adminLoginForm" style="display: none;">
+    <%= image_tag 'tamu_login_logo.png', class: 'logo', alt: 'TAMU LOGO' %>
+    <p class="text">Admin Login</p>
+    <%= form_with(scope: :session, url: '/login') do |f| %>
+      <div class="form-group">
+         <%= f.text_field :user_name, class: "form-control", placeholder: "Username" %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+      </div>
+      <div>
+          <%= f.hidden_field :user_email, value: "admin.phd@tamu.edu" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Log In", class: "btn btn-primary" %>
+      </div>
+      <button id="googleLoginToggle" class="toggle-button">Back to Google Login</button>
+    <% end %>
+  </div>
