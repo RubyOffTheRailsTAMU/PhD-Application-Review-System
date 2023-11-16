@@ -1,40 +1,43 @@
-<div class="d-flex justify-content-center align-items-center" style="min-height: 60vh;">
-<div class="container">
-  <h2>My Applications</h2>
-  <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-    <input type="checkbox" class="btn-check" id="inprogress" autocomplete="on">
-    <label class="btn btn-outline-primary" for="inprogress">In Progress</label>
 
-    <input type="checkbox" class="btn-check" id="assigned" autocomplete="on">
-    <label class="btn btn-outline-primary" for="assigned">Assigned</label>
+<div class="d-flex justify-content-center align-items-center webpage-body" style="min-height: 60vh;">
+  <div class="container">
+    <h2>My Applications</h2>
+    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+      <input type="checkbox" class="btn-check" id="inprogress" autocomplete="on">
+      <label class="btn btn-outline-primary" for="inprogress">In Progress</label>
 
-    <input type="checkbox" class="btn-check" id="completed" autocomplete="on">
-    <label class="btn btn-outline-primary" for="completed">Completed</label>
+      <input type="checkbox" class="btn-check" id="assigned" autocomplete="on" checked>
+      <label class="btn btn-outline-primary" for="assigned">Assigned</label>
+
+      <input type="checkbox" class="btn-check" id="completed" autocomplete="on">
+      <label class="btn btn-outline-primary" for="completed">Completed</label>
+    </div>
+    <div class="scrollable-table">
+      <table class="table">
+        <!-- Table Header -->
+        <thead>
+          <tr>
+            <th scope="col">Applicant</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="applicationList">
+          <% Review.where(user_netid: current_user.user_netid).each do |review| %>
+            <tr class="clickable-row" data-status="<%= review.status.downcase %>" data-href="/application?cas_id=<%= review.applicant_id %>">
+              <td><%= review.applicant_id %></td>
+              <td>
+              <span class="status-box <%= review.status.downcase %>"><%= review.status %></span>
+              </td>
+              <td><button type="button" class="btn btn-primary btn-sm">View</button></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-  
-  <table class="table">
-    <!-- Table Header -->
-    <thead>
-      <tr>
-        <th scope="col">Applicant</th>
-        <th scope="col">Status</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody id="applicationList">
-      <% Review.where(user_netid: current_user.user_netid).each do |review| %>
-        <tr class="clickable-row" data-status="<%= review.status.downcase %>" data-href="/application?cas_id=<%= review.applicant_id %>">
-          <td><%= review.applicant_id %></td>
-          <td>
-          <span class="status-box <%= review.status.downcase %>"><%= review.status %></span>
-          </td>
-          <td><button type="button" class="btn btn-primary btn-sm">View</button></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
 </div>
-</div>
+
 <script>
 // Function to filter rows based on checkboxes
   function filterRows() {

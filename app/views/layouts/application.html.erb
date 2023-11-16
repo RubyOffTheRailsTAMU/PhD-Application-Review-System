@@ -29,7 +29,12 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <%= render 'shared/footer' %>
+      <% if session[:user_email] %>
+        <% if session[:alert] %>
+          <%else%>
+            <%= render 'shared/footer' %>
+          <%end%>
+        <%end%>
     </footer>
   </div>
 
