@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get '/searches', to: 'searches#index'
   get '/admin', to: 'welcome#_admin'
   get 'application', to: 'application#index'
+  post '/assign', to: 'reviews#assign'
   # get '/applicants/:id', to: 'applicants#index', as: 'applicants'
 
   post 'searches', to: 'searches#index', as: 'search'

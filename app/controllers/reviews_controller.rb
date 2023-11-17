@@ -1,3 +1,4 @@
+require 'json'
 class ReviewsController < ApplicationController
   before_action :require_user
   before_action :set_review, only: %i[ show edit update destroy ]
@@ -6,6 +7,8 @@ class ReviewsController < ApplicationController
   # POST /reviews or /reviews.json
   def create
     @review = Review.new(review_params)
+    # if @review.status=="assigned"
+    #   puts "assigned"
     if saved?
       @review.status = "completed"
     else
@@ -26,25 +29,26 @@ class ReviewsController < ApplicationController
   end
 
   def assign
-    puts review_params
-    # @review = Review.new(review_params)
-    # @review.status = "inprogress"
-    # respond_to do |format|
-    #   if @review.save
-    #     # format.html { redirect_to review_url(@review), notice: "Review was successfully created." }
-    #     flash[:notice] = "Review was successfully created."
-    #     format.html { redirect_to "/application?cas_id=#{params[:applicant_id]}" }
-    #     format.json { render :show, status: :created, location: @review }
-    #   else
-    #     format.html { render :new, status: :unprocessable_entity }
-    #     format.json { render json: @review.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    tmp = JSON.parse(request.body.string)
+    puts tmp
+    puts tmp["user_id"]
+    puts tmp["application_ids"]
+    for applicant_id in tmp["application_ids"]
+      not_exists = Review.where(user_netid: tmp["user_id"], applicant_id: applicant_id).blank?
+      puts not_exists
+
+      if not_exists
+        puts "here"
+        Review.new(user_netid: tmp["user_id"], applicant_id: applicant_id, status:"assigned").save
+        flash[:notice] = "Review was successfully assigned."
+      end
+    end
   end
 
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
     respond_to do |format|
+      # if @review.status=="assigned"
       if saved?
         @review.status = "completed"
       else
