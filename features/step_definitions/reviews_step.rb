@@ -1,11 +1,10 @@
+# frozen_string_literal: true
+
 require 'rspec/expectations'
 World(RSpec::Matchers)
 require 'capybara'
 require 'capybara/dsl'
 require 'selenium-webdriver'
-
-require 'capybara'
-require 'capybara/dsl'
 
 World(Capybara::DSL)
 Capybara.current_driver = :webkit
@@ -15,7 +14,19 @@ When('I want to see all reviews') do
   response = Net::HTTP.get_response(uri)
   @content_type = response['Content-Type']
   @response_code = response.code.to_i
-  @response_body = response.body rescue nil
+  @response_body = begin
+    response.body
+  rescue StandardError
+    nil
+  end
+end
+
+And ('I select the first checkbox') do
+  first('tbody#applicationList input[type="checkbox"]').click
+end
+
+And("I select {string} from the dropdown") do |option_name|
+  select(option_name, from: 'userDropdown')
 end
 
 And ('I select the first checkbox') do
@@ -44,6 +55,7 @@ And('I can see all reviews') do
 end
 
 And(/I fill in review "(.*)" with rating "(.*)" and assistantship "(.*)"/) do |review, rating, assistantship|
+<<<<<<< HEAD
   fill_in 'reviewInput', with: review
   # choose "rating_#{rating}" 
   find(".fa[data-rating='#{rating}']").click

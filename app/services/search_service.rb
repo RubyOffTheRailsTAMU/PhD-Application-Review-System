@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SearchService
   require 'net/http'
   def self.searchall(token:)

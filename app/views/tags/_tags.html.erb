@@ -1,8 +1,7 @@
 <!-- app/views/tags/_tags.html.erb -->
 <% if tags.any? %>
   <% tags.each do |tag| %>
-    <%= tag.name %>
-    <!-- Display other tag details as needed -->
+    <%= link_to tag.name, edit_tag_path(tag, cas_id: params[:cas_id]) %> | 
   <% end %>
 <% else %>
   <p>No tags found for this CAS ID.</p>
