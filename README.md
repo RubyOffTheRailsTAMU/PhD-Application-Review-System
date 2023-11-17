@@ -289,6 +289,27 @@ Set admin account in `db/seeds.rb`
 
 We use Google OAuth to login the review system, so you need to set up the Google OAuth in your Google Cloud Platform.
 
+Venture here: https://console.developers.google.com/cloud-resource-manager to set up your Google credentials. Click on the CREATE PROJECT button.
+
+After the project is created, select the “Credentials” option from the menu on the left then you can select the “OAuth Consent Screen”. Set it to type Internal and click create.
+
+Add the required information and then in the "Authorized domains" section, add the endpoints for all of the valid places you can use google auth. For example
+
+```sh
+https://phdappreview-2530b5efb143.herokuapp.com/auth/google_oauth2/callback
+http://127.0.0.1:3000/auth/google_oauth2/callback
+```
+
+Create it and find the client id and client secret. Add it to the .env file
+
+```.env
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
+
+Refer this for any more specific information. https://medium.com/@jenn.leigh.hansen/google-oauth2-for-rails-ba1bcfd1b863
+
+
 ### Public Key and Private Key
 
 We use public key and private key for JWT authentication, you need to set up the public key and private key in your local environment and then store them on Heroku. You can check `config/initializers/jwt.rb` to see how we use the public key and private key.
