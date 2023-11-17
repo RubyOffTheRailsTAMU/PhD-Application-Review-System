@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :require_user
   before_action :set_review, only: %i[ show edit update destroy ]
+  protect_from_forgery with: :null_session
 
   # POST /reviews or /reviews.json
   def create
@@ -22,6 +23,23 @@ class ReviewsController < ApplicationController
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def assign
+    puts review_params
+    # @review = Review.new(review_params)
+    # @review.status = "inprogress"
+    # respond_to do |format|
+    #   if @review.save
+    #     # format.html { redirect_to review_url(@review), notice: "Review was successfully created." }
+    #     flash[:notice] = "Review was successfully created."
+    #     format.html { redirect_to "/application?cas_id=#{params[:applicant_id]}" }
+    #     format.json { render :show, status: :created, location: @review }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @review.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /reviews/1 or /reviews/1.json

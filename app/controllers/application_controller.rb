@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?
+    helper_method :current_user, :all_users, :logged_in?
     if Rails.env.test?
         before_action :stub_current_user
         def stub_current_user
@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     end
     def current_user
         @current_user ||= User.find_by(user_email: session[:user_email]) if session[:user_token]
+    end
+    def all_users
+        if logged_in?
+            @all_users ||= User.all
+        end
     end
     def logged_in?
         !!current_user

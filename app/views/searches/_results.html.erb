@@ -7,6 +7,7 @@
     <!-- Table Header -->
     <thead>
       <tr>
+        <th></th>
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
@@ -16,6 +17,7 @@
     <tbody id="applicationList">
       <% @results.each do |result| %>
         <tr class="clickable-row" data-href="/application?cas_id=<%= result["application_cas_id"] %>">
+          <td class="except"><input type="checkbox"/></td>
           <td><%= result["application_cas_id"]  %></a></td>
           <td><%= result["application_name"]%></td>
           <td><%= result["application_email"]%></td>
@@ -30,13 +32,50 @@
   <h1>No results found.</h1>
 <% end %>
 
+
+<%= form_tag 'reviews/assign', onsubmit: "myFunction();" do %>
+  <label for="user">Select User:</label>
+  <select id="userDropdown">
+    <%= options_from_collection_for_select(all_users, 'id', 'user_name') %>
+  </select>
+
+  <button type="submit" >Submit</button>
+<% end %>
 <script>
+  var selectedRows = [];
+  function myFunction(){
+    console.log(selectedRows);
+    var userDropdown = document.getElementById('userDropdown');
+    var selectedUserId = userDropdown.options[userDropdown.selectedIndex].value;
+    
+    console.log('Selected User ID:', selectedUserId);
+  }
   document.addEventListener('DOMContentLoaded', function() {
     var rows = document.querySelectorAll('.clickable-row');
     rows.forEach(function(row) {
-      row.addEventListener('click', function() {
-        window.location.href = this.dataset.href;
-      });
+      // Start the loop from index 1 to skip the first td
+      for (var j = 0; j < row.cells.length; j++) {
+        row.cells[j].addEventListener('click', function() {
+          // Get the content of the clicked td
+          var clickedTdContent = this.innerHTML;
+          // if clickedTdContent is a checkbox, then return
+          if (clickedTdContent.includes("checkbox")) {
+            console.log("checkbox clicked");
+            // if the checkbox is already checked, them remove it from the array
+            var index = selectedRows.indexOf(row.cells[1].innerHTML);
+            if (index > -1) {
+              selectedRows.splice(index, 1);
+            }
+            else{
+            selectedRows.push(row.cells[1].innerHTML);
+
+            }
+          }
+          else{
+            window.location.href = row.dataset.href;
+          }
+        });
+      }
     });
   });
 </script>
