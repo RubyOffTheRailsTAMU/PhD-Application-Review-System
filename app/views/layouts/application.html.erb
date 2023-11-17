@@ -14,8 +14,8 @@
     <div class="page-container">
     <!-- Header -->
     <header>
-        <% if session[:user_email] %>
-            <%= render 'shared/nav' %>
+        <% if session[:user_email] and current_user %>
+          <%= render 'shared/nav' %>
         <%end%>
     </header>
 
