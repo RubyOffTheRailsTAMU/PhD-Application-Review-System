@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeIeltsColumnsToAllowNull < ActiveRecord::Migration[7.0]
   def change
     change_column :application_ielts, :application_ielts_listening, :integer, null: true

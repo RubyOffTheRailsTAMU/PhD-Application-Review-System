@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RenameColumnName < ActiveRecord::Migration[7.0]
   def change
     rename_column :toefls, :listening, :application_toefl_listening

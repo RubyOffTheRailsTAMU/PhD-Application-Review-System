@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Task < ApplicationRecord
   belongs_to :user
   belongs_to :applicant  # Ensure this association is defined
