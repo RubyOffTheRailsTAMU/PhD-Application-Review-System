@@ -118,6 +118,8 @@ Then, create a user and alter the role to superuser
 CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpassword' SUPERUSER;
 ```
 
+## Setup on local and deploy on Heroku
+
 ### Set up the project on local
 
 ***We have two repositories for this project. one is the review system repo, which is the backend and frontend parts of the project. Another one is the database system, which is for the database***
@@ -314,6 +316,8 @@ Refer this for any more specific information. https://medium.com/@jenn.leigh.han
 
 We use public key and private key for JWT authentication, you need to set up the public key and private key in your local environment and then store them on Heroku. You can check `config/initializers/jwt.rb` to see how we use the public key and private key.
 
+If you want to know more about JWT, you can check `./JWT.md` and go [JWT](https://jwt.io/).
+
 Here is a way to generate keys, you can use other proper ways to generate your own keys.
 
 Generate private key:
@@ -361,7 +365,7 @@ Then you can use the APIs for database on Heroku.
 
 ### Test
 
-You can go `/rspec` and `/cucumber` to check the tests.
+You can go `/spec` to see the rspec tests and `/features` to check the cucumber tests.
 
 Run rspec test:
 
@@ -384,3 +388,7 @@ bundle exec cucumber --publish
 ```
 
 Then, click the link to see the report.
+
+### Motor Admin
+
+You can view information about the Motor Admin at this link: [Motor Admin](https://github.com/RubyOffTheRailsTAMU/motor-admin-rails).
