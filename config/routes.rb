@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   mount Motor::Admin => '/motor_admin'
   get 'dashboards/show'
@@ -9,9 +11,7 @@ Rails.application.routes.draw do
   resources :users
   resources :reviews
   resources :applicants
-  resources :tags, only: [:create, :destroy]
-
-  
+  resources :tags
 
   get 'xlsx/tojson'
   get 'csv/tojson'

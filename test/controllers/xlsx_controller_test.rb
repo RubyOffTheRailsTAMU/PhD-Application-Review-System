@@ -1,7 +1,9 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class XlsxControllerTest < ActionDispatch::IntegrationTest
-  test "should get tojson" do
+  test 'should get tojson' do
     get xlsx_tojson_url
     assert_response :success
   end

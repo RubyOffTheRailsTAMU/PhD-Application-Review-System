@@ -1,11 +1,10 @@
+# frozen_string_literal: true
+
 require 'rspec/expectations'
 World(RSpec::Matchers)
 require 'capybara'
 require 'capybara/dsl'
 require 'selenium-webdriver'
-
-require 'capybara'
-require 'capybara/dsl'
 
 World(Capybara::DSL)
 
