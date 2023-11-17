@@ -12,13 +12,86 @@
   background: linear-gradient(to right, #500000 50%, #ffffff 50%);
  }
 
+ .login-button{
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+ }
+/* Style for the admin login form */
+.admin-login-form {
+  width: 400px; /* Set fixed width */
+  height: 450px; /* Set fixed height */
+  background-color: rgb(235, 235, 235);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+/* Style for form groups */
+.form-group {
+  width: 100%; /* Slightly less than full width for better aesthetics */
+  margin-bottom: 2px; /* Consistent spacing */
+}
+
+
+/* Style for input fields */
+.form-control {
+  width: 100%; /* Full width for inputs */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem; /* Readable font size */
+}
+
+/* Style for the submit button */
+.btn-primary {
+  width: 60%; /* Consistent with form-group width */
+  padding: 10px;
+  border: none !important;
+  border-radius: 5px;
+  background-color: #500000 !important; /* Theme color */
+  color: white;
+  cursor: pointer;
+  font-size: 1rem; /* Readable font size */
+  margin-top: 10px; /* Space above the button */
+  margin-left:20%;
+}
+
+/* Hover effect for the button */
+.btn-primary:hover {
+  background-color: #400000; /* Slightly darker on hover */
+}
+
+.toggle-button {
+  background-color: #500000; /* Green background */
+  color: white;
+  padding: 7px 16px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+
+.toggle-button:hover {
+  background-color: #400000; /* Darker green */
+}
+
+.btn .btn-primary{
+  color:#500000;
+}
 
 /* Updated style for the container */
 .card-login-container {
-  width: 350px; /* Set fixed width */
-  height: 350px; /* Set fixed height */
+  width: 400px; /* Set fixed width */
+  height: 450px; /* Set fixed height */
   background-color: rgb(235, 235, 235);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,13 +113,6 @@
   font-weight: 650;
 }
 
-/* Style for the button */
-.button {
-  padding: 10px 20px; /* Make the button larger */
-  font-size: 1rem; /* Font size of button text */
-  cursor: pointer; /* Change cursor on hover over button */
-}
-
 
  .login-with-google {
   padding: 8px 16px;  /* Adjusted padding for compact sizing */
@@ -57,4 +123,47 @@
   border-radius: 5px;
   font-size: 1rem;
  }
+
+ .login-with-google:hover{
+  background-color: #400000 !important;
+ }
  
+ .login-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.or-divider {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.or-text {
+  color: #555;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.or-divider::before {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.or-divider::after {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.login-with-google, .toggle-button {
+  width: 100%; /* Adjust width as needed */
+  margin-bottom: 5px; /* Spacing between buttons */
+}

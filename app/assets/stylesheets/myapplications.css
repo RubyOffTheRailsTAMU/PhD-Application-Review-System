@@ -93,6 +93,10 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
 
+  .scrollable-table{
+    max-height: 250px;
+    overflow-y: auto;
+  }
   /* Table styling */
   .table {
     margin-top: 1rem;
