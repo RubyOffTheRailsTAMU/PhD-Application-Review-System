@@ -18,7 +18,6 @@
             <% if session[:alert] %>
             <%else%>
             <%= render 'shared/nav' %>
-            <%end%>
         <%end%>
     </header>
 
@@ -30,10 +29,7 @@
     <!-- Footer -->
     <footer class="site-footer">
       <% if session[:user_email] %>
-        <% if session[:alert] %>
-          <%else%>
             <%= render 'shared/footer' %>
-          <%end%>
         <%end%>
     </footer>
   </div>
