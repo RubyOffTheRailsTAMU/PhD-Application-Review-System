@@ -309,6 +309,8 @@ GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 ```
 
+Then, you should add your `@tamu.edu` email to the `app/assets/whitelist.txt` file. Then you can use your TAMU email to login the review system.
+
 Refer this for any more specific information. https://medium.com/@jenn.leigh.hansen/google-oauth2-for-rails-ba1bcfd1b863
 
 
