@@ -1,0 +1,144 @@
+    <div class="container">
+        <div class="row">
+        <!-- Left Section: Applicant Data and Review -->
+            <div class="col-md-4 left-section">
+                <!-- Applicant Data Table -->
+                <div class="applicant-data">
+                    <!-- Applicant Name Display -->
+                    <div class="applicant-name">
+                        <h3><%= @result['application_name'] || 'Applicant Name' %></h3>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Value</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>CAS ID</td>
+                            <td><%= @result['application_cas_id'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td><%= @result['application_name'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td><%= @result['application_gender'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Citizenship Country</td>
+                            <td><%= @result['application_citizenship_country'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth</td>
+                            <td><%= @result['application_dob'] ? @result['application_dob'].strftime('%B %d, %Y') : 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><%= @result['application_email'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Degree</td>
+                            <td><%= @result['application_degree'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Application Submitted</td>
+                            <td><%= @result['application_submitted'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td><%= @result['application_status'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Research Interests</td>
+                            <td><%= @result['application_research'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Faculty</td>
+                            <td><%= @result['application_faculty'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>School Name</td>
+                            <td><%= @result['application_school_name'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>School Level</td>
+                            <td><%= @result['application_school_level'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>School GPA</td>
+                            <td><%= @result['application_school_gpa'] ? @result['application_school_gpa'].to_s : 'N/A' %></td>
+                        </tr>
+                        <!-- Add other fields like IELTS, GRE scores in a similar fashion -->
+                        <!-- ... continue for other fields ... -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Review Text Box -->
+                <div class="review-box">
+                    <textarea placeholder="Add your review here"></textarea>
+                    <h4 class="rating-heading">Rating</h4>
+                    <!-- Star Rating (Placeholder for now) -->
+                    <div class="star-rating">
+                        <i class="fa fa-star" data-rating="1" aria-hidden="true"></i>
+                        <i class="fa fa-star" data-rating="2" aria-hidden="true"></i>
+                        <i class="fa fa-star" data-rating="3" aria-hidden="true"></i>
+                        <i class="fa fa-star" data-rating="4" aria-hidden="true"></i>
+                        <i class="fa fa-star" data-rating="5" aria-hidden="true"></i>
+                        <input type="hidden" id="rating" name="rating" value="0">
+                        <span id="rating-display" class="rating-display">0</span>
+                    </div>
+                    <button>Submit Review</button>
+                </div>
+            </div>
+
+            <!-- Right Section: PDF Viewer and Other Reviews -->
+            <div class="col-md-8 right-section">
+                <!-- PDF Viewer -->
+                <div class="pdf-viewer">
+                <div class="pdf-viewer">
+                        <iframe src="/1234567890.pdf" width="100%" height="500px" allowfullscreen webkitallowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Other Reviewers Information -->
+                <div class="other-reviewers">
+                    <p>Other Reviews</p>
+                    <% @other_reviewers.each do |reviewer| %>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= reviewer.name %></h5>
+                                <p class="card-text"><%= reviewer.review %></p>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let stars = document.querySelectorAll('.star-rating .fa');
+        let ratingDisplay = document.getElementById('rating-display');
+
+        stars.forEach((star, idx) => {
+            star.addEventListener('click', () => {
+                document.getElementById('rating').value = idx + 1; // Update hidden input
+                ratingDisplay.innerText = idx + 1; // Update rating display
+                updateStars(idx);
+            });
+        });
+
+        function updateStars(index) {
+            stars.forEach((star, idx) => {
+                star.style.color = idx <= index ? '#ffd700' : '#e4e5e9'; // Gold or gray
+            });
+        }
+    });
+    </script>

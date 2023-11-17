@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
-
+  protect_from_forgery with: :null_session
   # GET /users/new
   def new
     @user = User.new
@@ -14,7 +14,6 @@ class UsersController < ApplicationController
     current_user
     respond_to do |format|
       if @user.save
-        format.html { redirect_to '/home' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
