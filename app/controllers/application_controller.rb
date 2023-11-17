@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
     helper_method :current_user, :all_users, :logged_in?
     if Rails.env.test?

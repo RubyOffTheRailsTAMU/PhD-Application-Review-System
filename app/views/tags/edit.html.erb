@@ -1,0 +1,30 @@
+<h1>Edit Tag</h1>
+
+<%= form_with(model: @tag, local: true) do |form| %>
+  <% if @tag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+
+      <ul>
+        <% @tag.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.hidden_field :cas_id, value: params[:cas_id] %>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<%= button_to 'Delete', tag_path(@tag, cas_id: params[:cas_id]), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Back', application_path(cas_id: params[:cas_id]) %>
+

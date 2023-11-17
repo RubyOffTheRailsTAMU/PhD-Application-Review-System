@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SearchesController < ApplicationController
   require 'net/http'
   before_action :require_user
