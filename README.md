@@ -249,13 +249,13 @@ The steps are the same as the review system repo:
 Go to the terminal of the database system, and then:
 
 ```sh
-heroku create <you-review-system-app-name>
+heroku create <you-database-system-app-name>
 ```
 
 Go to your Heroku console, and add the heroku remote:
 
 ```sh
-heroku git:remote -a <you-review-system-app-name>
+heroku git:remote -a <you-database-system-app-name>
 ```
 
 Deploy the app on Heroku:
