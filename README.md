@@ -289,7 +289,7 @@ Set admin account in `db/seeds.rb`
 
 ### Google OAuth
 
-We use Google OAuth to login the review system, so you need to set up the Google OAuth in your Google Cloud Platform.
+We use Google OAuth to login the review system, so you need to set up the Google OAuth in your Google Cloud Platform. You MUST do this with your TAMU google account.
 
 Venture here: https://console.developers.google.com/cloud-resource-manager to set up your Google credentials. Click on the CREATE PROJECT button.
 
