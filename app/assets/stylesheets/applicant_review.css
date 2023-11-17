@@ -1,0 +1,27 @@
+.star-rating .fa {
+    color: #e4e5e9; /* Gray color for unselected stars */
+    margin-right: 5px;
+    cursor: pointer; /* Changes cursor to indicate it's clickable */
+}
+
+
+.star-rating {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.rating-display {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333; /* Dark color for contrast */
+    vertical-align: middle;
+}
+
+.rating-heading {
+    color: #4a4a4a; /* Dark gray color */
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 500; /* Semi-bold */
+    text-align: left;
+}

@@ -25,7 +25,7 @@
     </thead>
     <tbody id="applicationList">
       <% @results.each do |result| %>
-        <tr class="clickable-row" data-href="/application?cas_id=<%= result["application_cas_id"] %>">
+        <tr class="clickable-row" data-href="/applicant?cas_id=<%= result["application_cas_id"] %>">
           <% if current_user.user_level != "faculty" %>
             <td class="except"><input type="checkbox"/></td>
           <% end %>
