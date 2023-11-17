@@ -2,6 +2,7 @@
   <div class="flash-<%= key %>">
       <%= value %>
   </div>
+<% end %>
 
 
 <div class="container">
@@ -13,7 +14,9 @@
     <!-- Table Header -->
     <thead>
       <tr>
-        <th></th>
+        <% if current_user.user_level != "faculty" %>
+          <th></th>
+        <% end %>
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
@@ -23,7 +26,9 @@
     <tbody id="applicationList">
       <% @results.each do |result| %>
         <tr class="clickable-row" data-href="/application?cas_id=<%= result["application_cas_id"] %>">
-          <td class="except"><input type="checkbox"/></td>
+          <% if current_user.user_level != "faculty" %>
+            <td class="except"><input type="checkbox"/></td>
+          <% end %>
           <td><%= result["application_cas_id"]  %></a></td>
           <td><%= result["application_name"]%></td>
           <td><%= result["application_email"]%></td>
@@ -39,13 +44,14 @@
 <% end %>
 
 
+<% if current_user.user_level != "faculty" %>
+  <label for="user">Select User:</label>
+  <select id="userDropdown">
+    <%= options_from_collection_for_select(all_users, 'user_netid', 'user_name') %>
+  </select>
 
-<label for="user">Select User:</label>
-<select id="userDropdown">
-  <%= options_from_collection_for_select(all_users, 'user_netid', 'user_name') %>
-</select>
-
-<button type="submit" onclick="myFunction()">Submit</button>
+  <button type="submit" onclick="myFunction()">Submit</button>
+<% end %>
 
 <script>
   var selectedRows = [];
@@ -59,6 +65,12 @@
       "user_id": selectedUserId,
       "application_ids": selectedRows
     }
+
+    if (selectedRows.length == 0){
+      alert("Please select at least one application");
+      return;
+    }           
+
     url = "http://127.0.0.1:3000/assign"
     fetch(url, {
     method: 'POST', // Specify the method as POST
@@ -104,6 +116,7 @@
           else{
             window.location.href = row.dataset.href;
           }
+          console.log(selectedRows);
         });
       }
     });
