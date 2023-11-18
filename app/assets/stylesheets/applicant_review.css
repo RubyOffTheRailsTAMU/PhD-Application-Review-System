@@ -145,3 +145,71 @@
     text-decoration: none;
     outline: none;
 }
+
+.success-message {
+    color: #fff;
+    background-color: #28a745; /* Green background */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.scrollable-table {
+    overflow-y: scroll; /* Enables vertical scrolling */
+    min-height: 450px; /* Minimum height of the container */
+    max-height: 500px; /* Maximum height before scrolling */
+    border: 1px solid #ddd; /* Optional: adds a border around the table */
+    margin-bottom: 15px;
+}
+
+/* Ensuring the scrollbar is always visible */
+.scrollable-table::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+.scrollable-table::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.review-card {
+    border: 1px solid #ced4da;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    background-color: #f9f9f9;
+}
+
+
+.review-card {
+    /* Previous styles for the card */
+    min-height: 150px; /* Match the height of the textarea */
+}
+
+.button-row {
+    display: flex;
+    justify-content: start;
+    gap: 10px; /* Spacing between buttons */
+}
+
+.button-row .btn {
+    height: 50px !important;
+    margin: 20px !important;
+    flex: 1; /* Makes both buttons take equal width */
+    padding: 10px 15px; /* Adjust padding as needed */
+}
+
+.edit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
