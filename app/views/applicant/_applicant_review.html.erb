@@ -1,7 +1,7 @@
     <div class="container">
         <div class="row">
         <!-- Left Section: Applicant Data and Review -->
-            <div class="col-md-4 left-section">
+            <div class="col-md-5 left-section">
                 <!-- Applicant Data Table -->
                 <div class="applicant-data">
                     <!-- Applicant Name Display -->
@@ -80,7 +80,8 @@
 
                 <!-- Review Text Box -->
                 <div class="review-box">
-                    <textarea placeholder="Add your review here"></textarea>
+                   <textarea class="form-control" placeholder="Add your review here" rows="4"></textarea>
+
                     <h4 class="rating-heading">Rating</h4>
                     <!-- Star Rating (Placeholder for now) -->
                     <div class="star-rating">
@@ -92,36 +93,58 @@
                         <input type="hidden" id="rating" name="rating" value="0">
                         <span id="rating-display" class="rating-display">0</span>
                     </div>
-                    <button>Submit Review</button>
+                    <button class="btn btn-primary">Submit Review</button>
                 </div>
             </div>
 
             <!-- Right Section: PDF Viewer and Other Reviews -->
-            <div class="col-md-8 right-section">
+            <div class="col-md-6 right-section">
                 <!-- PDF Viewer -->
-                <div class="pdf-viewer">
-                <div class="pdf-viewer">
-                        <iframe src="/1234567890.pdf" width="100%" height="500px" allowfullscreen webkitallowfullscreen></iframe>
+                <div class="right-container">
+                    <div class="pdf-viewer-container" data-toggle="modal" data-target="#pdfModal">
+                            <iframe src="/1234567890.pdf" width="100%" height="500px" allowfullscreen webkitallowfullscreen></iframe>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Other Reviewers Information -->
-                <div class="other-reviewers">
-                    <p>Other Reviews</p>
-                    <% @other_reviewers.each do |reviewer| %>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title"><%= reviewer.name %></h5>
-                                <p class="card-text"><%= reviewer.review %></p>
+
+                    <!-- PDF Modal -->
+                    <div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="pdfModalLabel">PDF Viewer</h5>
+                                    <button type="button" class="close modal-close-button" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe src="/1234567890.pdf" width="100%" height="800px" allowfullscreen webkitallowfullscreen></iframe>
+                                </div>
                             </div>
                         </div>
-                    <% end %>
+                    </div>
+                    <!-- Other Reviewers Information -->
+                    <div class="other-reviewers-container">
+                        <div class="other-reviewers">
+                            <h4 class="other-reviews-heading">Other Reviews</h4>
+                            <% @other_reviewers.each do |reviewer| %>
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><%= reviewer.user_netid %></h5>
+                                        <p class="card-text"><%= reviewer.review_info %></p>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         let stars = document.querySelectorAll('.star-rating .fa');

@@ -19,9 +19,129 @@
 }
 
 .rating-heading {
-    color: #4a4a4a; /* Dark gray color */
-    font-size: 24px;
+    font-size: 24px; /* Adjust font size */
+    color: #333; /* Dark color for the heading */
+    font-weight: bold;
+    padding-bottom: 10px; /* Padding to space out the line */
+    margin-bottom: 20px; /* Margin to space out content below */
+    border-bottom: 2px solid #400000; /* Solid line with color */
+    display: inline-block; /* To fit the border to content width */
+    padding-top: 10px;
+}
+
+.other-reviewers {
+    margin-top: 20px;
+}
+
+.other-reviewers .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adds a subtle shadow */
+    transition: 0.3s; /* Smooth transition for hover effect */
+    margin-bottom: 15px; /* Space between cards */
+}
+
+.other-reviewers .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3); /* Shadow effect on hover */
+}
+
+.other-reviewers .card-body {
+    padding: 15px;
+}
+
+.other-reviewers .card-title {
+    color: #333; /* Dark color for the title */
     margin-bottom: 10px;
-    font-weight: 500; /* Semi-bold */
-    text-align: left;
+    font-weight: bold;
+}
+
+.other-reviewers .card-text {
+    color: #555; /* Slightly lighter color for text */
+    font-size: 14px;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 10px;
+    font-size: 16px;
+    resize: vertical; /* Allows vertical resizing, not horizontal */
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.other-reviews-heading {
+    font-size: 24px; /* Adjust font size */
+    color: #333; /* Dark color for the heading */
+    font-weight: bold;
+    padding-bottom: 10px; /* Padding to space out the line */
+    margin-bottom: 20px; /* Margin to space out content below */
+    border-bottom: 2px solid #400000; /* Solid line with color */
+    display: inline-block; /* To fit the border to content width */
+}
+
+.left-section {
+    border: 1px solid #ced4da; /* Border color */
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px; /* Padding inside the section */
+    margin: 10px; /* Margin at the top */
+    background-color: #ffffff; /* Background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.pdf-viewer-container {
+    cursor: pointer; /* Indicates the element is clickable */
+    border: 1px solid #ced4da; /* Border color */
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px; /* Padding inside the container */
+    background-color: #ffffff; /* Background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensures the content fits within the rounded borders */
+}
+
+.pdf-viewer-container iframe {
+    width: 100%; /* Full width of the container */
+    height: 500px; /* Adjust height as needed */
+    border: none; /* Remove default iframe border */
+}
+
+.other-reviewers-container {
+    border: 1px solid #ced4da; /* Border color */
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px; /* Padding inside the container */
+    margin-top: 20px; /* Margin at the top */
+    background-color: #ffffff; /* Background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensures the content fits within the rounded borders */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 500px; /* Maximum height before scrolling */
+}
+
+.modal {
+    position: fixed !important;
+    z-index: 9999 !important;
+}
+
+.modal-backdrop {
+    z-index: 9998 !important;
+}
+
+/* Custom style for the close button */
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    background-color: transparent;
+    font-size: 25px; /* Larger font size for the icon */
+    color: #707070; /* Color of the icon */
+    cursor: pointer;
+}
+
+.modal-close-button:hover, .modal-close-button:focus {
+    color: #505050; /* Darker color on hover and focus for better interaction */
+    text-decoration: none;
+    outline: none;
 }
