@@ -8,82 +8,92 @@
                     <div class="applicant-name">
                         <h3><%= @result['application_name'] || 'Applicant Name' %></h3>
                     </div>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Value</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>CAS ID</td>
-                            <td><%= @result['application_cas_id'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>Name</td>
-                            <td><%= @result['application_name'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>Gender</td>
-                            <td><%= @result['application_gender'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>Citizenship Country</td>
-                            <td><%= @result['application_citizenship_country'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>Date of Birth</td>
-                            <td><%= @result['application_dob'] ? @result['application_dob'].strftime('%B %d, %Y') : 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td><%= @result['application_email'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>Degree</td>
-                            <td><%= @result['application_degree'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>Application Submitted</td>
-                            <td><%= @result['application_submitted'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>Status</td>
-                            <td><%= @result['application_status'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>Research Interests</td>
-                            <td><%= @result['application_research'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>Faculty</td>
-                            <td><%= @result['application_faculty'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>School Name</td>
-                            <td><%= @result['application_school_name'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>School Level</td>
-                            <td><%= @result['application_school_level'] || 'N/A' %></td>
-                        </tr>
-                        <tr>
-                            <td>School GPA</td>
-                            <td><%= @result['application_school_gpa'] ? @result['application_school_gpa'].to_s : 'N/A' %></td>
-                        </tr>
-                        <!-- Add other fields like IELTS, GRE scores in a similar fashion -->
-                        <!-- ... continue for other fields ... -->
-                        </tbody>
-                    </table>
+                    <div class="scrollable-table">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Value</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>CAS ID</td>
+                                <td><%= @result['application_cas_id'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td><%= @result['application_name'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td><%= @result['application_gender'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>Citizenship Country</td>
+                                <td><%= @result['application_citizenship_country'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>Date of Birth</td>
+                                <td><%= @result['application_dob'] ? @result['application_dob'].strftime('%B %d, %Y') : 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td><%= @result['application_email'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>Degree</td>
+                                <td><%= @result['application_degree'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>Application Submitted</td>
+                                <td><%= @result['application_submitted'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td><%= @result['application_status'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>Research Interests</td>
+                                <td><%= @result['application_research'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>Faculty</td>
+                                <td><%= @result['application_faculty'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>School Name</td>
+                                <td><%= @result['application_school_name'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>School Level</td>
+                                <td><%= @result['application_school_level'] || 'N/A' %></td>
+                            </tr>
+                            <tr>
+                                <td>School GPA</td>
+                                <td><%= @result['application_school_gpa'] ? @result['application_school_gpa'].to_s : 'N/A' %></td>
+                            </tr>
+                            <!-- Add other fields like IELTS, GRE scores in a similar fashion -->
+                            <!-- TODO -->
+                            <!-- ... continue for other fields ... -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-                <!-- Review Text Box -->
+                
+                
                 <div class="review-box">
-                   <textarea class="form-control" placeholder="Add your review here" rows="4"></textarea>
-
+                    <!-- Review Text Area -->
+                    <textarea id="reviewInput" class="form-control" placeholder="Add your review here" rows="4"></textarea>
+                    <!-- Review Display Card (Initially Hidden) -->
+                    <div id="reviewCard" class="review-card" style="display: none;">
+                        <p id="reviewText"></p>
+                        <button id="editButton" class="edit-button">
+                            <i class="fa fa-edit"></i> <!-- Font Awesome icon for edit -->
+                        </button>
+                    </div>
+                    <!-- Rating Section -->
                     <h4 class="rating-heading">Rating</h4>
-                    <!-- Star Rating (Placeholder for now) -->
                     <div class="star-rating">
                         <i class="fa fa-star" data-rating="1" aria-hidden="true"></i>
                         <i class="fa fa-star" data-rating="2" aria-hidden="true"></i>
@@ -93,7 +103,17 @@
                         <input type="hidden" id="rating" name="rating" value="0">
                         <span id="rating-display" class="rating-display">0</span>
                     </div>
-                    <button class="btn btn-primary">Submit Review</button>
+
+                    <!-- Success Message -->
+                    <div id="successMessage" class="success-message" style="display: none;">
+                        Your review has been submitted successfully!
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="button-row">
+                        <button id="submitButton" class="btn btn-primary">Submit Review</button>
+                        <button id="saveButton" class="btn btn-secondary">Save for Later</button>
+                    </div>
                 </div>
             </div>
 
@@ -139,7 +159,6 @@
                     </div>
                 </div>
             </div>
-
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -163,5 +182,88 @@
                 star.style.color = idx <= index ? '#ffd700' : '#e4e5e9'; // Gold or gray
             });
         }
+    });
+
+    document.getElementById('submitButton').addEventListener('click', function() {
+    document.getElementById('successMessage').style.display = 'block';
+    //TODO: Implement Review request 
+
+    // Transfer text and show card
+    var reviewText = document.getElementById('reviewInput').value;
+    document.getElementById('reviewText').innerText = reviewText;
+    document.getElementById('reviewInput').style.display = 'none';
+    document.getElementById('reviewCard').style.display = 'block';
+
+    // Disable buttons
+    this.disabled = true;
+    document.getElementById('saveButton').disabled = true;
+
+    // Show success message
+    document.getElementById('successMessage').style.display = 'block';
+
+    setTimeout(function() {
+            document.getElementById('successMessage').style.display = 'none';
+        }, 3000); // The message will be hidden after 3 seconds
+    });
+    
+    document.getElementById('editButton').addEventListener('click', function() {
+        // Switch back to editable state
+        document.getElementById('reviewInput').style.display = 'block';
+        document.getElementById('reviewCard').style.display = 'none';
+
+        // Enable buttons
+        // document.getElementById('submitButton').disabled = false;
+        // document.getElementById('saveButton').disabled = false;
+    });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let stars = document.querySelectorAll('.star-rating .fa');
+        let ratingDisplay = document.getElementById('rating-display');
+        let initialRating = document.getElementById('rating').value;
+        let initialText = document.getElementById('reviewInput').value.trim();
+
+        function updateStars(index) {
+            stars.forEach((star, idx) => {
+                star.style.color = idx <= index ? '#ffd700' : '#e4e5e9'; // Gold or gray
+            });
+        }
+
+        function checkForChanges() {
+            var currentText = document.getElementById('reviewInput').value.trim();
+            var currentRating = document.getElementById('rating').value;
+
+            var isTextChanged = initialText !== currentText;
+            var isTextPresent = currentText.length > 0;
+
+            var isRatingChanged = initialRating !== currentRating;
+            var isRatingSelected = currentRating !== '0';
+
+            var enableButtons = (isTextChanged && isTextPresent) || (isRatingChanged && isRatingSelected);
+            document.getElementById('submitButton').disabled = !enableButtons;
+            document.getElementById('saveButton').disabled = !enableButtons;
+        }
+
+        stars.forEach((star, idx) => {
+            star.addEventListener('click', () => {
+                document.getElementById('rating').value = idx + 1; // Update hidden input
+                ratingDisplay.innerText = idx + 1; // Update rating display
+                updateStars(idx);
+                checkForChanges(); // Check for changes in rating
+            });
+        });
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var initialText = document.getElementById('reviewInput').value.trim();
+
+        document.getElementById('reviewInput').addEventListener('input', function() {
+            var currentText = this.value.trim();
+            var isTextChanged = initialText !== currentText;
+            var isTextPresent = currentText.length > 0;
+
+            document.getElementById('submitButton').disabled = !(isTextChanged && isTextPresent);
+            document.getElementById('saveButton').disabled = !(isTextChanged && isTextPresent);
+        });
     });
     </script>
