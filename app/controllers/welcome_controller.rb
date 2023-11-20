@@ -12,7 +12,7 @@ class WelcomeController < ApplicationController
             current_user
             redirect_to '/home'
           else
-            session[:alert] = "Wrong Admin Credentails"
+            session[:alert] = "Wrong Admin Credentials"
             redirect_to root_path
           end
     end

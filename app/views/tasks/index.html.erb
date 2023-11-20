@@ -17,14 +17,16 @@
         <!-- Table Header -->
         <thead>
           <tr>
-            <th scope="col">Applicant</th>
+            <th scope="col">Name</th>
+            <th scope="col">CAS ID</th>
             <th scope="col">Status</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody id="applicationList">
-          <% Review.where(user_netid: current_user.user_netid).each do |review| %>
-            <tr class="clickable-row" data-status="<%= review.status.downcase %>" data-href="/application?cas_id=<%= review.applicant_id %>">
+          <% @reviews.each do |review| %>
+            <tr class="clickable-row" data-status="<%= review.status.downcase %>" data-href="/applicant?cas_id=<%= review.applicant_id %>">
+              <td><%= @applicant_names[review.applicant_id] %></td>
               <td><%= review.applicant_id %></td>
               <td>
               <span class="status-box <%= review.status.downcase %>"><%= review.status %></span>

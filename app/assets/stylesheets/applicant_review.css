@@ -163,6 +163,7 @@
     max-height: 500px; /* Maximum height before scrolling */
     border: 1px solid #ddd; /* Optional: adds a border around the table */
     margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 /* Ensuring the scrollbar is always visible */
