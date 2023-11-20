@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_231_109_183_021) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_20_071557) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -209,17 +209,17 @@ ActiveRecord::Schema[7.0].define(version: 20_231_109_183_021) do
     t.index ['name'], name: 'motor_tags_name_unique_index', unique: true
   end
 
-  create_table 'reviews', force: :cascade do |t|
-    t.integer 'review_id'
-    t.string 'user_netid'
-    t.string 'applicant_id'
-    t.string 'review_info'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'rating'
-    t.string 'status'
-    t.boolean 'gar'
-    t.boolean 'gat'
+  create_table "reviews", force: :cascade do |t|
+    t.integer "review_id"
+    t.string "user_netid"
+    t.string "applicant_id"
+    t.string "review_info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "rating", default: 0
+    t.string "status"
+    t.boolean "gar"
+    t.boolean "gat"
   end
 
   create_table 'tags', force: :cascade do |t|
