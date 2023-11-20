@@ -59,7 +59,7 @@ Recommend to use `Sonoma 14.0` or `Ubuntu 22.04.3 LTS` from WSL2. (Refer to this
 
 ### Install ruby 3.2.2
 
-Here I recommand to use rvm, it is a tool for manage ruby with different version. (Refer to this [link](https://rvm.io/rvm/install))
+Here I recommend using rvm, a tool for managing Ruby with different versions. (Refer to this [link](https://rvm.io/rvm/install))
 
 Install rvm:
 
@@ -87,7 +87,7 @@ Check rvm version
 rvm -v
 ```
 
-You should see the version of rvm, that means you seccussfully install rvm.
+You should see the version of rvm, which means you have successfully installed rvm.
 
 Then install and use ruby 3.2.2
 
@@ -217,23 +217,23 @@ rails s
 
 ----
 
-### Deploy the project on heroku
+### Deploy the project on Heroku
 
-***We have 2 repo to deploy, so we will have 2 apps on heroku***
+***We have 2 repo to deploy, so we will have 2 apps on Heroku ***
 
-Register an account on heroku: <https://signup.heroku.com/>.
+Register an account on Heroku: <https://signup.heroku.com/>.
 
-Download heroku CLI: <https://devcenter.heroku.com/articles/heroku-cli>.
+Download Heroku CLI: <https://devcenter.heroku.com/articles/heroku-cli>.
 
-After that, check the version of heroku CLI:
+After that, check the version of Heroku CLI:
 
 ```sh
-heroku -v
+Heroku -v
 ```
 
-You should see the version of Heroku CLI, that means you seccussfully install Heroku CLI.
+You should see the version of Heroku CLI, which means you have successfully installed Heroku CLI.
 
-Then, login to heroku:
+Then, login to Heroku:
 
 ```sh
 heroku login
@@ -241,13 +241,13 @@ heroku login
 
 First, deploy the review system repo.
 
-Go to the terminal of the review system project, and create an app for review system:
+Go to the terminal of the review system project, and create an app for the review system:
 
 ```sh
 heroku create <you-review-system-app-name>
 ```
 
-Go to your Heroku console, and add the heroku remote:
+Go to your Heroku console, and add the Heroku remote:
 
 ```sh
 heroku git:remote -a <you-review-system-app-name>
@@ -261,7 +261,7 @@ git commit -am "make it better"
 git push heroku main
 ```
 
-And then, go heroku console to check whether the app is deployed.
+And then, go Heroku console to check whether the app is deployed.
 
 If you want to check the status of the app:
 
@@ -299,7 +299,7 @@ git commit -am "make it better"
 git push heroku main
 ```
 
-And then, go heroku console to check whether the app is deployed.
+Then, go to the Heroku console to check whether the app is deployed.
 
 If you want to check the status of the app:
 
@@ -333,18 +333,18 @@ heroku logs
 
 ### Admin Account
 
-Admin account is used to manage the review system and the database system, you can use the following account to login the database management system.
+An admin account is used to manage the review system and the database system, you can use the following account to log into the database management system.
 Set admin account in `db/seeds.rb`
 
 ### Google OAuth
 
-We use Google OAuth to login the review system, so you need to set up the Google OAuth in your Google Cloud Platform. You MUST do this with your TAMU google account.
+We use Google OAuth to log in to the review system, so you need to set up the Google OAuth in your Google Cloud Platform. You MUST do this with your TAMU Google account.
 
 Venture here: https://console.developers.google.com/cloud-resource-manager to set up your Google credentials. Click on the CREATE PROJECT button.
 
-After the project is created, select the “Credentials” option from the menu on the left then you can select the “OAuth Consent Screen”. Set it to type Internal and click create.
+After the project is created, select the “Credentials” option from the menu on the left then you can select the “OAuth Consent Screen”. Set it to type Internal and click Create.
 
-Add the required information and then in the "Authorized domains" section, add the endpoints for all of the valid places you can use google auth. For example
+Add the required information and then in the "Authorized domains" section, add the endpoints for all of the valid places you can use Google auth. For example
 
 ```sh
 https://phdappreview-2530b5efb143.herokuapp.com/auth/google_oauth2/callback
@@ -358,9 +358,9 @@ GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
 ```
 
-Then, you should add your `@tamu.edu` email to the `app/assets/whitelist.txt` file. Then you can use your TAMU email to login the review system.
+Then, you should add your `@tamu.edu` email to the `app/assets/whitelist.txt` file. Then you can use your TAMU email to log into the review system.
 
-Refer this for any more specific information. https://medium.com/@jenn.leigh.hansen/google-oauth2-for-rails-ba1bcfd1b863
+Refer to this for any more specific information: https://medium.com/@jenn.leigh.hansen/google-oauth2-for-rails-ba1bcfd1b863
 
 
 ### Public Key and Private Key
@@ -405,14 +405,14 @@ PRIVATE_KEY=<encoded_private_key>
 PUBLIC_KEY=<encoded_public_key>
 ```
 
-Now, you can use the APIs for database locally. Because we will deploy the project on Heroku, you should also add these `encoded_private_key` and `encoded_public_key` on Heroku. Here are steps:
+Now, you can use the APIs for the database locally. Because we will deploy the project on Heroku, you should also add these `encoded_private_key` and `encoded_public_key` on Heroku. Here are steps:
 
 1. Go Heroku console, and go to the review system app.
 2. Go to the `Settings` tab, and click `Reveal Config Vars`.
 3. Add `PRIVATE_KEY` in the `KEY` column, and add `encoded_private_key` in the `VALUE` column.
 4. Do the same steps on the database system app, but add `PUBLIC_KEY` in the `KEY` column, and add `encoded_public_key` in the `VALUE` column.
 
-Then you can use the APIs for database on Heroku.
+Then you can use the APIs for the database on Heroku.
 
 ### Test
 
