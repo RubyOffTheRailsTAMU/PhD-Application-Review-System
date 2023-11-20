@@ -1,10 +1,12 @@
 # PhD-Application-Review-System
 
-Organization:	Department of Computer Science and Engineering
-Contact name:	Prof. Khanh Nguyen
-Contact email:	khanhtn@tamu.edu
+Organization: Department of Computer Science and Engineering
 
-# Team Contact Information
+Contact name: Prof. Khanh Nguyen
+
+Contact email:  khanhtn@tamu.edu
+
+## Team Contact Information
 
 Product Owner: Tanay Patankar tanayp@tamu.edu
 
@@ -26,8 +28,7 @@ The PhD Admission process currently solicits reviews from committee members and 
 1. it should help faculties easily filter applications of interest.
 2. it should make the reviews input easy for faculties.
 3. it should help support staff keep track of status of each application.
-
-   
+  
 **Additional information provided by the client**
 Green-light from the department head might be required before the work can start.
 
@@ -35,7 +36,8 @@ Ideally we would want to use TAMU credentials (one less account for faculties an
 
 Note from Prof. Ritchey: consider it green-lighted, but see my advice below.
 
-**Advice from Prof. Ritchey**
+***Advice from Prof. Ritchey***
+
 1. Use Ruby on Rails.
 2. Focus on Functionality.
   a. Data security is critical due to FERPA.
@@ -152,14 +154,15 @@ Get in the root of the project:
 cd PhD-Application-Review-System
 ```
 
-### Setting ENV variables  in Development Environment:
+### Setting ENV variables  in Development Environment
 
 Create .env file in the root directory and set the following environment variables.
 
-```
+```.env
 DATABASE_SERVER_URL=http://127.0.0.1:3001
 PHD_APP_REVIEW_URL=http://127.0.0.1:3000
 ```
+
 >**NOTE**:  There are few more environment variables which needs to be set which are captured in the next few sections.
 
 Install all dependencies:
@@ -181,9 +184,11 @@ Now, you can run the review project homepage locally:
 ```sh
 rails s
 ```
--------
+
+-----
 
 ### Setting up Database System
+
 Now, clone the database system repo [database system](https://github.com/RubyOffTheRailsTAMU/PhD-Application-Review-System-Database-management)
 
 ```sh
@@ -215,11 +220,11 @@ Now, you can start the database management system locally:
 rails s
 ```
 
-----
+-----
 
 ### Deploy the project on Heroku
 
-***We have 2 repo to deploy, so we will have 2 apps on Heroku ***
+***We have 2 repo to deploy, so we will have 2 apps on Heroku***
 
 Register an account on Heroku: <https://signup.heroku.com/>.
 
@@ -329,8 +334,6 @@ heroku logs
    heroku config:set PHD_APP_REVIEW_URL=https://phdappreview-2530b5efb143.herokuapp.com -a your-app-name
    ```
 
-
-
 ### Admin Account
 
 An admin account is used to manage the review system and the database system, you can use the following account to log into the database management system.
@@ -340,7 +343,7 @@ Set admin account in `db/seeds.rb`
 
 We use Google OAuth to log in to the review system, so you need to set up the Google OAuth in your Google Cloud Platform. You MUST do this with your TAMU Google account.
 
-Venture here: https://console.developers.google.com/cloud-resource-manager to set up your Google credentials. Click on the CREATE PROJECT button.
+Venture here: <https://console.developers.google.com/cloud-resource-manager> to set up your Google credentials. Click on the CREATE PROJECT button.
 
 After the project is created, select the “Credentials” option from the menu on the left then you can select the “OAuth Consent Screen”. Set it to type Internal and click Create.
 
@@ -360,8 +363,7 @@ GOOGLE_CLIENT_SECRET=
 
 Then, you should add your `@tamu.edu` email to the `app/assets/whitelist.txt` file. Then you can use your TAMU email to log into the review system.
 
-Refer to this for any more specific information: https://medium.com/@jenn.leigh.hansen/google-oauth2-for-rails-ba1bcfd1b863
-
+Refer to this for any more specific information: <https://medium.com/@jenn.leigh.hansen/google-oauth2-for-rails-ba1bcfd1b863>
 
 ### Public Key and Private Key
 
@@ -385,13 +387,9 @@ openssl rsa -pubout -in private_key.pem -out public_key.pem
 
 Then, use base64 to encode the private key and public key:
 
-```ruby
-require 'base64'
+Go [Base64 Encode](https://www.base64encode.org/) to encode the private key and public key, and then copy the encoded private key and public key.
 
-encoded_private_key = Base64.strict_encode64('Your private key here')
-
-encoded_public_key = Base64.strict_encode64('Your public key here')
-```
+![base64 encoding](Encode.png)
 
 Then set the environment variables in your local environment, add the keys in the `.env` file, save encoded_private_key in the review system repo, and save encoded_public_key in the database system repo.
 
