@@ -29,3 +29,4 @@
       And I click "Log In"
       When I search the applicant field "name"
       Then I should see "Evan"
+      And I follow link "applicant?cas_id=4040926943"

@@ -43,6 +43,7 @@ class ReviewsController < ApplicationController
         flash[:notice] = "Review was successfully assigned."
       end
     end
+    render json: { status: 'success', message: 'Review(s) assigned successfully' }
   end
 
   # PATCH/PUT /reviews/1 or /reviews/1.json
