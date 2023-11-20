@@ -106,13 +106,13 @@
                     <span id="rating-display" class="rating-display">0</span>
                 </div>
                 <!-- GAT/GAR Section -->
-                <div class="checkboxes" ><center>
+                <div class="checkboxes" >
                     <input type="checkbox" id="gatCheckbox" name="gatCheckbox" >
                     <label for="gatCheckbox">GAT</label>
 
                     <input type="checkbox" id="garCheckbox" name="garCheckbox">
                     <label for="garCheckbox">GAR</label>
-                </div>  
+                </div>
 
                 <!-- Success Message -->
                 <div id="successMessage" class="success-message" style="display: none;">
@@ -123,7 +123,7 @@
                 </div>
                 <!-- Buttons -->
                 <div class="button-row">
-                    <button id="submitButton" class="btn btn-primary" disabled>Submit Review</button>
+                    <button id="submitButton" class="btn btn-primary">Submit Review</button>
                     <button id="saveButton" class="btn btn-secondary" disabled>Save for Later</button>
                 </div>
             </div>
@@ -209,11 +209,14 @@ document.getElementById('garCheckbox').checked = <%= !(not_exist) && rev.first.g
 console.log(<%= not_exist %>);
 
 <% if !(not_exist) %>
+    document.getElementById('submitButton').disabled = <%= rev.first.status == 'completed' %>;
+
     document.getElementById('rating').value = <%= rev.first.rating %>;
     document.getElementById('rating-display').innerText = <%= rev.first.rating %>;
     updateStars(<%= rev.first.rating - 1 %>);
 
     document.getElementById('reviewText').innerText = '<%= rev.first.review_info %>';
+    document.getElementById('reviewInput').value = '<%= rev.first.review_info %>';
     document.getElementById('reviewInput').style.display = 'none';
     document.getElementById('reviewCard').style.display = 'block';
 <% end %>
@@ -243,7 +246,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
         "applicant_id": "<%= @result['application_cas_id'] %>",
         "gat": gat,
         "gar": gar,
-        "status": "submitted"
+        "status": "completed"
     };
 
     // var rev = <%= Review.where(user_netid: current_user.user_netid, applicant_id: @result['application_cas_id'])  %>
