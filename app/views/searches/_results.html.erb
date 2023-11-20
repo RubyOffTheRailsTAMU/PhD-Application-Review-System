@@ -70,8 +70,8 @@
       alert("Please select at least one application");
       return;
     }           
-
-    url = "http://127.0.0.1:3000/assign"
+    
+    url =   "<%= @phd_app_url%>" + "/assign";
     fetch(url, {
     method: 'POST', // Specify the method as POST
     headers: {
@@ -103,6 +103,7 @@
           // if clickedTdContent is a checkbox, then return
           if (clickedTdContent.includes("checkbox")) {
             console.log("checkbox clicked");
+          
             // if the checkbox is already checked, them remove it from the array
             var index = selectedRows.indexOf(row.cells[1].innerHTML);
             if (index > -1) {

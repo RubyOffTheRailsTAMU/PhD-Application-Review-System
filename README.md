@@ -4,6 +4,22 @@ Organization:	Department of Computer Science and Engineering
 Contact name:	Prof. Khanh Nguyen
 Contact email:	khanhtn@tamu.edu
 
+# Team Contact Information
+
+Product Owner: Tanay Patankar tanayp@tamu.edu
+
+Scrum Master: Francesco Romano fwromano@tamu.edu
+
+Shreyas Shivakumar Kasetty shreyasskasetty@tamu.edu
+
+Brian Munoz brian.m@tamu.edu
+
+Meetansh Gupta guptameetansh@tamu.edu
+
+Ruofei Xu xrf@tamu.edu
+
+-----
+
 **Client's description of the project**
 The PhD Admission process currently solicits reviews from committee members and faculties using a Google Sheet. PARC would like to have a system built that can help with the admission process.
 
@@ -136,7 +152,18 @@ Get in the root of the project:
 cd PhD-Application-Review-System
 ```
 
+### Setting ENV variables  in Development Environment:
+
+Create .env file in the root directory and set the following environment variables.
+
+```
+DATABASE_SERVER_URL=http://127.0.0.1:3001
+PHD_APP_REVIEW_URL=http://127.0.0.1:3000
+```
+>**NOTE**:  There are few more environment variables which needs to be set which are captured in the next few sections.
+
 Install all dependencies:
+> **Note:** Delete the `Gemfile.lock` before running `bundle install`.
 
 ```sh
 bundle install
@@ -154,7 +181,9 @@ Now, you can run the review project homepage locally:
 ```sh
 rails s
 ```
+-------
 
+### Setting up Database System
 Now, clone the database system repo [database system](https://github.com/RubyOffTheRailsTAMU/PhD-Application-Review-System-Database-management)
 
 ```sh
@@ -185,6 +214,8 @@ Now, you can start the database management system locally:
 ```sh
 rails s
 ```
+
+----
 
 ### Deploy the project on heroku
 
@@ -281,6 +312,24 @@ If you want to check the logs of the app:
 ```sh
 heroku logs
 ```
+
+### Setting Environment Variables in Heroku
+
+1. **Login to Heroku CLI**: First, ensure you are logged into the Heroku CLI.
+   ```bash
+   heroku login
+   ```
+2. ```bash
+   cd your-app-directory
+   ```
+3. ```bash
+   heroku config:set DATABASE_SERVER_URL=https://phdapplicationsystemdatabase-5e5fc255409c.herokuapp.com -a your-app-name
+   ```
+4. ```bash
+   heroku config:set PHD_APP_REVIEW_URL=https://phdappreview-2530b5efb143.herokuapp.com -a your-app-name
+   ```
+
+
 
 ### Admin Account
 
