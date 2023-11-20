@@ -1,192 +1,224 @@
-    <div class="container">
-        <div class="row">
-        <!-- Left Section: Applicant Data and Review -->
-            <div class="col-md-5 left-section">
-                <!-- Applicant Data Table -->
-                <div class="applicant-data">
-                    <!-- Applicant Name Display -->
-                    <div class="applicant-name">
-                        <h3><%= @result['application_name'] || 'Applicant Name' %></h3>
-                    </div>
-                    <div class="scrollable-table">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>Field</th>
-                                <th>Value</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>CAS ID</td>
-                                <td><%= @result['application_cas_id'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td><%= @result['application_name'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>Gender</td>
-                                <td><%= @result['application_gender'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>Citizenship Country</td>
-                                <td><%= @result['application_citizenship_country'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>Date of Birth</td>
-                                <td><%= @result['application_dob'] ? @result['application_dob'].strftime('%B %d, %Y') : 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td><%= @result['application_email'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>Degree</td>
-                                <td><%= @result['application_degree'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>Application Submitted</td>
-                                <td><%= @result['application_submitted'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>Status</td>
-                                <td><%= @result['application_status'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>Research Interests</td>
-                                <td><%= @result['application_research'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>Faculty</td>
-                                <td><%= @result['application_faculty'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>School Name</td>
-                                <td><%= @result['application_school_name'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>School Level</td>
-                                <td><%= @result['application_school_level'] || 'N/A' %></td>
-                            </tr>
-                            <tr>
-                                <td>School GPA</td>
-                                <td><%= @result['application_school_gpa'] ? @result['application_school_gpa'].to_s : 'N/A' %></td>
-                            </tr>
-                            <!-- Add other fields like IELTS, GRE scores in a similar fashion -->
-                            <!-- TODO -->
-                            <!-- ... continue for other fields ... -->
-                            </tbody>
-                        </table>
-                    </div>
+<div class="container">
+    <div class="row">
+    <!-- Left Section: Applicant Data and Review -->
+        <div class="col-md-5 left-section">
+            <!-- Applicant Data Table -->
+            <div class="applicant-data">
+                <!-- Applicant Name Display -->
+                <div class="applicant-name">
+                    <h3><%= @result['application_name'] || 'Applicant Name' %></h3>
                 </div>
-                
-                
-                <div class="review-box">
-                    <!-- Review Text Area -->
-                    <textarea id="reviewInput" class="form-control" placeholder="Add your review here" rows="4"></textarea>
-                    <!-- Review Display Card (Initially Hidden) -->
-                    <div id="reviewCard" class="review-card" style="display: none;">
-                        <p id="reviewText"></p>
-                        <button id="editButton" class="edit-button">
-                            <i class="fa fa-edit"></i> <!-- Font Awesome icon for edit -->
-                        </button>
-                    </div>
-                    <!-- Rating Section -->
-                    <h4 class="rating-heading">Rating</h4>
-                    <div class="star-rating">
-                        <i class="fa fa-star" data-rating="1" aria-hidden="true"></i>
-                        <i class="fa fa-star" data-rating="2" aria-hidden="true"></i>
-                        <i class="fa fa-star" data-rating="3" aria-hidden="true"></i>
-                        <i class="fa fa-star" data-rating="4" aria-hidden="true"></i>
-                        <i class="fa fa-star" data-rating="5" aria-hidden="true"></i>
-                        <input type="hidden" id="rating" name="rating" value="0">
-                        <span id="rating-display" class="rating-display">0</span>
-                    </div>
-
-                    <!-- Success Message -->
-                    <div id="successMessage" class="success-message" style="display: none;">
-                        Your review has been submitted successfully!
-                    </div>
-                    <div id="successMessageSave" class="success-message" style="display: none;">
-                        Your review has been saved successfully!
-                    </div>
-                    <!-- Buttons -->
-                    <div class="button-row">
-                        <button id="submitButton" class="btn btn-primary" disabled>Submit Review</button>
-                        <button id="saveButton" class="btn btn-secondary" disabled>Save for Later</button>
-                    </div>
+                <div class="scrollable-table">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Value</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>CAS ID</td>
+                            <td><%= @result['application_cas_id'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td><%= @result['application_name'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td><%= @result['application_gender'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Citizenship Country</td>
+                            <td><%= @result['application_citizenship_country'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth</td>
+                            <td><%= @result['application_dob'] ? @result['application_dob'].strftime('%B %d, %Y') : 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><%= @result['application_email'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Degree</td>
+                            <td><%= @result['application_degree'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Application Submitted</td>
+                            <td><%= @result['application_submitted'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td><%= @result['application_status'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Research Interests</td>
+                            <td><%= @result['application_research'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>Faculty</td>
+                            <td><%= @result['application_faculty'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>School Name</td>
+                            <td><%= @result['application_school_name'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>School Level</td>
+                            <td><%= @result['application_school_level'] || 'N/A' %></td>
+                        </tr>
+                        <tr>
+                            <td>School GPA</td>
+                            <td><%= @result['application_school_gpa'] ? @result['application_school_gpa'].to_s : 'N/A' %></td>
+                        </tr>
+                        <!-- Add other fields like IELTS, GRE scores in a similar fashion -->
+                        <!-- TODO -->
+                        <!-- ... continue for other fields ... -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            
+            <% rev = Review.where(user_netid: current_user.user_netid, applicant_id: @result['application_cas_id']) %>
+            <% not_exist = rev.blank? %>
 
-            <!-- Right Section: PDF Viewer and Other Reviews -->
-            <div class="col-md-6 right-section">
-                <!-- PDF Viewer -->
-                <div class="right-container">
-                    <div class="pdf-viewer-container" data-toggle="modal" data-target="#pdfModal">
-                            <iframe src="/1234567890.pdf" width="100%" height="500px" allowfullscreen webkitallowfullscreen></iframe>
-                        </div>
+            <div class="review-box">
+                <!-- Review Text Area -->
+                <textarea id="reviewInput" class="form-control" placeholder="Add your review here" rows="4"></textarea>
+                <!-- Review Display Card (Initially Hidden) -->
+                <div id="reviewCard" class="review-card" style="display: none;">
+                    <p id="reviewText"></p>
+                    <button id="editButton" class="edit-button">
+                        <i class="fa fa-edit"></i> <!-- Font Awesome icon for edit -->
+                    </button>
+                </div>
+                <!-- Rating Section -->
+                <h4 class="rating-heading">Rating</h4>
+                <div class="star-rating">
+                    <i class="fa fa-star" data-rating="1" aria-hidden="true"></i>
+                    <i class="fa fa-star" data-rating="2" aria-hidden="true"></i>
+                    <i class="fa fa-star" data-rating="3" aria-hidden="true"></i>
+                    <i class="fa fa-star" data-rating="4" aria-hidden="true"></i>
+                    <i class="fa fa-star" data-rating="5" aria-hidden="true"></i>
+                    <input type="hidden" id="rating" name="rating" value="0">
+                    <span id="rating-display" class="rating-display">0</span>
+                </div>
+                <!-- GAT/GAR Section -->
+                <div class="checkboxes" ><center>
+                    <input type="checkbox" id="gatCheckbox" name="gatCheckbox" >
+                    <label for="gatCheckbox">GAT</label>
+
+                    <input type="checkbox" id="garCheckbox" name="garCheckbox">
+                    <label for="garCheckbox">GAR</label>
+                </div>  
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    Your review has been submitted successfully!
+                </div>
+                <div id="successMessageSave" class="success-message" style="display: none;">
+                    Your review has been saved successfully!
+                </div>
+                <!-- Buttons -->
+                <div class="button-row">
+                    <button id="submitButton" class="btn btn-primary" disabled>Submit Review</button>
+                    <button id="saveButton" class="btn btn-secondary" disabled>Save for Later</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section: PDF Viewer and Other Reviews -->
+        <div class="col-md-6 right-section">
+            <!-- PDF Viewer -->
+            <div class="right-container">
+                <div class="pdf-viewer-container" data-toggle="modal" data-target="#pdfModal">
+                        <iframe src="/1234567890.pdf" width="100%" height="500px" allowfullscreen webkitallowfullscreen></iframe>
                     </div>
+                </div>
 
 
-                    <!-- PDF Modal -->
-                    <div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="pdfModalLabel">PDF Viewer</h5>
-                                    <button type="button" class="close modal-close-button" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <iframe src="/1234567890.pdf" width="100%" height="800px" allowfullscreen webkitallowfullscreen></iframe>
-                                </div>
+                <!-- PDF Modal -->
+                <div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="pdfModalLabel">PDF Viewer</h5>
+                                <button type="button" class="close modal-close-button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe src="/1234567890.pdf" width="100%" height="800px" allowfullscreen webkitallowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
-                    <!-- Other Reviewers Information -->
-                    <div class="other-reviewers-container">
-                        <div class="other-reviewers">
-                            <h4 class="other-reviews-heading">Other Reviews</h4>
-                            <% @other_reviewers.each do |reviewer| %>
-                                <div class="card mb-3">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><%= reviewer.user_netid %></h5>
-                                        <p class="card-text"><%= reviewer.review_info %></p>
-                                    </div>
+                </div>
+                <!-- Other Reviewers Information -->
+                <div class="other-reviewers-container">
+                    <div class="other-reviewers">
+                        <h4 class="other-reviews-heading">Other Reviews</h4>
+                        <% @other_reviewers.each do |reviewer| %>
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= reviewer.user_netid %></h5>
+                                    <p class="card-text"><%= reviewer.review_info %></p>
                                 </div>
-                            <% end %>
-                        </div>
+                            </div>
+                        <% end %>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        let stars = document.querySelectorAll('.star-rating .fa');
-        let ratingDisplay = document.getElementById('rating-display');
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+// document.addEventListener('DOMContentLoaded', (event) => {
+//     let stars = document.querySelectorAll('.star-rating .fa');
+//     let ratingDisplay = document.getElementById('rating-display');
 
-        stars.forEach((star, idx) => {
-            star.addEventListener('click', () => {
-                document.getElementById('rating').value = idx + 1; // Update hidden input
-                ratingDisplay.innerText = idx + 1; // Update rating display
-                updateStars(idx);
-            });
-        });
+//     stars.forEach((star, idx) => {
+//         star.addEventListener('click', () => {
+//             document.getElementById('rating').value = idx + 1; // Update hidden input
+//             ratingDisplay.innerText = idx + 1; // Update rating display
+//             updateStars(idx);
+//         });
+//     });
 
-        function updateStars(index) {
-            stars.forEach((star, idx) => {
-                star.style.color = idx <= index ? '#ffd700' : '#e4e5e9'; // Gold or gray
-            });
-        }
+//     function updateStars(index) {
+//         stars.forEach((star, idx) => {
+//             star.style.color = idx <= index ? '#ffd700' : '#e4e5e9'; // Gold or gray
+//         });
+//     }
+// });
+
+function updateStars(index) {
+    stars = document.querySelectorAll('.star-rating .fa');
+    stars.forEach((star, idx) => {
+        star.style.color = idx <= index ? '#ffd700' : '#e4e5e9'; // Gold or gray
     });
+}
 
-    document.getElementById('submitButton').addEventListener('click', function() {
+document.getElementById('gatCheckbox').checked = <%= !(not_exist) && rev.first.gat %>;
+document.getElementById('garCheckbox').checked = <%= !(not_exist) && rev.first.gar %>;
+
+console.log(<%= not_exist %>);
+
+<% if !(not_exist) %>
+    document.getElementById('rating').value = <%= rev.first.rating %>;
+    document.getElementById('rating-display').innerText = <%= rev.first.rating %>;
+    updateStars(<%= rev.first.rating - 1 %>);
+
+    document.getElementById('reviewText').innerText = '<%= rev.first.review_info %>';
+    document.getElementById('reviewInput').style.display = 'none';
+    document.getElementById('reviewCard').style.display = 'block';
+<% end %>
+
+document.getElementById('submitButton').addEventListener('click', function() {
     document.getElementById('successMessage').style.display = 'block';
     //TODO: Implement Review request 
 
@@ -195,6 +227,45 @@
     document.getElementById('reviewText').innerText = reviewText;
     document.getElementById('reviewInput').style.display = 'none';
     document.getElementById('reviewCard').style.display = 'block';
+
+    var gat = document.getElementById('gatCheckbox').checked;
+    var gar = document.getElementById('garCheckbox').checked;
+
+    var rating = document.getElementById('rating').value;
+
+    var notExist = <%= not_exist %>;
+    console.log(notExist);
+
+    var data = {
+        "review_info": reviewText,
+        "rating": rating,
+        "user_netid": "<%= current_user.user_netid %>",
+        "applicant_id": "<%= @result['application_cas_id'] %>",
+        "gat": gat,
+        "gar": gar,
+        "status": "submitted"
+    };
+
+    // var rev = <%= Review.where(user_netid: current_user.user_netid, applicant_id: @result['application_cas_id'])  %>
+    var rev = <%= raw rev.to_json %>
+    console.log(rev);
+    var url = notExist? '/reviews' : '/reviews/' + rev[0]['id'];
+    console.log(url);
+
+    fetch(url, {
+        method: notExist? 'POST' : 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(function(error){
+        console.error('Error:', error);
+    });
 
     // Disable buttons
     this.disabled = true;
@@ -206,97 +277,146 @@
     setTimeout(function() {
             document.getElementById('successMessage').style.display = 'none';
         }, 3000); // The message will be hidden after 3 seconds
+});
+
+document.getElementById('editButton').addEventListener('click', function() {
+    // Switch back to editable state
+    text = document.getElementById('reviewText').innerText;
+    document.getElementById('reviewInput').value = text;
+    document.getElementById('reviewInput').style.display = 'block';
+    document.getElementById('reviewCard').style.display = 'none';
+
+    // Enable buttons
+    // document.getElementById('submitButton').disabled = false;
+    // document.getElementById('saveButton').disabled = false;
+});
+
+document.getElementById('saveButton').addEventListener('click', function() {
+    //TODO: Add Logic to save to the database and read from database
+
+    // Transfer text and show card
+    var reviewText = document.getElementById('reviewInput').value;
+    document.getElementById('reviewText').innerText = reviewText;
+    document.getElementById('reviewInput').style.display = 'none';
+    document.getElementById('reviewCard').style.display = 'block';
+
+    var gat = document.getElementById('gatCheckbox').checked;
+    var gar = document.getElementById('garCheckbox').checked;
+
+    var rating = document.getElementById('rating').value;
+
+    var notExist = <%= not_exist %>;
+    console.log(notExist);
+
+    var data = {
+        "review_info": reviewText,
+        "rating": rating,
+        "user_netid": "<%= current_user.user_netid %>",
+        "applicant_id": "<%= @result['application_cas_id'] %>",
+        "gat": gat,
+        "gar": gar,
+        "status": "inprogress"
+    };
+
+    // var rev = <%= Review.where(user_netid: current_user.user_netid, applicant_id: @result['application_cas_id'])  %>
+    var rev = <%= raw rev.to_json %>
+    console.log(rev);
+    var url = notExist? '/reviews' : '/reviews/' + rev[0]['id'];
+    console.log(url);
+
+    fetch(url, {
+        method: notExist? 'POST' : 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+    })
+    .catch(function(error){
+        console.error('Error:', error);
     });
-    
-    document.getElementById('editButton').addEventListener('click', function() {
-        // Switch back to editable state
-        document.getElementById('reviewInput').style.display = 'block';
-        document.getElementById('reviewCard').style.display = 'none';
 
-        // Enable buttons
-        // document.getElementById('submitButton').disabled = false;
-        // document.getElementById('saveButton').disabled = false;
-    });
+    // Disable buttons
+    this.disabled = true;
+    document.getElementById('saveButton').disabled = true;
 
-    document.getElementById('saveButton').addEventListener('click', function() {
-        //TODO: Add Logic to save to the database and read from database
+    // Show success message
+    document.getElementById('successMessageSave').style.display = 'block';
 
-        // Transfer text and show card
-        var reviewText = document.getElementById('reviewInput').value;
-        document.getElementById('reviewText').innerText = reviewText;
-        document.getElementById('reviewInput').style.display = 'none';
-        document.getElementById('reviewCard').style.display = 'block';
+    setTimeout(function() {
+            document.getElementById('successMessageSave').style.display = 'none';
+    }, 3000); // The message will be hidden after 3 seconds
+});
 
-        // Disable buttons
-        this.disabled = true;
-        document.getElementById('saveButton').disabled = true;
+document.addEventListener('DOMContentLoaded', (event) => {
+    let stars = document.querySelectorAll('.star-rating .fa');
+    let ratingDisplay = document.getElementById('rating-display');
+    let initialRating = document.getElementById('rating').value;
+    let initialText = document.getElementById('reviewInput').value.trim();
 
-        // Show success message
-        document.getElementById('successMessageSave').style.display = 'block';
+    console.log('Stars:', stars);
+    console.log('Rating Display:', ratingDisplay);
+    console.log('Initial Rating:', initialRating);
+    console.log('Initial Text:', initialText);
 
-        setTimeout(function() {
-                document.getElementById('successMessageSave').style.display = 'none';
-        }, 3000); // The message will be hidden after 3 seconds
-    });
-    
-    document.getElementById('editButton').addEventListener('click', function() {
-        // Switch back to editable state
-        document.getElementById('reviewInput').style.display = 'block';
-        document.getElementById('reviewCard').style.display = 'none';
-
-        // Enable buttons
-        // document.getElementById('submitButton').disabled = false;
-        // document.getElementById('saveButton').disabled = false;
-    });
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-        let stars = document.querySelectorAll('.star-rating .fa');
-        let ratingDisplay = document.getElementById('rating-display');
-        let initialRating = document.getElementById('rating').value;
-        let initialText = document.getElementById('reviewInput').value.trim();
-
-        function updateStars(index) {
-            stars.forEach((star, idx) => {
-                star.style.color = idx <= index ? '#ffd700' : '#e4e5e9'; // Gold or gray
-            });
-        }
-
-        function checkForChanges() {
-            var currentText = document.getElementById('reviewInput').value.trim();
-            var currentRating = document.getElementById('rating').value;
-
-            var isTextChanged = initialText !== currentText;
-            var isTextPresent = currentText.length > 0;
-
-            var isRatingChanged = initialRating !== currentRating;
-            var isRatingSelected = currentRating !== '0';
-
-            var enableButtons = (isTextChanged && isTextPresent) || (isRatingChanged && isRatingSelected);
-            document.getElementById('submitButton').disabled = !enableButtons;
-            document.getElementById('saveButton').disabled = !enableButtons;
-        }
-
+    function updateStars(index) {
         stars.forEach((star, idx) => {
-            star.addEventListener('click', () => {
-                document.getElementById('rating').value = idx + 1; // Update hidden input
-                ratingDisplay.innerText = idx + 1; // Update rating display
-                updateStars(idx);
-                checkForChanges(); // Check for changes in rating
-            });
+            star.style.color = idx <= index ? '#ffd700' : '#e4e5e9'; // Gold or gray
+        });
+    }
+
+    function checkForChanges() {
+        var currentText = document.getElementById('reviewInput').value.trim();
+        var currentRating = document.getElementById('rating').value;
+
+        var isTextChanged = initialText !== currentText;
+        var isTextPresent = currentText.length > 0;
+
+        var isRatingChanged = initialRating !== currentRating;
+        var isRatingSelected = currentRating !== '0';
+
+        var enableButtons = (isTextChanged && isTextPresent) || (isRatingChanged && isRatingSelected);
+        document.getElementById('submitButton').disabled = !enableButtons;
+        document.getElementById('saveButton').disabled = !enableButtons;
+    }
+
+    stars.forEach((star, idx) => {
+        star.addEventListener('click', () => {
+            document.getElementById('rating').value = idx + 1; // Update hidden input
+            ratingDisplay.innerText = idx + 1; // Update rating display
+            updateStars(idx);
+            checkForChanges(); // Check for changes in rating
         });
     });
+});
 
+document.addEventListener('DOMContentLoaded', function() {
+    var initialText = document.getElementById('reviewInput').value.trim();
+    var initialselect1 = document.getElementById('garCheckbox').value;
+    var initialselect2 = document.getElementById('gatCheckbox').value;
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var initialText = document.getElementById('reviewInput').value.trim();
+    document.getElementById('reviewInput').addEventListener('input', function() {
+        var currentText = this.value.trim();
+        var isTextChanged = initialText !== currentText;
+        var isTextPresent = currentText.length > 0;
 
-        document.getElementById('reviewInput').addEventListener('input', function() {
-            var currentText = this.value.trim();
-            var isTextChanged = initialText !== currentText;
-            var isTextPresent = currentText.length > 0;
-
-            document.getElementById('submitButton').disabled = !(isTextChanged && isTextPresent);
-            document.getElementById('saveButton').disabled = !(isTextChanged && isTextPresent);
-        });
+        document.getElementById('submitButton').disabled = !(isTextChanged && isTextPresent);
+        document.getElementById('saveButton').disabled = !(isTextChanged && isTextPresent);
     });
-    </script>
+
+    document.getElementById('garCheckbox').addEventListener('input', function() {
+        document.getElementById('submitButton').disabled = false;
+        document.getElementById('saveButton').disabled = false;
+    });
+
+    document.getElementById('gatCheckbox').addEventListener('input', function() {
+        document.getElementById('submitButton').disabled = false;
+        document.getElementById('saveButton').disabled = false;
+    });
+});
+</script>
+
+</div>
