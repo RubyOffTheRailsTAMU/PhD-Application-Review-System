@@ -7,6 +7,9 @@ class ReviewsController < ApplicationController
   # POST /reviews or /reviews.json
   def create
     @review = Review.new(review_params)
+    if !@review.rating
+      @review.rating = 0
+    end
     # if @review.status=="assigned"
     #   puts "assigned"
     # if saved?
