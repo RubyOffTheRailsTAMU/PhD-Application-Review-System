@@ -1,6 +1,6 @@
 class AdminConstraint
   def matches?(request)
-    return false unless request.session[:user_token] == 'admin_token_placeholder'
+    return false unless request.session[:user_token] == "admin_token_placeholder"
 
     true
   end
@@ -8,10 +8,10 @@ end
 
 Rails.application.routes.draw do
   # mount Motor::Admin => '/motor_admin'
-  get 'dashboards/show'
+  get "dashboards/show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
-  root 'welcome#index'
+  root "welcome#index"
 
   resources :tasks
   resources :users
@@ -19,21 +19,19 @@ Rails.application.routes.draw do
   resources :applicants
   resources :tags
 
-  
-
   constraints(AdminConstraint.new) do
-    mount Motor::Admin => '/motor_admin'
-    get 'xlsx/tojson'
+    mount Motor::Admin => "/motor_admin"
+    get "xlsx/tojson"
   end
 
   mount lambda { |_env|
-          [200, { 'Content-Type' => 'text/html' }, ['<script>alert("Access Denied"); window.location.href = "/home";</script>']]
-        }, at: '/motor_admin'
-  get 'xlsx/tojson', to: lambda { |_env|
-                           [200, { 'Content-Type' => 'text/html' }, ['<script>alert("Access Denied"); window.location.href = "/home";</script>']]
-                         }
+          [200, { "Content-Type" => "text/html" }, ['<script>alert("Access Denied"); window.location.href = "/home";</script>']]
+        }, at: "/motor_admin"
+  get "xlsx/tojson", to: lambda { |_env|
+                   [200, { "Content-Type" => "text/html" }, ['<script>alert("Access Denied"); window.location.href = "/home";</script>']]
+                 }
   # get 'xlsx/tojson', constraints: AdminConstraint.new
-  get 'csv/tojson'
+  get "csv/tojson"
 
   # Removed the ApplicantsController
   # get 'applicants/savedata'
@@ -56,7 +54,8 @@ Rails.application.routes.draw do
   post '/assign', to: 'reviews#assign'
   post '/randomassign', to: 'reviews#random_assign'
   # get '/applicants/:id', to: 'applicants#index', as: 'applicants'
-  get 'tags/show_tags/:cas_id', to: 'tags#show_tags', as: :show_tags_for_cas
+  get "tags/show_tags/:cas_id", to: "tags#show_tags", as: :show_tags_for_cas
 
-  post 'searches', to: 'searches#index', as: 'search'
+  post "searches", to: "searches#index", as: "search"
+  get "field_names", to: "searches#field_names"
 end

@@ -27,11 +27,27 @@ class SearchService
 
     # response = Net::HTTP.get(uri)
     headers = {
-      'Authorization' => "Bearer #{token}"
+      "Authorization" => "Bearer #{token}",
     }
 
     response = Net::HTTP.get_response(uri, headers)
     puts response.body
     JSON.parse(response.body)
+  end
+  def self.get_all_field_names(token:)
+    uri = URI("http://127.0.0.1:3001/api/v1/field_names")
+    headers = { "Authorization" => "Bearer #{token}" }
+
+    response = Net::HTTP.get_response(uri, headers)
+    puts "Response Body: #{response.body}"  # Debugging line
+
+    if response.is_a?(Net::HTTPSuccess)
+      fields_data = JSON.parse(response.body)
+      field_names = fields_data.map { |field| field["field_alias"] }
+      field_names
+    else
+      puts "Error with the API call: #{response.code}"  # Error handling
+      []
+    end
   end
 end
