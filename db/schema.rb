@@ -16,47 +16,6 @@ ActiveRecord::Schema[7.0].define(version: 20_231_109_183_021) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
-  create_table 'applicants', force: :cascade do |t|
-    t.string 'application_cas_id'
-    t.string 'application_name'
-    t.string 'application_gender'
-    t.string 'application_citizenship_country'
-    t.datetime 'application_dob'
-    t.string 'application_email'
-    t.string 'application_degree'
-    t.string 'application_submitted'
-    t.string 'application_status'
-    t.string 'application_research'
-    t.string 'application_faculty'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-  end
-
-  create_table 'application_ielts', force: :cascade do |t|
-    t.bigint 'applicant_id', null: false
-    t.integer 'application_ielts_listening'
-    t.integer 'application_ielts_reading'
-    t.integer 'application_ielts_result'
-    t.integer 'application_ielts_speaking'
-    t.integer 'application_ielts_writing'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['applicant_id'], name: 'index_application_ielts_on_applicant_id'
-  end
-
-  create_table 'gres', force: :cascade do |t|
-    t.bigint 'applicant_id', null: false
-    t.integer 'application_gre_quantitative_scaled'
-    t.integer 'application_gre_quantitative_percentile'
-    t.integer 'application_gre_verbal_scaled'
-    t.integer 'application_gre_verbal_percentile'
-    t.float 'application_gre_analytical_scaled'
-    t.integer 'application_gre_analytical_percentile'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['applicant_id'], name: 'index_gres_on_applicant_id'
-  end
-
   create_table 'motor_alert_locks', force: :cascade do |t|
     t.bigint 'alert_id', null: false
     t.string 'lock_timestamp', null: false

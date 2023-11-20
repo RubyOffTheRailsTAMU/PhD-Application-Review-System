@@ -15,11 +15,11 @@
     </thead>
     <tbody id="applicationList">
       <% @results.each do |result| %>
-        <tr class="clickable-row" data-href="/application?cas_id=<%= result["application_cas_id"] %>">
-          <td><%= result["application_cas_id"]  %></a></td>
-          <td><%= result["application_name"]%></td>
-          <td><%= result["application_email"]%></td>
-          <td><%= result["application_degree"]%></td>
+        <tr class="clickable-row" data-href="/application?cas_id=<%= result["cas_id"] %>">
+          <td><%= result["cas_id"]  %></a></td>
+          <td><%= result["name"]%></td>
+          <td><%= result["email"]%></td>
+          <td><%= result["degree"]%></td>
         </tr>
       <% end %>
     </tbody>
