@@ -1,6 +1,8 @@
 require 'omniauth'
 require 'rspec/expectations'
-World(RSpec::Matchers)
+require 'capybara/dsl'
+
+World(Capybara::DSL)
 
 Given(/the following users exist/) do |users|
   users.hashes.each do |user|
@@ -12,13 +14,14 @@ When(/I am on the log in page/) do
   visit root_path
 end
 
-When(/I click "(.*)"/) do | button |
-  click_button(button)
+And(/I click "(.*)"/) do | button |
+  click_button(button, visible: false, disabled: false)
 end
 
 When(/I want to log into the site with "(.*)" as "(.*)" and "(.*)" as "(.*)"/) do |username, name, password, pwd|
-  fill_in(username, with: name)
-  fill_in(password, with: pwd)
+  # puts page.html
+  fill_in(username, with: name, visible: false)
+  fill_in(password, with: pwd, visible: false)
 end
 
 Then (/I should not be able to log in/) do
@@ -45,6 +48,7 @@ When(/I get redirected to "(.*)"/) do | link |
 end
 
 Then(/I should see "(.*)"/) do |string|
+  # check if page has string in hidden elements
   expect(page).to have_content(string)
 end
 

@@ -28,6 +28,7 @@ Background: users in database
 
   Scenario: Admin Successful log in
     When I am on the log in page
+    And I click "Admin Login"
     And I want to log into the site with "Username" as "admin" and "Password" as "admin"
     And I click "Log In"
     Then I should be able to log in
