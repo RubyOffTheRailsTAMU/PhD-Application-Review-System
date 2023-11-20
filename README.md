@@ -228,7 +228,7 @@ Download Heroku CLI: <https://devcenter.heroku.com/articles/heroku-cli>.
 After that, check the version of Heroku CLI:
 
 ```sh
-Heroku -v
+heroku -v
 ```
 
 You should see the version of Heroku CLI, which means you have successfully installed Heroku CLI.
