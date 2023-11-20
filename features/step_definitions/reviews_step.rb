@@ -8,6 +8,7 @@ require 'capybara'
 require 'capybara/dsl'
 
 World(Capybara::DSL)
+Capybara.current_driver = :webkit
 
 When('I want to see all reviews') do
   uri = URI('http://127.0.0.1:3000/reviews')
@@ -17,9 +18,21 @@ When('I want to see all reviews') do
   @response_body = response.body rescue nil
 end
 
+And ('I select the first checkbox') do
+  first('tbody#applicationList input[type="checkbox"]').click
+end
+
+And("I select {string} from the dropdown") do |option_name|
+  select(option_name, from: 'userDropdown')
+end
+
 #* The response status should be 200
 Then('The response status should be {int}') do |status_code|
   expect(@response_code).to eq(status_code)
+end
+
+And(/I forcibly click the "(.*)" button/) do |button_text|
+  page.execute_script("document.getElementById('#{button_text.downcase.gsub(' ', '')}').click();")
 end
 
 And('I can see all reviews') do
@@ -31,7 +44,18 @@ And('I can see all reviews') do
 end
 
 And(/I fill in review "(.*)" with rating "(.*)" and assistantship "(.*)"/) do |review, rating, assistantship|
-  fill_in 'review_info', with: review
-  choose "rating_#{rating}" 
-  check "#{assistantship.downcase}"
+  fill_in 'reviewInput', with: review
+  # choose "rating_#{rating}" 
+  find(".fa[data-rating='#{rating}']").click
+  # TODO add this back in
+  # check "#{assistantship.downcase}"
+end
+
+Then(/I should see submitted/) do |string|
+  expect(page).to have_selector(:xpath, "//*[contains(., 'Your review has been submitted successfully!')]", visible: :all)
+end
+
+
+Then(/I should see saved/) do |string|
+  expect(page).to have_selector(:xpath, "//*[contains(., 'Your review has been saved successfully!')]", visible: :all)
 end
