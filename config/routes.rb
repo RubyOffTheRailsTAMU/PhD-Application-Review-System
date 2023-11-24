@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   get '/admin', to: 'welcome#_admin'
   get 'applicant', to: 'applicant#index'
   post '/assign', to: 'reviews#assign'
+  post '/randomassign', to: 'reviews#random_assign'
   # get '/applicants/:id', to: 'applicants#index', as: 'applicants'
 
   post 'searches', to: 'searches#index', as: 'search'
