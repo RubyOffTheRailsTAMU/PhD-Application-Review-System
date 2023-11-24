@@ -1,0 +1,30 @@
+.list-group-item {
+    background-color: #f8f9fa; /* Light background for list items */
+    border: 1px solid #dee2e6; /* Subtle borders for separation */
+    padding: 10px 15px; /* Padding for content inside list items */
+    margin-bottom: 5px; /* Space between list items */
+}
+
+.dashboard .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adds a shadow for depth */
+    transition: 0.3s; /* Smooth transition for hover effect */
+    margin-bottom: 20px; /* Space below each card */
+}
+
+.dashboard .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3); /* Larger shadow on hover */
+}
+
+.dasboard .card-body {
+    padding: 15px; /* Padding inside the card */
+}
+
+.dashbard .card-title {
+    margin-bottom: 15px; /* Space below the title */
+}
+
+.assign-button{
+    margin-left: 0px;
+    padding: 0;
+    width: 200px;
+}
