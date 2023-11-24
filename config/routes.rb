@@ -50,7 +50,8 @@ Rails.application.routes.draw do
   post "/login", to: "welcome#create"
   get "/searches", to: "searches#index"
   get "/admin", to: "welcome#_admin"
-  get "application", to: "application#index"
+  get "applicant", to: "applicant#index"
+  post "/assign", to: "reviews#assign"
   # get '/applicants/:id', to: 'applicants#index', as: 'applicants'
   get "tags/show_tags/:cas_id", to: "tags#show_tags", as: :show_tags_for_cas
 

@@ -1,3 +1,10 @@
+<% flash.each do |key, value| %>
+  <div class="flash-<%= key %>">
+      <%= value %>
+  </div>
+<% end %>
+
+
 <div class="container">
   <p><strong>Total Results:</strong> <%= @results.size %></p>
   <% if @results!=nil and !@results.is_a?(Array) and @results.key?("error") %>
@@ -7,6 +14,9 @@
     <!-- Table Header -->
     <thead>
       <tr>
+        <% if current_user.user_level != "faculty" %>
+          <th></th>
+        <% end %>
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
@@ -30,13 +40,82 @@
   <h1>No results found.</h1>
 <% end %>
 
+
+<% if current_user.user_level != "faculty" %>
+  <label for="user">Select User:</label>
+  <select id="userDropdown">
+    <%= options_from_collection_for_select(all_users, 'user_netid', 'user_name') %>
+  </select>
+
+  <button type="submit" onclick="myFunction()">Submit</button>
+<% end %>
+
 <script>
+  var selectedRows = [];
+  function myFunction(){
+    console.log(selectedRows);
+    var userDropdown = document.getElementById('userDropdown');
+    var selectedUserId = userDropdown.options[userDropdown.selectedIndex].value;
+    
+    console.log('Selected User ID:', selectedUserId);
+    data = {
+      "user_id": selectedUserId,
+      "application_ids": selectedRows
+    }
+
+    if (selectedRows.length == 0){
+      alert("Please select at least one application");
+      return;
+    }           
+
+    url = "http://127.0.0.1:3000/assign"
+    fetch(url, {
+    method: 'POST', // Specify the method as POST
+    headers: {
+        'Content-Type': 'application/json', // Set the content type header so that the server knows the format of the sent data
+    },
+    body: JSON.stringify(data) // Convert the JavaScript object to a JSON string and send it as the request body
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); // Parse the JSON response
+    })
+    .then(data => {
+        console.log('Success:', data); // Handle the response data
+    })
+    .catch(error => {
+        console.error('Error:', error); // Handle any errors
+    });
+  }
   document.addEventListener('DOMContentLoaded', function() {
     var rows = document.querySelectorAll('.clickable-row');
     rows.forEach(function(row) {
-      row.addEventListener('click', function() {
-        window.location.href = this.dataset.href;
-      });
+      // Start the loop from index 1 to skip the first td
+      for (var j = 0; j < row.cells.length; j++) {
+        row.cells[j].addEventListener('click', function() {
+          // Get the content of the clicked td
+          var clickedTdContent = this.innerHTML;
+          // if clickedTdContent is a checkbox, then return
+          if (clickedTdContent.includes("checkbox")) {
+            console.log("checkbox clicked");
+            // if the checkbox is already checked, them remove it from the array
+            var index = selectedRows.indexOf(row.cells[1].innerHTML);
+            if (index > -1) {
+              selectedRows.splice(index, 1);
+            }
+            else{
+            selectedRows.push(row.cells[1].innerHTML);
+
+            }
+          }
+          else{
+            window.location.href = row.dataset.href;
+          }
+          console.log(selectedRows);
+        });
+      }
     });
   });
 </script>
