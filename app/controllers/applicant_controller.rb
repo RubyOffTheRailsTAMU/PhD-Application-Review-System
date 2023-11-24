@@ -1,5 +1,6 @@
 class ApplicantController < ApplicationController
   def index
+    @fields = SearchService.get_all_field_names(token: session[:jwt_token])
     @result = SearchService.search(query: "*cas_id=#{params[:cas_id]}", field: "cas_id", token: session[:jwt_token])[0]
     puts "result:"
     puts @result
