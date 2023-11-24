@@ -189,7 +189,7 @@
 
 .review-card {
     /* Previous styles for the card */
-    min-height: 150px; /* Match the height of the textarea */
+    min-height: 120px; /* Match the height of the textarea */
 }
 
 .button-row {
