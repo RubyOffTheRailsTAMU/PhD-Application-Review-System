@@ -1,4 +1,4 @@
-<% existing = Review.where(user_netid: current_user.user_netid, applicant_id: @result['application_cas_id']) %>
+<% existing = Review.where(user_netid: current_user.user_netid, applicant_id: @result['cas_id']) %>
 <% condition = ! existing.blank? %>
 
 <div>

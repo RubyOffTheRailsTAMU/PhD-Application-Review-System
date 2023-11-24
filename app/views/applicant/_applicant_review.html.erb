@@ -20,20 +20,22 @@
                             <% @result.each do |key, value| %>
                             <tr>
                                 <!-- todo: fields where many is true... -->
+                                <!-- todo: clean up commas, but tahts many field stuff -->
 
                                 <td><%= key.humanize %></td>
                                 <td>
-                                <% if key.include?('date') %>
-                                        <% parsed_date = Date.parse(value) rescue nil %>
-                                        <% if parsed_date %>
-                                        <%= parsed_date.strftime('%B %d, %Y') %>
-                                        <% else %>
-                                        <%= value || 'N/A' %>
-                                        <% end %>
-                                <% elsif key.include?('gpa') && value %>
-                                    <%= value.to_s %>
+                                
+                                <% if key.include?('date') && !value.blank? %>
+                                    <% parsed_date = Date.parse(value) rescue nil %>
+                                    <% if parsed_date %>
+                                    <%= parsed_date.strftime('%B %d, %Y') %>
+                                    <% else %>
+                                    <%= value %>
+                                    <% end %>
+                                <% elsif key.include?('gpa') && !value.blank? %>
+                                    <%= value %>
                                 <% else %>
-                                    <%= value || 'N/A' %>
+                                    <%= value.blank? ? 'N/A' : value %>
                                 <% end %>
                                 </td>
                             </tr>
