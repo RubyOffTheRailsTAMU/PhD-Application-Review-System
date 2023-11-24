@@ -49,6 +49,29 @@ class ReviewsController < ApplicationController
     render json: { status: 'success', message: 'Review(s) assigned successfully' }
   end
 
+  def random_assign
+    # randomly assign applications to all users
+    # get all users
+    users = User.all
+    # get all applications
+    @results = SearchService.search(query: params[:query], field: params[:field], token: session[:jwt_token])
+    applications = Application.all
+    # randomly assign applications to users
+    for application in applications
+      # randomly select a user with the least number of assigned applications
+      user = users.sample
+      # check if the user has already reviewed the application
+      not_exists = Review.where(user_netid: user.netid, applicant_id: application.cas_id).blank?
+      # if the user has not reviewed the application, assign the application to the user
+      if not_exists
+        Review.new(user_netid: user.netid, applicant_id: application.cas_id, status:"assigned").save
+      end
+    end
+    flash[:notice] = "Review(s) assigned successfully."
+    render json: { status: 'success', message: 'Review(s) assigned successfully' }
+    redirect_to "/home"
+  end
+
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
     respond_to do |format|
