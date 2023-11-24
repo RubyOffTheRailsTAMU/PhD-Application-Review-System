@@ -33,9 +33,9 @@
                                     <%= value %>
                                     <% end %>
                                 <% elsif key.include?('gpa') && !value.blank? %>
-                                    <%= value %>
+                                    <%= value.split(',').reject { |s| s.strip.empty? }.join(', ') %>
                                 <% else %>
-                                    <%= value.blank? ? 'N/A' : value %>
+                                    <%= value.blank? ? 'N/A' : value.split(',').reject { |s| s.strip.empty? }.join(', ') %>
                                 <% end %>
                                 </td>
                             </tr>
