@@ -25,7 +25,7 @@
     </thead>
     <tbody id="applicationList">
       <% @results.each do |result| %>
-        <tr class="clickable-row" data-href="/application?cas_id=<%= result["cas_id"] %>">
+        <tr class="clickable-row" data-href="/applicant?cas_id=<%= result["cas_id"] %>">
           <td><%= result["cas_id"]  %></a></td>
           <td><%= result["name"]%></td>
           <td><%= result["email"]%></td>
