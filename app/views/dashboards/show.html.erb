@@ -13,7 +13,12 @@
     <button id="assignButton" class="btn btn-primary btn-block " style="margin: 0;" onclick="assignReviewers()">Assign</button>
     </div>
     <!-- Alert for Assignment Status -->
-    <div id="assignmentAlert" class="alert" style="display: none;"></div>
+    <div id="assignmentAlertFail" class="fail-message" style="display: none;">
+        Assignment of applications failed!
+    </div>
+    <div id="assignmentAlert" class="success-message" style="display: none;">
+        Assignment of applications succeeded!
+    </div>
     <h2 class="mt-4">Committee Members</h2>
     <hr> <!-- Division line -->
     <!-- User Cards Container -->
@@ -86,11 +91,22 @@
         })
         .then(data => {
             console.log('Success:', data); // Handle the response data
+            // location.reload();
+            document.getElementById('assignmentAlert').style.display = 'block';
+            setTimeout(function() {
+                    document.getElementById('assignmentAlert').style.display = 'none';
+            }, 3000); // The message will be hidden after 3 seconds
             location.reload();
         })
         .catch(error => {
             console.error('Error:', error); // Handle any errors
+            document.getElementById('assignmentAlertFail').style.display = 'block';
+            setTimeout(function() {
+                    document.getElementById('assignmentAlertFail').style.display = 'none';
+            }, 3000); // The message will be hidden after 3 seconds
+            location.reload();
         });
+        
     }
     document.addEventListener('DOMContentLoaded', function() {
     var rows = document.querySelectorAll('.clickable-row');
