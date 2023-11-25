@@ -49,29 +49,51 @@ class ReviewsController < ApplicationController
   end
 
   def random_assign
-    tmp = JSON.parse(request.body.string)
+    options = JSON.parse(request.body.string)["option"]
+    puts options
     # randomly assign applications to all users
     # get all users
-    users = User.all
+    remove = ['admin']
+    users = User.all.reject { |user| remove.include?(user.user_level) }
+    shuf_users = users.shuffle
     # get all applications
-    puts "token in random assign #{session[:jwt_token]}"
     applications = SearchService.searchall(token: session[:jwt_token])
     puts applications
-    # randomly assign applications to users
-    for application in applications
-      # randomly select a user with the least number of assigned applications
-      user = users.sample
-      # check if the user has already reviewed the application
-      not_exists = Review.where(user_netid: user.user_netid, applicant_id: application.application_cas_id).blank?
-      # if the user has not reviewed the application, assign the application to the user
-      if not_exists
-        Review.new(user_netid: user.user_netid, applicant_id: application.application_cas_id,
-                   status: 'assigned').save
+    if options.include?('roundRobin')
+      # randomly assign applications to users
+      applications.each_with_index do |application,idx|
+        # randomly select a user with the least number of assigned applications
+        # user = users.sample
+        user = shuf_users[idx%users.length]
+        # check if the user has already reviewed the application
+        not_exists = Review.where(user_netid: user.user_netid, applicant_id: application["application_cas_id"]).blank?
+        # if the user has not reviewed the application, assign the application to the user
+        if not_exists
+          Review.new(user_netid: user.user_netid, applicant_id: application["application_cas_id"],
+                    status: 'assigned').save
+        end
+      end
+    end
+    if options.include?('minThree')
+      # repeat three times
+      for i in 1..3
+        shuf_users = users.shuffle
+        applications.each_with_index do |application,idx|
+          # randomly select a user with the least number of assigned applications
+          # user = users.sample
+          user = shuf_users[idx%users.length]
+          # check if the user has already reviewed the application
+          not_exists = Review.where(user_netid: user.user_netid, applicant_id: application["application_cas_id"]).blank?
+          # if the user has not reviewed the application, assign the application to the user
+          if not_exists
+            Review.new(user_netid: user.user_netid, applicant_id: application["application_cas_id"],
+                      status: 'assigned').save
+          end
+        end
       end
     end
     flash[:notice] = 'Review(s) assigned successfully.'
     render json: { status: 'success', message: 'Review(s) assigned successfully' }
-    redirect_to '/home'
   end
 
   # PATCH/PUT /reviews/1 or /reviews/1.json
