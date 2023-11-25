@@ -50,18 +50,20 @@ class ReviewsController < ApplicationController
   end
 
   def random_assign
+    tmp = JSON.parse(request.body.string)
     # randomly assign applications to all users
     # get all users
     users = User.all
     # get all applications
-    @results = SearchService.search(query: params[:query], field: params[:field], token: session[:jwt_token])
-    applications = Application.all
+    puts session[:jwt_token]
+    applications = SearchService.searchall(token: session[:jwt_token])
+    puts applications
     # randomly assign applications to users
     for application in applications
       # randomly select a user with the least number of assigned applications
       user = users.sample
       # check if the user has already reviewed the application
-      not_exists = Review.where(user_netid: user.netid, applicant_id: application.cas_id).blank?
+      not_exists = Review.where(user_netid: user.user_netid, applicant_id: application.cas_id).blank?
       # if the user has not reviewed the application, assign the application to the user
       if not_exists
         Review.new(user_netid: user.netid, applicant_id: application.cas_id, status:"assigned").save
