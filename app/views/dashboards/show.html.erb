@@ -12,7 +12,7 @@
 
     <!-- Assign Button -->
     <div class="assign-button">
-    <button id="assignButton" class="btn btn-primary btn-block " style="margin: 0;">Assign</button>
+    <button id="assignButton" class="btn btn-primary btn-block " style="margin: 0;" onclick="assignReviewers()">Assign</button>
     </div>
     <!-- Alert for Assignment Status -->
     <div id="assignmentAlert" class="alert" style="display: none;"></div>
@@ -63,10 +63,36 @@
 
 
   <script>
-    document.getElementById('assignButton').addEventListener('click', function() {
-      // Here you will add the logic to handle assignment, display success/conflict alert,
-      // and dynamically load the user cards with assigned applications.
-    });
+    function assignReviewers(){
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        var checkboxesChecked = [];
+        for (var i = 0; i < checkboxes.length; i++) {
+            // Push the checked checkboxes onto an array
+            checkboxesChecked.push(checkboxes[i].id);
+        }
+        console.log(checkboxesChecked);
+
+        url =   "<%= @phd_app_url%>" + "/randomassign";
+        fetch(url, {
+        method: 'POST', // Specify the method as POST
+        headers: {
+            'Content-Type': 'application/json', // Set the content type header so that the server knows the format of the sent data
+        },
+        body: JSON.stringify(checkboxesChecked) // Convert the JavaScript object to a JSON string and send it as the request body
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // Parse the JSON response
+        })
+        .then(data => {
+            console.log('Success:', data); // Handle the response data
+        })
+        .catch(error => {
+            console.error('Error:', error); // Handle any errors
+        });
+    }
     document.addEventListener('DOMContentLoaded', function() {
     var rows = document.querySelectorAll('.clickable-row');
     rows.forEach(function(row) {
