@@ -5,9 +5,9 @@ Feature: Open Dashboard Page
   
   Background: users in database
     Given the following users exist:
-      | user_netid   | user_name | user_level | user_email        | password  |
-      | 12345        | admin     | committee_chair      | admin@tamu.edu    | admin     |
-      | 12346        | admin     | committee_member      | admin@tamu.edu    | admin     |
+      | user_netid   | user_name | user_level       | user_email        | password  |
+      | 12345        | admin     | committee_chair  | admin@tamu.edu    | admin     |
+      | 12346        | admin     | committee_member | admin@tamu.edu    | admin     |
     
     Given the following reviews exist:
       | review_id | user_netid | applicant_id | review_info    | rating | status      | gar   | gat   |
