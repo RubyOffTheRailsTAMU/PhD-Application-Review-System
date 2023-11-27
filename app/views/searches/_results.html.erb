@@ -20,16 +20,17 @@
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
-        <th>Degree</th>
       </tr>
     </thead>
     <tbody id="applicationList">
       <% @results.each do |result| %>
         <tr class="clickable-row" data-href="/applicant?cas_id=<%= result["cas_id"] %>">
+          <% if current_user.user_level != "faculty" %>
+            <td class="except"><input type="checkbox"/></td>
+          <% end %>
           <td><%= result["cas_id"]  %></a></td>
-          <td><%= result["name"]%></td>
+          <td><%= result["Combined name"]%></td>
           <td><%= result["email"]%></td>
-          <td><%= result["degree"]%></td>
         </tr>
       <% end %>
     </tbody>

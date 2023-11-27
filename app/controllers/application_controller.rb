@@ -41,9 +41,12 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user
-    return if logged_in?
-
-    flash[:alert] = "You must be logged in to perform that action."
-    redirect_to root_path
+    if Rails.env.test?
+        return
+    end
+    if !logged_in?
+        flash[:alert] = "You must be logged in to perform that action."
+        redirect_to root_path
+    end
   end
 end

@@ -1,76 +1,86 @@
-    <div class="container">
-        <div class="row">
-        <!-- Left Section: Applicant Data and Review -->
-            <div class="col-md-5 left-section">
-                <!-- Applicant Data Table -->
-                <div class="applicant-data">
-                    <!-- Applicant Name Display -->
-                    <div class="applicant-name">
-                        <h3><%= @result['name'] || 'Applicant Name' %></h3>
-                    </div>
-                    <div class="scrollable-table">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>Field</th>
-                                <th>Value</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <% @result.each do |key, value| %>
-                            <tr>
-                                <!-- todo: fields where many is true... -->
-                                <!-- todo: clean up commas, but tahts many field stuff -->
-
-                                <td><%= key.humanize %></td>
-                                <td>
-                                
-                                <% if key.include?('date') && !value.blank? %>
-                                    <% parsed_date = Date.parse(value) rescue nil %>
-                                    <% if parsed_date %>
-                                    <%= parsed_date.strftime('%B %d, %Y') %>
-                                    <% else %>
-                                    <%= value %>
-                                    <% end %>
-                                <% elsif key.include?('gpa') && !value.blank? %>
-                                    <%= value.split(',').reject { |s| s.strip.empty? }.join(', ') %>
-                                <% else %>
-                                    <%= value.blank? ? 'N/A' : value.split(',').reject { |s| s.strip.empty? }.join(', ') %>
-                                <% end %>
-                                </td>
-                            </tr>
-                            <% end %>
-
-                            <!-- Add other fields like IELTS, GRE scores in a similar fashion -->
-                            <!-- TODO -->
-                            <!-- ... continue for other fields ... -->
-                            </tbody>
-                        </table>
-                    </div>
+<div class="container">
+    <div class="row">
+    <!-- Left Section: Applicant Data and Review -->
+        <div class="col-md-5 left-section">
+            <!-- Applicant Data Table -->
+            <div class="applicant-data">
+                <!-- Applicant Name Display -->
+                <div class="applicant-name">
+                    <h3><%= @result['application_name'] || 'Applicant Name' %></h3>
                 </div>
-                
-                
-                <div class="review-box">
-                    <!-- Review Text Area -->
-                    <textarea id="reviewInput" class="form-control" placeholder="Add your review here" rows="4"></textarea>
-                    <!-- Review Display Card (Initially Hidden) -->
-                    <div id="reviewCard" class="review-card" style="display: none;">
-                        <p id="reviewText"></p>
-                        <button id="editButton" class="edit-button">
-                            <i class="fa fa-edit"></i> <!-- Font Awesome icon for edit -->
-                        </button>
-                    </div>
-                    <!-- Rating Section -->
-                    <h4 class="rating-heading">Rating</h4>
-                    <div class="star-rating">
-                        <i class="fa fa-star" data-rating="1" aria-hidden="true"></i>
-                        <i class="fa fa-star" data-rating="2" aria-hidden="true"></i>
-                        <i class="fa fa-star" data-rating="3" aria-hidden="true"></i>
-                        <i class="fa fa-star" data-rating="4" aria-hidden="true"></i>
-                        <i class="fa fa-star" data-rating="5" aria-hidden="true"></i>
-                        <input type="hidden" id="rating" name="rating" value="0">
-                        <span id="rating-display" class="rating-display">0</span>
-                    </div>
+                <div class="scrollable-table">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Value</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% @result.each do |key, value| %>
+                        <tr>
+                            <!-- todo: fields where many is true... -->
+                            <!-- todo: clean up commas, but tahts many field stuff -->
+
+                            <td><%= key.humanize %></td>
+                            <td>
+                            
+                            <% if key.include?('date') && !value.blank? %>
+                                <% parsed_date = Date.parse(value) rescue nil %>
+                                <% if parsed_date %>
+                                <%= parsed_date.strftime('%B %d, %Y') %>
+                                <% else %>
+                                <%= value %>
+                                <% end %>
+                            <% elsif key.include?('gpa') && !value.blank? %>
+                                <%= value.split(',').reject { |s| s.strip.empty? }.join(', ') %>
+                            <% else %>
+                                <%= value.blank? ? 'N/A' : value.split(',').reject { |s| s.strip.empty? }.join(', ') %>
+                            <% end %>
+                            </td>
+                        </tr>
+                        <% end %>
+
+                        <!-- Add other fields like IELTS, GRE scores in a similar fashion -->
+                        <!-- TODO -->
+                        <!-- ... continue for other fields ... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <% rev = Review.where(user_netid: current_user.user_netid, applicant_id: @result['application_cas_id']) %>
+            <% not_exist = rev.blank? %>
+
+            <div class="review-box">
+                <!-- Review Text Area -->
+                <textarea id="reviewInput" class="form-control" placeholder="Add your review here" rows="4"></textarea>
+                <!-- Review Display Card (Initially Hidden) -->
+                <div id="reviewCard" class="review-card" style="display: none;">
+                    <p id="reviewText"></p>
+                    <button id="editButton" class="edit-button">
+                        <i class="fa fa-edit"></i> <!-- Font Awesome icon for edit -->
+                    </button>
+                </div>
+                <!-- Rating Section -->
+                <h4 class="rating-heading">Rating</h4>
+                <div class="star-rating">
+                    <i class="fa fa-star" data-rating="1" aria-hidden="true"></i>
+                    <i class="fa fa-star" data-rating="2" aria-hidden="true"></i>
+                    <i class="fa fa-star" data-rating="3" aria-hidden="true"></i>
+                    <i class="fa fa-star" data-rating="4" aria-hidden="true"></i>
+                    <i class="fa fa-star" data-rating="5" aria-hidden="true"></i>
+                    <input type="hidden" id="rating" name="rating" value="0">
+                    <span id="rating-display" class="rating-display">0</span>
+                </div>
+                <!-- GAT/GAR Section -->
+                <div class="checkboxes" >
+                    <input type="checkbox" id="gatCheckbox" name="gatCheckbox" >
+                    <label for="gatCheckbox">GAT</label>
+
+                    <input type="checkbox" id="garCheckbox" name="garCheckbox">
+                    <label for="garCheckbox">GAR</label>
+                </div>
 
                 <!-- Success Message -->
                 <div id="successMessage" class="success-message" style="display: none;">

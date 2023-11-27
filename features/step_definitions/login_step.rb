@@ -55,6 +55,6 @@ Then(/I should see "(.*)"/) do |string|
 end
 
 When(/I create a user with netid "(.*)" username "(.*)"/) do |netid, username|
-  fill_in('User NetID', with: netid)
-  fill_in('Username', with: username)
+  fill_in('NetID', with: netid)
+  fill_in('Name', with: username)
 end
