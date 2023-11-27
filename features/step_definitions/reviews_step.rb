@@ -55,7 +55,6 @@ And('I can see all reviews') do
 end
 
 And(/I fill in review "(.*)" with rating "(.*)" and assistantship "(.*)"/) do |review, rating, assistantship|
-<<<<<<< HEAD
   fill_in 'reviewInput', with: review
   # choose "rating_#{rating}" 
   find(".fa[data-rating='#{rating}']").click

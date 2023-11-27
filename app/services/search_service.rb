@@ -31,11 +31,12 @@ class SearchService
     }
 
     response = Net::HTTP.get_response(uri, headers)
+    puts "here"
     puts response.body
     JSON.parse(response.body)
   end
   def self.get_all_field_names(token:)
-    uri = URI("http://127.0.0.1:3001/api/v1/field_names")
+    uri = URI(ENV["DATABASE_SERVER_URL"]+"/api/v1/field_names")
     headers = { "Authorization" => "Bearer #{token}" }
 
     response = Net::HTTP.get_response(uri, headers)
