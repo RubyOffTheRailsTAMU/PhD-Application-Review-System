@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/channels/application_cable/channel.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -11,7 +11,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/channels/application_cable/connection.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -21,7 +21,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/applicant_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/applicant_controller.rb": {
         "lines": [
           1,
           1,
@@ -35,7 +35,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/application_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -91,7 +91,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/application_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -99,7 +99,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/csv_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/csv_helper.rb": {
         "lines": [
           null,
           null,
@@ -107,7 +107,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/dashboards_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/dashboards_helper.rb": {
         "lines": [
           null,
           null,
@@ -115,7 +115,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/reviews_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/reviews_helper.rb": {
         "lines": [
           null,
           null,
@@ -123,7 +123,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/searches_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/searches_helper.rb": {
         "lines": [
           null,
           null,
@@ -131,7 +131,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/sessions_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -139,7 +139,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/tags_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/tags_helper.rb": {
         "lines": [
           null,
           null,
@@ -147,7 +147,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/tasks_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/tasks_helper.rb": {
         "lines": [
           null,
           null,
@@ -155,7 +155,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/users_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/users_helper.rb": {
         "lines": [
           null,
           null,
@@ -163,7 +163,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/welcome_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/welcome_helper.rb": {
         "lines": [
           null,
           null,
@@ -171,7 +171,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/xlsx_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/xlsx_helper.rb": {
         "lines": [
           null,
           null,
@@ -179,7 +179,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/dashboards_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/dashboards_controller.rb": {
         "lines": [
           null,
           null,
@@ -212,7 +212,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/homepage_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/homepage_controller.rb": {
         "lines": [
           null,
           null,
@@ -220,7 +220,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/reviews_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/reviews_controller.rb": {
         "lines": [
           1,
           1,
@@ -357,7 +357,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/searches_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/searches_controller.rb": {
         "lines": [
           null,
           null,
@@ -376,7 +376,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/sessions_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -440,7 +440,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/tags_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/tags_controller.rb": {
         "lines": [
           null,
           null,
@@ -516,7 +516,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/tasks_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/tasks_controller.rb": {
         "lines": [
           1,
           1,
@@ -544,7 +544,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/users_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/users_controller.rb": {
         "lines": [
           null,
           null,
@@ -587,7 +587,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/welcome_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/welcome_controller.rb": {
         "lines": [
           null,
           null,
@@ -612,7 +612,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/jobs/application_job.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -625,7 +625,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/mailers/application_mailer.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -635,7 +635,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/applicant.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/applicant.rb": {
         "lines": [
           null,
           null,
@@ -648,7 +648,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/application_record.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -657,7 +657,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/application_ielt.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/application_ielt.rb": {
         "lines": [
           null,
           null,
@@ -666,7 +666,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/gre.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/gre.rb": {
         "lines": [
           null,
           null,
@@ -675,7 +675,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/review.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/review.rb": {
         "lines": [
           null,
           null,
@@ -685,7 +685,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/school.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/school.rb": {
         "lines": [
           null,
           null,
@@ -694,7 +694,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/tag.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/tag.rb": {
         "lines": [
           null,
           null,
@@ -704,7 +704,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/task.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/task.rb": {
         "lines": [
           null,
           null,
@@ -726,7 +726,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/toefl.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/toefl.rb": {
         "lines": [
           null,
           null,
@@ -735,7 +735,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/user.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -747,7 +747,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/services/jwt_service.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/services/jwt_service.rb": {
         "lines": [
           null,
           null,
@@ -758,7 +758,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/services/search_service.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/services/search_service.rb": {
         "lines": [
           null,
           null,
@@ -818,11 +818,11 @@
         ]
       }
     },
-    "timestamp": 1701281449
+    "timestamp": 1701294078
   },
   "RSpec": {
     "coverage": {
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/channels/application_cable/channel.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -832,7 +832,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/channels/application_cable/connection.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -842,7 +842,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/applicant_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/applicant_controller.rb": {
         "lines": [
           1,
           1,
@@ -856,7 +856,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/application_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -912,7 +912,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/application_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -920,7 +920,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/csv_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/csv_helper.rb": {
         "lines": [
           null,
           null,
@@ -928,7 +928,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/dashboards_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/dashboards_helper.rb": {
         "lines": [
           null,
           null,
@@ -936,7 +936,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/reviews_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/reviews_helper.rb": {
         "lines": [
           null,
           null,
@@ -944,7 +944,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/searches_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/searches_helper.rb": {
         "lines": [
           null,
           null,
@@ -952,7 +952,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/sessions_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/sessions_helper.rb": {
         "lines": [
           null,
           null,
@@ -960,7 +960,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/tags_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/tags_helper.rb": {
         "lines": [
           null,
           null,
@@ -968,7 +968,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/tasks_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/tasks_helper.rb": {
         "lines": [
           null,
           null,
@@ -976,7 +976,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/users_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/users_helper.rb": {
         "lines": [
           null,
           null,
@@ -984,7 +984,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/welcome_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/welcome_helper.rb": {
         "lines": [
           null,
           null,
@@ -992,7 +992,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/helpers/xlsx_helper.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/helpers/xlsx_helper.rb": {
         "lines": [
           null,
           null,
@@ -1000,7 +1000,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/dashboards_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/dashboards_controller.rb": {
         "lines": [
           null,
           null,
@@ -1033,7 +1033,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/homepage_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/homepage_controller.rb": {
         "lines": [
           null,
           null,
@@ -1041,7 +1041,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/reviews_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/reviews_controller.rb": {
         "lines": [
           1,
           1,
@@ -1099,7 +1099,7 @@
           null,
           null,
           2,
-          10,
+          4,
           2,
           null,
           2,
@@ -1178,7 +1178,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/searches_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/searches_controller.rb": {
         "lines": [
           null,
           null,
@@ -1197,7 +1197,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/sessions_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -1261,7 +1261,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/tags_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/tags_controller.rb": {
         "lines": [
           null,
           null,
@@ -1337,7 +1337,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/tasks_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/tasks_controller.rb": {
         "lines": [
           1,
           1,
@@ -1365,7 +1365,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/users_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/users_controller.rb": {
         "lines": [
           null,
           null,
@@ -1408,7 +1408,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/controllers/welcome_controller.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/controllers/welcome_controller.rb": {
         "lines": [
           null,
           null,
@@ -1433,7 +1433,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/jobs/application_job.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -1446,7 +1446,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/mailers/application_mailer.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -1456,7 +1456,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/applicant.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/applicant.rb": {
         "lines": [
           null,
           null,
@@ -1469,7 +1469,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/application_record.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -1478,7 +1478,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/application_ielt.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/application_ielt.rb": {
         "lines": [
           null,
           null,
@@ -1487,7 +1487,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/gre.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/gre.rb": {
         "lines": [
           null,
           null,
@@ -1496,7 +1496,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/review.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/review.rb": {
         "lines": [
           null,
           null,
@@ -1506,7 +1506,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/school.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/school.rb": {
         "lines": [
           null,
           null,
@@ -1515,7 +1515,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/tag.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/tag.rb": {
         "lines": [
           null,
           null,
@@ -1525,7 +1525,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/task.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/task.rb": {
         "lines": [
           null,
           null,
@@ -1547,7 +1547,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/toefl.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/toefl.rb": {
         "lines": [
           null,
           null,
@@ -1556,7 +1556,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/models/user.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -1568,7 +1568,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/services/jwt_service.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/services/jwt_service.rb": {
         "lines": [
           null,
           null,
@@ -1579,7 +1579,7 @@
           null
         ]
       },
-      "/mnt/d/GitHub/PhD-Application-Review-System/app/services/search_service.rb": {
+      "/home/felix/se/PhD-Application-Review-System/app/services/search_service.rb": {
         "lines": [
           null,
           null,
@@ -1639,6 +1639,6 @@
         ]
       }
     },
-    "timestamp": 1701281417
+    "timestamp": 1701294434
   }
 }
