@@ -38,7 +38,7 @@
 </div>
 <div>
     <%= form.hidden_field :user_netid, value: current_user.user_netid %>
-    <%= form.hidden_field :applicant_id, value: @result['application_cas_id'] %>
+    <%= form.hidden_field :applicant_id, value: @result['cas_id'] %>
 </div>
 <div>
     <%= form.label :rating, "Recommend Applicant for Assistantship:", class: "bold-label" %><br>

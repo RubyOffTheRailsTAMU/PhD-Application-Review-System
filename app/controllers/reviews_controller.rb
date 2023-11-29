@@ -66,10 +66,10 @@ class ReviewsController < ApplicationController
         # user = users.sample
         user = shuf_users[idx%users.length]
         # check if the user has already reviewed the application
-        not_exists = Review.where(user_netid: user.user_netid, applicant_id: application["application_cas_id"]).blank?
+        not_exists = Review.where(user_netid: user.user_netid, applicant_id: application).blank?
         # if the user has not reviewed the application, assign the application to the user
         if not_exists
-          Review.new(user_netid: user.user_netid, applicant_id: application["application_cas_id"],
+          Review.new(user_netid: user.user_netid, applicant_id: application,
                     status: 'assigned').save
         end
       end
@@ -83,10 +83,10 @@ class ReviewsController < ApplicationController
           # user = users.sample
           user = shuf_users[idx%users.length]
           # check if the user has already reviewed the application
-          not_exists = Review.where(user_netid: user.user_netid, applicant_id: application["application_cas_id"]).blank?
+          not_exists = Review.where(user_netid: user.user_netid, applicant_id: application).blank?
           # if the user has not reviewed the application, assign the application to the user
           if not_exists
-            Review.new(user_netid: user.user_netid, applicant_id: application["application_cas_id"],
+            Review.new(user_netid: user.user_netid, applicant_id: application,
                       status: 'assigned').save
           end
         end

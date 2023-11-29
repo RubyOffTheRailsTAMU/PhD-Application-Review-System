@@ -49,7 +49,7 @@
                 </div>
             </div>
             
-            <% rev = Review.where(user_netid: current_user.user_netid, applicant_id: @result['application_cas_id']) %>
+            <% rev = Review.where(user_netid: current_user.user_netid, applicant_id: @result['cas_id']) %>
             <% not_exist = rev.blank? %>
 
             <div class="review-box">
@@ -211,7 +211,7 @@ document.getElementById('submitButton').addEventListener('click', function() {
         "review_info": reviewText,
         "rating": rating,
         "user_netid": "<%= current_user.user_netid %>",
-        "applicant_id": "<%= @result['application_cas_id'] %>",
+        "applicant_id": "<%= @result['cas_id'] %>",
         "gat": gat,
         "gar": gar,
         "status": "completed"
@@ -283,7 +283,7 @@ document.getElementById('saveButton').addEventListener('click', function() {
         "review_info": reviewText,
         "rating": rating,
         "user_netid": "<%= current_user.user_netid %>",
-        "applicant_id": "<%= @result['application_cas_id'] %>",
+        "applicant_id": "<%= @result['cas_id'] %>",
         "gat": gat,
         "gar": gar,
         "status": "inprogress"

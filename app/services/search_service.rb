@@ -9,6 +9,7 @@ class SearchService
       'Authorization' => "Bearer #{token}"
     }
     response = Net::HTTP.get_response(uri, headers)
+    puts uri
     JSON.parse(response.body)
     # uri = URI("http://
   end

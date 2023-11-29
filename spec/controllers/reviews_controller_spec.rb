@@ -30,9 +30,43 @@ RSpec.describe ReviewsController, type: :controller do
     let(:valid_session) { 
         {
             user_email: "admin.phd@tamu.edu",
-            user_token: "admin_token_placeholder"
+            user_token: "admin_token_placeholder",
+            jwt_token: JwtService.generate_jwt({user_email:"admin.phd@tamu.edu",
+            exp: 24.hours.from_now.to_i})
         }
     }
+
+    describe "POST #assign" do
+      context "with valid params" do
+          it "assigns a new Review" do
+            expect {
+              post :assign, body: '{
+                "user_id": 1,
+                "application_ids": [101, 102, 103]
+              }' , session: valid_session
+            }.to change(Review, :count).by(3)
+          end
+      end
+    end
+
+    describe "POST #random_assign" do
+      context "with valid params" do
+          it "assigns a reviews in roundrobin" do
+            expect {
+              post :random_assign, body: '{
+                "option": ["roundRobin"]
+              }' , session: valid_session
+            }.to change(Review, :count).by_at_least(1)
+          end
+          it "assigns a reviews in minthree" do
+            expect {
+              post :random_assign, body: '{
+                "option": ["minThree"]
+              }' , session: valid_session
+            }.to change(Review, :count).by_at_least(1)
+          end
+      end
+    end
 
     describe "POST #create" do
         context "with valid params" do
