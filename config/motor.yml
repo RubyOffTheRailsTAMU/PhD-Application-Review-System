@@ -53,7 +53,7 @@ forms:
       default_value: admin
       validators: []
     request_type: rest
-  api_config_name: localhost:3000
+  api_config_name: https://phdappreview-2530b5efb143.herokuapp.com
   tags:
   - "#createuser"
   updated_at: 2023-11-17 19:17:43.794831000 +00:00
@@ -66,8 +66,8 @@ api_configs:
   description:
   updated_at: 2023-11-05 02:35:33.795155000 +00:00
 - id: 2
-  name: localhost:3000
-  url: http://localhost:3000
+  name: https://phdappreview-2530b5efb143.herokuapp.com
+  url: https://phdappreview-2530b5efb143.herokuapp.com
   preferences: {}
   description:
   updated_at: 2023-11-17 19:07:48.206924000 +00:00
