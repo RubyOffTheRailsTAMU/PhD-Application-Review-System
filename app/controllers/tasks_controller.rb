@@ -10,7 +10,7 @@ class TasksController < ApplicationController
         
         begin
           # Fetch application info
-          application_info = SearchService.search(query: "*cas_id=#{applicant_id}", field: "cas_id", token: session[:jwt_token])[0]
+          application_info = SearchService.search(query: "*cas_id=#{applicant_id}.0", field: "cas_id", token: session[:jwt_token])[0]
           @applicant_names[applicant_id] = application_info ? application_info["Combined name"] : "Default Name"
           
         rescue => e
