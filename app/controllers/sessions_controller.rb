@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env['omniauth.auth']
-    render json: {"token": request.env['omniauth.auth']}
+    redirect_to 'http://127.0.0.1:3000/auth/google_oauth2/callback', body: {"token": request.env['omniauth.auth']}
 
     # emails = read_emails(Rails.root.join('app', 'assets', 'whitelist.txt').to_s)
     # if email_exists?(auth.info.email, emails)
