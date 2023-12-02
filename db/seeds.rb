@@ -11,13 +11,10 @@
 #   {:candidate_id => "1", :candidate_info => "Francesco Romano"}
 # ]
 
-User.create!(user_netid: '5290000', user_name: 'Tanay', user_level: 'faculty', password_digest: 'admin')
 
 # Create new users
 users = [
-  { user_netid: '123', user_email: 'admin.phd@tamu.edu', user_name: 'admin', user_level: 'admin', password: 'admin' },
-  { user_netid: 'shreyasskasetty', user_email: 'shreyasskasetty@tamu.edu', user_name: 'Shreyas Shivakumar',
-    user_level: 'comittee_member', password_digest: 'admin' }
+  { user_netid: '123', user_email: 'admin.phd@tamu.edu', user_name: 'admin', user_level: 'admin', password: 'admin' }
   # adxd more users as needed
 ]
 

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.password ||= 'googlepwdplaceholder'
-    @user.user_level ||= 'faculty'
+    @user.user_level ||= 'committee_member'
     current_user
     respond_to do |format|
       if @user.save
