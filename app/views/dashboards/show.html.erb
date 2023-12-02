@@ -44,7 +44,7 @@
                     </table>
                         <div style="overflow-y:auto; max-height: 300px;">
                             <table class="table">
-                                    <tbody id="applicationList">
+                                    <tbody id="applicationList=<%= member.user_netid %>">
                                         <% @committee_reviews[member.user_netid].each do |review| %>
                                         <tr id="review-row-<%= review.applicant_id %>" class="clickable-row" data-href="/applicant?cas_id=<%= review.applicant_id.to_f %>">
                                             <td><%= @applicant_names[review.applicant_id] %></td>
@@ -81,9 +81,10 @@
                 })
                 .then(response => {
                     if (response.ok) {
-                         const tableBody = document.getElementById('applicationList');
-                         tableBody.innerHTML = ''; // Clears the table contents
-                        return response.json();
+                             document.querySelectorAll('tbody[id^="applicationList="]').forEach(tableBody => {
+                                tableBody.innerHTML = '';
+                            });
+                                                return response.json();
                     }
                     throw new Error('Network response was not ok.');
                 })
