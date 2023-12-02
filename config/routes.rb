@@ -35,7 +35,9 @@ Rails.application.routes.draw do
 
   # Removed the ApplicantsController
   # get 'applicants/savedata'
-
+  delete '/reviews', to: 'reviews#destroy_all'
+  delete '/reviews/:applicant_id', to: 'reviews#destroy'
+  
   resources :reviews
   resources :users
   resources :candidates

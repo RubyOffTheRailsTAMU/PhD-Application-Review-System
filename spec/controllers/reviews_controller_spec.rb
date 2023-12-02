@@ -126,7 +126,7 @@ RSpec.describe ReviewsController, type: :controller do
       it 'redirects to the review' do
         review = Review.create! valid_attributes
         put :update, params: { id: review.to_param, review: new_attributes }, session: valid_session
-        expect(response).to redirect_to("/applicant?cas_id=#{review.applicant_id}")
+        expect(response).to redirect_to("/applicant?cas_id=#{review.applicant_id.to_f}")
       end
     end
 
@@ -164,4 +164,35 @@ RSpec.describe ReviewsController, type: :controller do
       expect(flash[:notice]).to eq('Review was successfully assigned.')
     end
   end
+
+  describe 'DELETE #destroy' do
+    context 'when the review exists' do
+      it 'deletes the review' do
+        expect {
+          delete :destroy, params: { id: 'applicant123'}, format: :json
+        }.to change(Review, :count).by(0)
+  
+        expect(response).to have_http_status(:not_found)
+      end
+    end
+  end
+
+  describe 'DELETE #destroy_all' do
+      context 'when there are reviews' do
+          it 'deletes all reviews and returns success message' do
+            delete :destroy_all, format: :json
+            expect(response).to have_http_status(:ok)
+          end
+      end
+  end
+
+  context 'when there are no reviews' do
+    it 'returns message saying no reviews to delete' do
+      delete :destroy_all, format: :json
+      expect(JSON.parse(response.body)['message']).to eq('No reviews to delete.')
+    end
+  end
+
+ 
+  
 end

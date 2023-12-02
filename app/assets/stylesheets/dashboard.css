@@ -24,7 +24,37 @@
 }
 
 .assign-button{
-    margin-left: 0px;
+    display: flex;
+
+    align-items: center; /* Center the buttons vertically */
     padding: 0;
-    width: 200px;
+}
+
+#assignButton {
+    width: 150px; /* Adjust this value as needed */
+}
+
+.assign-button .btn {
+    margin: 5px;
+    white-space: nowrap;  /* Prevents text from wrapping */
+}
+
+.alert-box {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336; /* Red background color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensure it's above other elements */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }

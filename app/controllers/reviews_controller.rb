@@ -1,7 +1,7 @@
 require 'json'
 class ReviewsController < ApplicationController
   before_action :require_user
-  before_action :set_review, only: %i[show edit update destroy]
+  before_action :set_review, only: %i[show edit update]
   skip_before_action :verify_authenticity_token
   # protect_from_forgery with: :null_session
 
@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
       if @review.save
         # format.html { redirect_to review_url(@review), notice: "Review was successfully created." }
         flash[:notice] = 'Review was successfully created.'
-        format.html { redirect_to "/applicant?cas_id=#{@review.applicant_id}" }
+        format.html { redirect_to "/applicant?cas_id=#{@review.applicant_id.to_f}" }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -96,6 +96,32 @@ class ReviewsController < ApplicationController
     render json: { status: 'success', message: 'Review(s) assigned successfully' }
   end
 
+  def destroy_all
+    deleted_count = Review.delete_all
+
+    respond_to do |format|
+      if deleted_count > 0
+        format.json { render json: { message: "#{deleted_count} reviews deleted successfully." }, status: :ok }
+      else
+        format.json { render json: { message: 'No reviews to delete.' }, status: :ok }
+      end
+    end
+  end
+
+  def destroy
+    review = Review.find_by(applicant_id: params[:id])
+    if review
+      review.destroy
+      respond_to do |format|
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.json { render json: { error: 'Review not found!' }, status: :not_found }
+      end
+    end
+  end
+
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
     respond_to do |format|
@@ -109,7 +135,7 @@ class ReviewsController < ApplicationController
         puts(review_params)
         # format.html { redirect_to review_url(@review), notice: "Review was successfully updated." }
         flash[:notice] = 'Review was successfully updated.'
-        format.html { redirect_to "/applicant?cas_id=#{@review.applicant_id}" }
+        format.html { redirect_to "/applicant?cas_id=#{@review.applicant_id.to_f}" }
         format.json { render :show, status: :ok, location: @review }
       else
         format.html { render :edit, status: :unprocessable_entity }

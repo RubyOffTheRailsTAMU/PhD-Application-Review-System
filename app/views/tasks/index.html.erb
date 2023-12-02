@@ -25,7 +25,7 @@
         </thead>
         <tbody id="applicationList">
           <% @reviews.each do |review| %>
-            <tr class="clickable-row" data-status="<%= review.status.downcase %>" data-href="/applicant?cas_id=<%= review.applicant_id %>">
+            <tr class="clickable-row" data-status="<%= review.status.downcase %>" data-href="/applicant?cas_id=<%= review.applicant_id.to_f %>">
               <td><%= @applicant_names[review.applicant_id] %></td>
               <td><%= review.applicant_id %></td>
               <td>
