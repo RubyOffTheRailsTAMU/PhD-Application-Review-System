@@ -34,7 +34,11 @@ class SearchService
     response = Net::HTTP.get_response(uri, headers)
     puts "here"
     puts response.body
-    JSON.parse(response.body)
+    begin
+      JSON.parse(response.body)
+    rescue JSON::ParserError => e
+      JSON.parse("{}")
+    end
   end
   def self.get_all_field_names(token:)
     uri = URI(ENV["DATABASE_SERVER_URL"]+"/api/v1/field_names")
