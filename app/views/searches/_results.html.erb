@@ -29,7 +29,7 @@
             <td class="except"><input type="checkbox"/></td>
           <% end %>
           <td><%= result["cas_id"]  %></a></td>
-          <td><%= result["Combined name"]%></td>
+          <td><%= @result["first_name"] +" "+ @result["last_name"]%></td>
           <td><%= result["email"]%></td>
         </tr>
       <% end %>

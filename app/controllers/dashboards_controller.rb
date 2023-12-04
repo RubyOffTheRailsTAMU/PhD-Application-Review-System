@@ -17,7 +17,7 @@ class DashboardsController < ApplicationController
         begin
           unless @applicant_names.key?(review.applicant_id)
             application_info = SearchService.search(query: "*cas_id=#{review.applicant_id}.0", field: "cas_id", token: session[:jwt_token])[0]
-            @applicant_names[review.applicant_id] = application_info ? application_info["Combined name"] : "Default Name"
+            @applicant_names[review.applicant_id] = application_info ? application_info["first_name"] +" "+ application_info["last_name"] : "Default Name"
           end
         rescue => e
           Rails.logger.error "Failed to fetch application info for applicant_id #{review.applicant_id}: #{e.message}"
