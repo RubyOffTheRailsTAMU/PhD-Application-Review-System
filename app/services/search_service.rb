@@ -56,4 +56,34 @@ class SearchService
       []
     end
   end
+  def self.get_pdf(token:, cas_id:)
+    # remove deciman from cas_id
+    cas_id_i = cas_id.to_i
+    uri = URI(ENV["DATABASE_SERVER_URL"]+"/api/v1/return_pdf?cas_id=#{cas_id_i}")
+    headers = { "Authorization" => "Bearer #{token}" }
+
+    response = Net::HTTP.get_response(uri, headers)
+    puts "Response Body: #{response.body}"  # Debugging line
+
+    if response.is_a?(Net::HTTPSuccess)
+      pdf_data = JSON.parse(response.body)
+      # Convert the base64 string to a PDF
+      pdf = Base64.decode64(pdf_data["pdf_file"])
+      # if pdf_data["pdf_file"] is not a string
+      if pdf_data["pdf_file"] == "error"
+        # write an empty pdf to a file
+        File.open("public/#{cas_id}.pdf", 'wb') do |f|
+          return "No PDF found"
+        end
+      end
+      # write the PDF to a file
+      File.open("public/#{cas_id}.pdf", 'wb') do |f|
+        f.write(pdf)
+        return "#{cas_id}"
+      end
+    else
+      puts "Error with the API call: #{response.code}"  # Error handling
+      []
+    end
+  end
 end
