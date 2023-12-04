@@ -2,7 +2,8 @@
 
 class DashboardsController < ApplicationController
   def show
-    @committee_members = User.where(user_level: 'committee_member')
+    # get users who user level is not admin
+    @users = User.where.not(user_level: 'admin')
     
     @committee_reviews = {}
     @applicant_names = {}
