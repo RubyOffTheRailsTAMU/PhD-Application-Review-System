@@ -8,7 +8,7 @@ class DashboardsController < ApplicationController
     @committee_reviews = {}
     @applicant_names = {}
 
-    @committee_members.each do |member|
+    @users.each do |member|
       reviews = Review.where(user_netid: member.user_netid)
       @committee_reviews[member.user_netid] = reviews
 
