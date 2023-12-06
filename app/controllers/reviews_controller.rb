@@ -23,9 +23,6 @@ class ReviewsController < ApplicationController
         flash[:notice] = 'Review was successfully created.'
         format.html { redirect_to "/applicant?cas_id=#{@review.applicant_id.to_f}" }
         format.json { render :show, status: :created, location: @review }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -11,7 +11,7 @@
       When I am on the log in page
       And I want to log into the site with "Username" as "admin" and "Password" as "admin"
       And I click "Log In"
-      When I search the applicant field "last_name"
+      When I search the applicant field "cas_id"
       Then I should see "Evan"
 
     Scenario: Applicant does not exist
