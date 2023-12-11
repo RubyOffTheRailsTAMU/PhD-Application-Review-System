@@ -46,7 +46,7 @@
                             <table class="table">
                                     <tbody id="applicationList=<%= member.user_netid %>">
                                         <% @committee_reviews[member.user_netid].each do |review| %>
-                                        <tr id="review-row-<%= review.applicant_id %>" class="clickable-row" data-href="/applicant?cas_id=<%= review.applicant_id.to_f %>">
+                                        <tr id="review-row-<%= review.applicant_id %>" class="clickable-row" data-href="/applicant?cas_id=<%= review.applicant_id %>">
                                             <td><%= @applicant_names[review.applicant_id] %></td>
                                             <td><%= review.applicant_id %></td>
                                             <td><button type="button" class="btn btn-primary btn-sm">remove</button></td>
